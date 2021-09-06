@@ -22,11 +22,11 @@ function ExtendedCard(props) {
 
 function Card(props) {
   return (
-    <article className="w-full">
-      <div className="w-full h-56">
+    <article className="w-full h-full">
+      <div className="w-full h-3/4">
         <img src={slide} className="w-full h-full" />
       </div>
-      <div className="flex items-center justify-center w-full h-10 py-8 bg-green-300">
+      <div className="flex items-center justify-center w-full bg-green-300 h-1/4">
         <span>{props.text}</span>
       </div>
     </article>
@@ -35,7 +35,7 @@ function Card(props) {
 
 function Work() {
   return (
-    <section className="w-full grid grid-cols-3">
+    <section id="work" className="w-full h-screen grid grid-cols-3">
       <Card text="MODERN HTML & CSS FROM THE BEGINNING" />
       <Card text="MODERN HTML & CSS FROM THE BEGINNING" />
       <Card text="MODERN HTML & CSS FROM THE BEGINNING" />

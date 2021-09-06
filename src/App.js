@@ -3,8 +3,7 @@ import "./App.css";
 import Header from "./Header";
 import Work from "./Work";
 import About from "./About";
-// Change Form to Contact
-import Form from "./Form";
+import Contact from "./Contact";
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
       <main>
         <Work />
         <About />
-        <Form />
+        <Contact />
       </main>
     </div>
   );
