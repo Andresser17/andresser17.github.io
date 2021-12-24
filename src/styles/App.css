@@ -1,0 +1,17 @@
+.cont-blue-gradient {
+  background-image: linear-gradient(
+    to right bottom,
+    #1b2a49,
+    #223b68,
+    #284d88,
+    #2c60ab,
+    #2d74ce,
+    #2d7dde,
+    #2b86ee,
+    #298fff,
+    #298fff,
+    #298fff,
+    #298fff,
+    #298fff
+  );
+}

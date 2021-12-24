@@ -1,6 +1,7 @@
 import { useState /*useEffect*/ } from "react";
 import githubIcon from "./github-icon-1.svg";
 import codepenIcon from "./codepen-icon.svg";
+import SectionTitle from "./SectionTitle";
 
 function FormTextarea(props) {
   const [color, setColor] = useState("bg-gray-500");
@@ -53,12 +54,10 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="flex flex-wrap items-start h-screen px-4 py-16 bg-blue-400"
+      className="flex flex-wrap items-start h-screen px-4 py-8 bg-second"
     >
-      <div className="flex justify-center w-full p-4 mb-20">
-        <h2 className="px-4 pb-2 text-3xl text-center border-b-2">
-          Contact Me
-        </h2>
+      <div className="flex justify-center w-full p-4">
+        <SectionTitle text="Contact Me" />
       </div>
       <div className="w-1/2">
         <h3 className="text-xl">
