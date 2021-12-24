@@ -1,14 +1,16 @@
-import slide from "./site-video.jpg";
-import githubIcon from "./github-icon-1.svg";
-import codepenIcon from "./codepen-icon.svg";
+// Icons
+import githubIcon from "../icons/github-icon-1.svg";
+import codepenIcon from "../icons/codepen-icon.svg";
+// Images
+// import slide from "./site-video.jpg";
 
 function ExtendedCard(props) {
   return (
     <div className="flex flex-wrap content-around justify-center hidden w-full h-full">
       <div className="flex flex-wrap items-start justify-between w-full p-4">
-        <img src={slide} className="w-64" />
-        <img src={slide} className="w-64" />
-        <img src={slide} className="w-64" />
+        {/* <img src={slide} className="w-64" /> */}
+        {/* <img src={slide} className="w-64" /> */}
+        {/* <img src={slide} className="w-64" /> */}
       </div>
       <a href="#32" className="block w-12 h-12 mx-4">
         <img src={githubIcon} className="max-w-full max-h-full" />
@@ -24,7 +26,7 @@ function Card(props) {
   return (
     <article className="w-full h-full">
       <div className="w-full h-3/4">
-        <img src={slide} className="w-full h-full" />
+        {/* <img src={slide} className="w-full h-full" /> */}
       </div>
       <div className="flex items-center justify-center w-full bg-green-300 h-1/4">
         <span>{props.text}</span>

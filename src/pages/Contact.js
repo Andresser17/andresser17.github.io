@@ -1,7 +1,9 @@
 import { useState /*useEffect*/ } from "react";
-import githubIcon from "./github-icon-1.svg";
-import codepenIcon from "./codepen-icon.svg";
-import SectionTitle from "./SectionTitle";
+// Components
+import SectionTitle from "../components/SectionTitle";
+// Icons
+import githubIcon from "../icons/github-icon-1.svg";
+import codepenIcon from "../icons/codepen-icon.svg";
 
 function FormTextarea(props) {
   const [color, setColor] = useState("bg-gray-500");

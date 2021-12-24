@@ -1,10 +1,12 @@
 // import {useState} from "react";
-import "./App.css";
-// Complete Sections
-import Header from "./Header";
-import Work from "./Work";
-import About from "./About";
-import Contact from "./Contact";
+// Styles
+import "./styles/App.css";
+// Complete Sections (components)
+import Header from "./components/Header";
+// Pages
+import Work from "./pages/Work";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
   return (

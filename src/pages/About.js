@@ -1,8 +1,11 @@
-import authorPic from "./cara-y-cecula.jpg";
-import githubIcon from "./github-icon-1.svg";
-import codepenIcon from "./codepen-icon.svg";
-import Buttons from "./Buttons";
-import SectionTitle from "./SectionTitle";
+// Components
+import Buttons from "../components/Buttons";
+import SectionTitle from "../components/SectionTitle";
+// Icons
+import githubIcon from "../icons/github-icon-1.svg";
+import codepenIcon from "../icons/codepen-icon.svg";
+// Images
+// import authorPic from "./cara-y-cecula.jpg";
 
 function Icons(props) {
   return (
@@ -22,7 +25,7 @@ function About() {
         <SectionTitle text="About Me" />
       </div>
       <div className="w-1/2">
-        <img src={authorPic} className="m-auto rounded w-72" />
+        {/* <img src={authorPic} className="m-auto rounded w-72" /> */}
       </div>
       <div className="w-1/2 text-center">
         <div className="p-4">
