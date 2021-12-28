@@ -29,7 +29,7 @@ function Header() {
     <header id="home">
       <div
         id="top-panel"
-        className="absolute flex items-center justify-between w-full h-20 px-4 text-white bg-black border-b border-blue-600 bg-opacity-30"
+        className="absolute flex items-center justify-between w-full h-20 px-4 text-white bg-black border-b border-fourth bg-opacity-30"
       >
         <div className="logo">
           <h1 className="text-2xl text-center">Alejandro Serrano</h1>
@@ -51,7 +51,7 @@ function Header() {
             </span>
           </div>
           <div className="mr-4">
-            <Buttons href="#" text="Works" />
+            <Buttons href="#" text="Works"/>
           </div>
           <div className="mr-4">
             <Buttons href="#" text="Contact me" />

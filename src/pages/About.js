@@ -1,19 +1,12 @@
 // Components
 import Buttons from "../components/Buttons";
 import SectionTitle from "../components/SectionTitle";
+import Icons from "../components/Icons";
 // Icons
 import githubIcon from "../icons/github-icon-1.svg";
 import codepenIcon from "../icons/codepen-icon.svg";
 // Images
 // import authorPic from "./cara-y-cecula.jpg";
-
-function Icons(props) {
-  return (
-    <a href={props.href} className="block w-12 h-12 mx-4">
-      <img src={props.src} className="max-w-full max-h-full" />
-    </a>
-  );
-}
 
 function About() {
   return (
