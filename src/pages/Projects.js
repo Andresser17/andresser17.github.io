@@ -1,3 +1,5 @@
+// Components
+import Icons from "../components/Icons";
 // Icons
 import githubIcon from "../icons/github-icon-1.svg";
 import codepenIcon from "../icons/codepen-icon.svg";
@@ -6,12 +8,31 @@ import sampleImage from "../images/sample-image.png";
 
 function Card(props) {
   return (
-    <article className="flex w-full even:bg-red-400">
-      <div className="">
-        <img src={sampleImage} className="w-2/4 h-full" />
+    <article className="w-full bg-third text-black even:bg-fourth even:text-white">
+      <div className="w-full">
+        <img src={sampleImage} className="w-full h-60" />
       </div>
-      <div className="flex items-center justify-center w-full bg-green-300 h-1/4">
-        <span>{props.text}</span>
+      <div className="w-full p-2">
+        <h2 className="text-center text-xl">Hello World Project</h2>
+        <p className="my-4">
+          <div>
+            Elit placeat impedit sit possimus sit? Deserunt et corporis itaque
+            nam quae libero Officia ipsa eaque ullam debitis ratione. Incidunt
+            eius laudantium quasi consequatur nesciunt. Amet voluptate quis illo
+            ab.
+          </div>
+          <div>
+            Amet maxime ullam in aut blanditiis quo. Aspernatur quibusdam quo
+            voluptate ut ut Tenetur a iste voluptatem sint exercitationem.
+            Expedita neque beatae cumque totam enim? Eos doloremque aliquam quo
+            qui.
+          </div>
+        </p>
+        <div className="flex justify-center py-2">
+          <Icons href="#" src={githubIcon} />
+          {/* Replace with a heroku icon */}
+          <Icons href="#" src={codepenIcon} />
+        </div>
       </div>
     </article>
   );

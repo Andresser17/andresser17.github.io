@@ -56,7 +56,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="flex flex-wrap items-start h-screen px-4 py-8 bg-second"
+      className="flex flex-wrap items-start px-4 py-8 bg-second"
     >
       <div className="flex justify-center w-full p-4">
         <SectionTitle text="Contact Me" />

@@ -12,11 +12,9 @@ function About() {
   return (
     <section
       id="about"
-      className="flex flex-wrap items-start h-screen px-4 py-8 text-white bg-first"
+      className="flex flex-wrap items-start px-4 py-8 text-white bg-first"
     >
-      <div className="flex justify-center w-full p-4">
-        <SectionTitle text="About Me" />
-      </div>
+      <SectionTitle text="About Me" />
       <div className="w-1/2">
         {/* <img src={authorPic} className="m-auto rounded w-72" /> */}
       </div>
@@ -44,7 +42,7 @@ function About() {
         <div className="flex justify-center p-4">
           <Icons href="#" src={githubIcon} />
           <Icons href="#" src={codepenIcon} />
-          <Buttons src="#" text="Download my resume" /> 
+          <Buttons src="#" text="Download my resume" />
         </div>
       </div>
     </section>
