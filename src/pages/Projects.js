@@ -1,5 +1,6 @@
 // Components
 import Icons from "../components/Icons";
+import SectionTitle from "../components/SectionTitle";
 // Icons
 import githubIcon from "../icons/github-icon-1.svg";
 import codepenIcon from "../icons/codepen-icon.svg";
@@ -40,7 +41,8 @@ function Card(props) {
 
 function Projects() {
   return (
-    <section id="projects" className="w-full">
+    <section id="projects" className="w-full py-8">
+      <SectionTitle text="Projects" />
       <Card text="MODERN HTML & CSS FROM THE BEGINNING" />
       <Card text="MODERN HTML & CSS FROM THE BEGINNING" />
       <Card text="MODERN HTML & CSS FROM THE BEGINNING" />

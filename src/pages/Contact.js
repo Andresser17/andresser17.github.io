@@ -1,43 +1,40 @@
 import { useState /*useEffect*/ } from "react";
 // Components
 import SectionTitle from "../components/SectionTitle";
+import Icons from "../components/Icons";
+import Buttons from "../components/Buttons";
 // Icons
 import githubIcon from "../icons/github-icon-1.svg";
 import codepenIcon from "../icons/codepen-icon.svg";
 
 function FormTextarea(props) {
-  const [color, setColor] = useState("bg-gray-500");
-
-  if (props.color !== color && props.color) {
-    setColor(props.color);
-  }
-
-  return <textarea className={`p-2 mb-3 shadow-inner h-36 ${color}`}></textarea>;
+  return (
+    <textarea className={`p-2 mb-6 shadow-inner h-36 text-black`}></textarea>
+  );
 }
 
 function FormInput(props) {
-  const [color, setColor] = useState("bg-gray-500");
+  // const [color, setColor] = useState("bg-gray-500");
 
-  if (props.color !== color && props.color) {
-    setColor(props.color);
-  }
+  // if (props.color !== color && props.color) {
+  //   setColor(props.color);
+  // }
 
-  return <input className={`p-2 mb-3 shadow-inner ${color}`} />;
+  // return <input className={`p-2 mb-3 shadow-inner ${color}`} />;
+  return <input className={`p-2 mb-3 shadow-inner text-black`} />;
 }
 
 function FormButton(props) {
-  const [color, setColor] = useState("bg-gray-500");
-
-  if (props.color !== color && props.color) {
-    setColor(props.color);
-  }
-
-  return <button className={`mt-4 ${color}`}>{props.text}</button>;
+  return (
+    <button className="block px-6 py-4 rounded shadow-md bg-fourth">
+      {props.text}
+    </button>
+  );
 }
 
 function Form() {
   return (
-    <form className="p-5 bg-gray-600 w-80 md:w-96 grid grid-col-12">
+    <form className="p-5 bg-first grid grid-col-12">
       <label>Name</label>
       <FormInput color="bg-red-600" />
 
@@ -47,36 +44,26 @@ function Form() {
       <FormTextarea />
 
       <FormButton text="Send" />
-      <FormButton color="bg-red-800" text="Clear" />
     </form>
   );
 }
 
 function Contact() {
   return (
-    <section
-      id="contact"
-      className="flex flex-wrap items-start px-4 py-8 bg-second"
-    >
-      <div className="flex justify-center w-full p-4">
-        <SectionTitle text="Contact Me" />
-      </div>
-      <div className="w-1/2">
-        <h3 className="text-xl">
+    <section id="contact" className="px-4 py-8 bg-second">
+      <SectionTitle text="Contact Me" />
+      <div className="">
+        <span className="text-xl block">
           Consectetur repellendus magnam tenetur libero ratione Voluptate unde
           sit est
-        </h3>
-        <span>Example@email.com</span>
+        </span>
+        <span className="block text-lg">Example@email.com</span>
         <div className="flex justify-center p-4">
-          <a href="#32" className="block w-12 h-12 mx-4">
-            <img src={githubIcon} className="max-w-full max-h-full" />
-          </a>
-          <a href="#" className="block w-12 h-12 mx-4">
-            <img src={codepenIcon} className="max-w-full max-h-full" />
-          </a>
+          <Icons src={githubIcon} />
+          <Icons src={codepenIcon} />
         </div>
       </div>
-      <div className="flex justify-center w-1/2">
+      <div className="">
         <Form />
       </div>
     </section>

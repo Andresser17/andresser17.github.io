@@ -10,15 +10,12 @@ import codepenIcon from "../icons/codepen-icon.svg";
 
 function About() {
   return (
-    <section
-      id="about"
-      className="flex flex-wrap items-start px-4 py-8 text-white bg-first"
-    >
+    <section id="about" className="px-4 py-8 bg-first">
       <SectionTitle text="About Me" />
       <div className="w-1/2">
         {/* <img src={authorPic} className="m-auto rounded w-72" /> */}
       </div>
-      <div className="w-1/2 text-center">
+      <div className="text-center">
         <div className="p-4">
           <p className="py-2">
             Dolor laboriosam harum earum rem nostrum accusamus? Ducimus nostrum
@@ -39,10 +36,13 @@ function About() {
             blanditiis rerum soluta quasi!
           </p>
         </div>
-        <div className="flex justify-center p-4">
+        <div className="flex flex-wrap justify-center">
           <Icons href="#" src={githubIcon} />
+          {/* Change to linkedin icon */}
           <Icons href="#" src={codepenIcon} />
-          <Buttons src="#" text="Download my resume" />
+          <div className="my-4">
+            <Buttons src="#" text="Download my resume" />
+          </div>
         </div>
       </div>
     </section>
