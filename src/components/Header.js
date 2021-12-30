@@ -1,7 +1,10 @@
 import { useState } from "react";
-import Buttons from "./Buttons";
+// Components
+import Buttons from "../components/Buttons";
+// Icons
+import { ReactComponent as MenuIcon } from "../icons/menu-icon.svg";
 
-function MenuList(props) {
+function Menu(props) {
   const items = props.items.map((item) => {
     const id = item.toLowerCase();
     let styles = `mx-4 px-2 py-0.5`;
@@ -21,30 +24,32 @@ function MenuList(props) {
     );
   });
 
-  return <ul className="flex hidden">{items}</ul>;
+  return <ul className="hidden sm:flex">{items}</ul>;
+}
+
+function MenuButton(props) {
+  return (
+    <span className="w-12 h-12 flex justify-center items-center shadow-md text-white p-2 rounded bg-fourth block sm:hidden">
+      <MenuIcon />
+    </span>
+  );
 }
 
 function Header() {
   const [selected, setSelected] = useState("home");
   return (
-    <header id="home" className="w-screen">
-      <div
-        id="top-panel"
-        className="absolute w-full h-20 text-white bg-black border-b border-fourth bg-opacity-30"
-      >
-        <div className="logo">
-          <h1 className="text-2xl text-center">Alejandro Serrano</h1>
-        </div>
-        <div className="menu-cont">
-          <MenuList
-            onSelectedChange={setSelected}
-            selected={selected}
-            items={["Home", "Work", "About", "Contact"]}
-          />
-        </div>
-      </div>
-      <div className="flex items-center py-32 text-white cont-blue-gradient">
-        <div className="flex flex-wrap justify-center">
+    <header id="home">
+        {/* <div> */}
+        {/*   <MenuButton menuId="menu" /> */}
+        {/*   <Menu */}
+        {/*     onSelectedChange={setSelected} */}
+        {/*     selected={selected} */}
+        {/*     items={["Home", "Projects", "About", "Contact"]} */}
+        {/*   /> */}
+        {/* </div> */}
+      {/* Home */}
+      <div className="flex items-center py-32 px-4 text-white cont-blue-gradient">
+        <div className="flex flex-wrap justify-center lg:w-2/4">
           <div className="flex flex-col items-center w-full mb-8">
             <span className="mb-4 text-center text-2xl">
               Sit nisi quibusdam expedita
@@ -52,8 +57,6 @@ function Header() {
             <span className="text-center">
               Lorem laboriosam eligendi eos reiciendis officiis incidunt error
               Tempora nam veniam neque voluptatibus id, atque? Exercitationem
-              voluptates reprehenderit earum voluptatem perspiciatis libero!
-              Sunt quibusdam aperiam veniam dolorem placeat harum. Voluptatum.
             </span>
           </div>
 

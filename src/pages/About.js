@@ -10,7 +10,7 @@ import codepenIcon from "../icons/codepen-icon.svg";
 
 function About() {
   return (
-    <section id="about" className="px-4 py-8 bg-first">
+    <section id="about" className="px-4 py-8 cont-blue-gradient">
       <SectionTitle text="About Me" />
       <div className="w-1/2">
         {/* <img src={authorPic} className="m-auto rounded w-72" /> */}
@@ -36,7 +36,7 @@ function About() {
             blanditiis rerum soluta quasi!
           </p>
         </div>
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center items-center">
           <Icons href="#" src={githubIcon} />
           {/* Change to linkedin icon */}
           <Icons href="#" src={codepenIcon} />

@@ -1,11 +1,6 @@
-import { useState /*useEffect*/ } from "react";
+// import { useState /*useEffect*/ } from "react";
 // Components
 import SectionTitle from "../components/SectionTitle";
-import Icons from "../components/Icons";
-import Buttons from "../components/Buttons";
-// Icons
-import githubIcon from "../icons/github-icon-1.svg";
-import codepenIcon from "../icons/codepen-icon.svg";
 
 function FormTextarea(props) {
   return (
@@ -34,9 +29,9 @@ function FormButton(props) {
 
 function Form() {
   return (
-    <form className="p-5 bg-first grid grid-col-12">
+    <form className="grid grid-col-12 w-96">
       <label>Name</label>
-      <FormInput color="bg-red-600" />
+      <FormInput />
 
       <label>Email</label>
       <FormInput />
@@ -50,20 +45,16 @@ function Form() {
 
 function Contact() {
   return (
-    <section id="contact" className="px-4 py-8 bg-second">
+    <section id="contact" className="px-4 py-8 bg-first lg:flex lg:flex-wrap">
       <SectionTitle text="Contact Me" />
-      <div className="">
+      <div className="lg:w-1/2 py-8">
         <span className="text-xl block">
           Consectetur repellendus magnam tenetur libero ratione Voluptate unde
           sit est
         </span>
         <span className="block text-lg">Example@email.com</span>
-        <div className="flex justify-center p-4">
-          <Icons src={githubIcon} />
-          <Icons src={codepenIcon} />
-        </div>
       </div>
-      <div className="">
+      <div className="flex justify-center py-8 lg:w-1/2">
         <Form />
       </div>
     </section>
