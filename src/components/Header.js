@@ -29,7 +29,7 @@ function Menu(props) {
 
 function MenuButton(props) {
   return (
-    <span className="w-12 h-12 flex justify-center items-center shadow-md text-white p-2 rounded bg-fourth block sm:hidden">
+    <span className="w-12 h-12 mx-2 flex justify-center items-center shadow-md text-white p-2 rounded bg-fourth block sm:hidden">
       <MenuIcon />
     </span>
   );
@@ -38,35 +38,26 @@ function MenuButton(props) {
 function Header() {
   const [selected, setSelected] = useState("home");
   return (
-    <header id="home">
-        {/* <div> */}
-        {/*   <MenuButton menuId="menu" /> */}
-        {/*   <Menu */}
-        {/*     onSelectedChange={setSelected} */}
-        {/*     selected={selected} */}
-        {/*     items={["Home", "Projects", "About", "Contact"]} */}
-        {/*   /> */}
-        {/* </div> */}
+    <header id="home" className="cont-blue-gradient">
+      {/* Top panel */}
+      <div class="fixed w-full flex justify-end bg-black/50 py-2 text-xs sm:hover:text-base sm:hover:py-4 transition-all duration-300 ease-out">
+        <MenuButton menuId="menu" />
+        <Menu
+          onSelectedChange={setSelected}
+          selected={selected}
+          items={["Home", "Projects", "About", "Contact"]}
+        />
+      </div>
       {/* Home */}
-      <div className="flex items-center py-32 px-4 text-white cont-blue-gradient">
-        <div className="flex flex-wrap justify-center lg:w-2/4">
-          <div className="flex flex-col items-center w-full mb-8">
-            <span className="mb-4 text-center text-2xl">
-              Sit nisi quibusdam expedita
-            </span>
-            <span className="text-center">
-              Lorem laboriosam eligendi eos reiciendis officiis incidunt error
-              Tempora nam veniam neque voluptatibus id, atque? Exercitationem
-            </span>
-          </div>
-
-          <div className="mr-4">
-            <Buttons href="#" text="Works" />
-          </div>
-          <div className="mr-4">
-            <Buttons href="#" text="Contact me" />
-          </div>
-        </div>
+      <div className="flex flex-col w-full sm:w-96 py-32 px-4">
+        <span className="block mb-4 text-xl font-extralight">
+          Hello, I'm
+          <h1 className="text-3xl font-black">Alejandro Serrano</h1>
+        </span>
+        <span className="block">
+          Lorem laboriosam eligendi eos reiciendis officiis incidunt error
+          Tempora nam veniam neque voluptatibus id, atque? Exercitationem
+        </span>
       </div>
     </header>
   );
