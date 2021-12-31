@@ -40,7 +40,7 @@ function Header() {
   return (
     <header id="home" className="cont-blue-gradient">
       {/* Top panel */}
-      <div class="fixed w-full flex justify-end bg-black/50 py-2 text-xs sm:hover:text-base sm:hover:py-4 transition-all duration-300 ease-out">
+      <div class="fixed w-full flex justify-end bg-black/20 text-white/20 py-2 text-xs sm:hover:text-base sm:hover:py-4 sm:hover:bg-black/50 sm:hover:text-white transition-all duration-300 ease-out">
         <MenuButton menuId="menu" />
         <Menu
           onSelectedChange={setSelected}

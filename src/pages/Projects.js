@@ -1,12 +1,28 @@
 // Components
 import Icons from "../components/Icons";
-import Buttons from "../components/Buttons";
 import SectionTitle from "../components/SectionTitle";
 // Icons
+// Remove this later, after refactoring Icons component
 import githubIcon from "../icons/github-icon-1.svg";
+import { ReactComponent as GithubIcon } from "../icons/github-icon-1.svg";
 import codepenIcon from "../icons/codepen-icon.svg";
+import { ReactComponent as HerokuIcon } from "../icons/heroku-icon.svg";
 // Images
 import sampleImage from "../images/sample-image.png";
+
+function ProjectLink(props) {
+  return (
+    <a
+      href={props.href}
+      className="flex py-2 my-4 bg-black/25 hover:bg-black/40 transition duration-300"
+    >
+      <span className="inline-block text-white w-6 mx-4">
+        {props.children}
+      </span>
+      <span className="inline-block">{props.text}</span>
+    </a>
+  );
+}
 
 function Card(props) {
   return (
@@ -15,13 +31,22 @@ function Card(props) {
         <img src={sampleImage} className="w-full" alt="" />
 
         {/* Source code and live code */}
-        <div className="flex pt-8">
-          <div className="mr-4">
-            <Buttons href="#" text="Source Code" />
-          </div>
-          <div className="mr-4">
-            <Buttons href="#" text="Live Code" />
-          </div>
+        {/* <div className="flex pt-8"> */}
+        {/*   <div className="mr-4"> */}
+        {/*     <Buttons href="#" text="Source Code" /> */}
+        {/*   </div> */}
+        {/*   <div className="mr-4"> */}
+        {/*     <Buttons href="#" text="Live Code" /> */}
+        {/*   </div> */}
+        {/* </div> */}
+        <div className="pt-8">
+          <ProjectLink href="#" text="Source Code">
+            <GithubIcon />
+          </ProjectLink>
+          {/* Replace with a heroku icon */}
+          <ProjectLink href="#" text="Live Code" >
+            <HerokuIcon />
+          </ProjectLink>
         </div>
       </div>
 
@@ -38,7 +63,6 @@ function Card(props) {
         <div className="flex flex-wrap">
           <span className="block w-full mb-4 text-xl">Stack</span>
           <Icons href="#" src={githubIcon} />
-          {/* Replace with a heroku icon */}
           <Icons href="#" src={codepenIcon} />
         </div>
       </div>
