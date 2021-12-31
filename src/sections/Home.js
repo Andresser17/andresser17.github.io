@@ -29,32 +29,55 @@ function Menu(props) {
 
 function MenuButton(props) {
   return (
-    <span className="w-12 h-12 mx-2 flex justify-center items-center shadow-md text-white p-2 rounded bg-fourth block sm:hidden">
+    <span className="flex items-center justify-center block w-12 h-12 p-2 mx-2 text-white rounded shadow-md bg-fourth sm:hidden">
       <MenuIcon />
     </span>
   );
 }
 
-function Header() {
+function TopPanel(props) {
+  // Top Panel behaviour
+  const base = "fixed top-0 w-full py-2 sm:py-4 flex justify-end transition-all duration-300 ease-out"
+  const home = "bg-black/50 text-white";
+  const inactive = "bg-black/20 text-white/20 text-xs";
+  const active =
+    "sm:hover:text-base sm:hover:py-4 sm:hover:bg-black/50 sm:hover:text-white ";
+
+  let styles = "";
+
+  if (props.selected === "home") {
+    styles = `${base} ${home}`;
+  } else {
+    styles = `${base} ${inactive} ${active}`;
+  }
+
+  return <div class={styles}>{props.children}</div>;
+}
+
+function Home() {
   const [selected, setSelected] = useState("home");
+
   return (
-    <header id="home" className="cont-blue-gradient">
+    <header
+      id="home"
+      className="flex items-center min-h-screen cont-blue-gradient"
+    >
       {/* Top panel */}
-      <div class="fixed w-full flex justify-end bg-black/20 text-white/20 py-2 text-xs sm:hover:text-base sm:hover:py-4 sm:hover:bg-black/50 sm:hover:text-white transition-all duration-300 ease-out">
+      <TopPanel selected={selected}>
         <MenuButton menuId="menu" />
         <Menu
           onSelectedChange={setSelected}
           selected={selected}
           items={["Home", "Projects", "About", "Contact"]}
         />
-      </div>
+      </TopPanel>
       {/* Home */}
-      <div className="flex flex-col w-full sm:w-96 py-32 px-4">
-        <span className="block mb-4 text-xl font-extralight">
+      <div className="flex flex-col w-full p-4 sm:w-2/4">
+        <span className="block mb-4 text-2xl font-extralight">
           Hello, I'm
-          <h1 className="text-3xl font-black">Alejandro Serrano</h1>
+          <h1 className="text-5xl font-black">Alejandro Serrano</h1>
         </span>
-        <span className="block">
+        <span className="block text-xl">
           Lorem laboriosam eligendi eos reiciendis officiis incidunt error
           Tempora nam veniam neque voluptatibus id, atque? Exercitationem
         </span>
@@ -63,4 +86,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Home;

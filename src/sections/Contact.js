@@ -4,7 +4,7 @@ import SectionTitle from "../components/SectionTitle";
 
 function FormTextarea(props) {
   return (
-    <textarea className={`p-2 mb-6 shadow-inner h-36 text-black`}></textarea>
+    <textarea className={`p-2 shadow-xl h-36 text-black`}></textarea>
   );
 }
 
@@ -16,12 +16,18 @@ function FormInput(props) {
   // }
 
   // return <input className={`p-2 mb-3 shadow-inner ${color}`} />;
-  return <input className={`p-2 mb-3 shadow-inner text-black`} />;
+  return <input className={`p-2 shadow-xl text-black`} />;
+}
+
+function FormLabel(props) {
+  return (
+    <label className="mt-4 mb-1">{props.text}</label>
+  )
 }
 
 function FormButton(props) {
   return (
-    <button className="block px-6 py-4 rounded shadow-md bg-fourth">
+    <button className="block px-6 py-4 mt-4 font-semibold text-black rounded shadow-xl bg-fourth">
       {props.text}
     </button>
   );
@@ -29,13 +35,14 @@ function FormButton(props) {
 
 function Form() {
   return (
-    <form className="grid grid-col-12 w-96">
-      <label>Name</label>
+    <form className="flex flex-col w-96">
+      <FormLabel text="Name" />
       <FormInput />
 
-      <label>Email</label>
+      <FormLabel text="Email" />
       <FormInput />
-      <label>Message</label>
+
+      <FormLabel text="Message" />
       <FormTextarea />
 
       <FormButton text="Send" />
@@ -45,14 +52,14 @@ function Form() {
 
 function Contact() {
   return (
-    <section id="contact" className="px-4 py-8 bg-first lg:flex lg:flex-wrap">
+    <section id="contact" className="min-h-screen px-4 py-8 bg-first lg:flex lg:flex-wrap">
       <SectionTitle text="Contact Me" />
-      <div className="lg:w-1/2 py-8">
-        <span className="text-xl block">
+      <div className="py-8 lg:w-1/2">
+        <span className="block text-xl">
           Consectetur repellendus magnam tenetur libero ratione Voluptate unde
           sit est
         </span>
-        <span className="block text-lg">Example@email.com</span>
+        <span className="block text-lg font-bold">Example@email.com</span>
       </div>
       <div className="flex justify-center py-8 lg:w-1/2">
         <Form />

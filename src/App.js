@@ -1,17 +1,17 @@
-// import {useState} from "react";
 // Styles
 import "./styles/App.css";
-// Complete Sections (components)
-import Header from "./components/Header";
-// Pages
-import Projects from "./pages/Projects";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+// Components
+
+// Sections
+import Home from "./sections/Home";
+import Projects from "./sections/Projects";
+import About from "./sections/About";
+import Contact from "./sections/Contact";
 
 function App() {
   return (
     <div className="text-white">
-      <Header />
+      <Home />
       <main>
         <Projects />
         <About />

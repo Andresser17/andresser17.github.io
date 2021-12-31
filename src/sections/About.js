@@ -6,17 +6,17 @@ import Icons from "../components/Icons";
 import githubIcon from "../icons/github-icon-1.svg";
 import codepenIcon from "../icons/codepen-icon.svg";
 // Images
-// import authorPic from "./cara-y-cecula.jpg";
+import authorPic from "../images/sample-person.jpg";
 
 function About() {
   return (
-    <section id="about" className="px-4 py-8 cont-blue-gradient">
+    <section id="about" className="flex flex-wrap min-h-screen px-4 py-8 cont-blue-gradient">
       <SectionTitle text="About Me" />
-      <div className="w-1/2">
-        {/* <img src={authorPic} className="m-auto rounded w-72" /> */}
+      <div className="flex justify-center w-full mt-8 lg:w-1/2">
+        <img src={authorPic} className="rounded w-60 h-60" />
       </div>
-      <div className="text-center">
-        <div className="p-4">
+      <div className="w-full text-center lg:w-1/2">
+        <div className="mb-4">
           <p className="py-2">
             Dolor laboriosam harum earum rem nostrum accusamus? Ducimus nostrum
             animi repellendus porro velit Cumque dolorum impedit deserunt
@@ -29,20 +29,9 @@ function About() {
             non vitae Porro iste qui dignissimos dolorem delectus suscipit
             Dolorem corrupti optio
           </p>
-          <p className="py-2">
-            Ipsum quod pariatur alias quo voluptate vitae. Hic facere facilis
-            dolores necessitatibus molestias. Fugit veritatis consequuntur
-            dolores esse illo! Dolor quaerat soluta quo velit voluptates! Ullam
-            blanditiis rerum soluta quasi!
-          </p>
         </div>
-        <div className="flex flex-wrap justify-center items-center">
-          <Icons href="#" src={githubIcon} />
-          {/* Change to linkedin icon */}
-          <Icons href="#" src={codepenIcon} />
-          <div className="my-4">
-            <Buttons src="#" text="Download my resume" />
-          </div>
+        <div className="flex flex-wrap items-center justify-center">
+          <Buttons src="#" text="Download my resume" />
         </div>
       </div>
     </section>

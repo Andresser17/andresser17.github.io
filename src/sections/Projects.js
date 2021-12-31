@@ -13,7 +13,7 @@ function ProjectLink(props) {
       href={props.href}
       className="flex py-2 my-4 bg-black/25 hover:bg-black/40 transition duration-300"
     >
-      <span className="inline-block text-white w-6 mx-4">
+      <span className="inline-block w-6 mx-4 text-white">
         {props.children}
       </span>
       <span className="inline-block">{props.text}</span>
@@ -23,7 +23,7 @@ function ProjectLink(props) {
 
 function Card(props) {
   return (
-    <article className="pb-8 mb-16 border-b border-fourth px-4 sm:border-none lg:flex lg:justify-around lg:even:flex-row-reverse">
+    <article className="px-4 pb-8 mb-16 border-b border-fourth sm:border-none lg:flex lg:justify-around lg:even:flex-row-reverse">
       <div className="w-full py-10 lg:w-5/12">
         <img src={sampleImage} className="w-full" alt="" />
 
@@ -40,7 +40,7 @@ function Card(props) {
       </div>
 
       <div className="w-fit lg:w-96">
-        <h2 className="text-center text-xl">Hello World Project</h2>
+        <h3 className="text-xl font-semibold text-center">Hello World Project</h3>
         <p className="mt-4 mb-8">
           Sit consequatur sint delectus magnam iste, adipisicing a error
           praesentium pariatur! Iste fuga qui quibusdam dolore sed aliquam ipsa
@@ -49,7 +49,7 @@ function Card(props) {
           quos odit ducimus eos reprehenderit Nihil.
         </p>
         {/* Used stack */}
-        <div className="flex flex-wrap bg-black/40 p-4">
+        <div className="flex flex-wrap p-4 bg-black/40">
           <span className="block w-full mb-4 text-xl border-b">Used Stack</span>
           <Icons href="#" dim="w-8 h-8">
             <GithubIcon />
@@ -65,7 +65,7 @@ function Card(props) {
 
 function Projects() {
   return (
-    <section id="projects" className="w-full py-8 px-4 bg-first">
+    <section id="projects" className="w-full px-4 py-8 bg-first">
       <SectionTitle text="Projects" />
       <div className="sm:grid sm:grid-cols-2 sm:gap-1 lg:block">
         <Card text="MODERN HTML & CSS FROM THE BEGINNING" />
