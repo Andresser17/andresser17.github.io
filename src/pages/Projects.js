@@ -2,10 +2,7 @@
 import Icons from "../components/Icons";
 import SectionTitle from "../components/SectionTitle";
 // Icons
-// Remove this later, after refactoring Icons component
-import githubIcon from "../icons/github-icon-1.svg";
 import { ReactComponent as GithubIcon } from "../icons/github-icon-1.svg";
-import codepenIcon from "../icons/codepen-icon.svg";
 import { ReactComponent as HerokuIcon } from "../icons/heroku-icon.svg";
 // Images
 import sampleImage from "../images/sample-image.png";
@@ -31,19 +28,11 @@ function Card(props) {
         <img src={sampleImage} className="w-full" alt="" />
 
         {/* Source code and live code */}
-        {/* <div className="flex pt-8"> */}
-        {/*   <div className="mr-4"> */}
-        {/*     <Buttons href="#" text="Source Code" /> */}
-        {/*   </div> */}
-        {/*   <div className="mr-4"> */}
-        {/*     <Buttons href="#" text="Live Code" /> */}
-        {/*   </div> */}
-        {/* </div> */}
         <div className="pt-8">
           <ProjectLink href="#" text="Source Code">
             <GithubIcon />
           </ProjectLink>
-          {/* Replace with a heroku icon */}
+
           <ProjectLink href="#" text="Live Code" >
             <HerokuIcon />
           </ProjectLink>
@@ -52,7 +41,7 @@ function Card(props) {
 
       <div className="w-fit lg:w-96">
         <h2 className="text-center text-xl">Hello World Project</h2>
-        <p className="my-4">
+        <p className="mt-4 mb-8">
           Sit consequatur sint delectus magnam iste, adipisicing a error
           praesentium pariatur! Iste fuga qui quibusdam dolore sed aliquam ipsa
           maiores! Deleniti hic reprehenderit praesentium ipsam vel reiciendis?
@@ -60,10 +49,14 @@ function Card(props) {
           quos odit ducimus eos reprehenderit Nihil.
         </p>
         {/* Used stack */}
-        <div className="flex flex-wrap">
-          <span className="block w-full mb-4 text-xl">Stack</span>
-          <Icons href="#" src={githubIcon} />
-          <Icons href="#" src={codepenIcon} />
+        <div className="flex flex-wrap bg-black/40 p-4">
+          <span className="block w-full mb-4 text-xl border-b">Used Stack</span>
+          <Icons href="#" dim="w-8 h-8">
+            <GithubIcon />
+          </Icons>
+          <Icons href="#" dim="w-8 h-8">
+            <HerokuIcon />
+          </Icons>
         </div>
       </div>
     </article>

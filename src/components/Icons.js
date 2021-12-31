@@ -1,7 +1,9 @@
 function Icons(props) {
+  const dim = props.dim ? props.dim : "w-12 h-12";
+
   return (
-    <a href={props.href} className="block w-12 h-12 mx-4">
-      <img src={props.src} className="max-w-full max-h-full" alt="" />
+    <a href={props.href} className={`block ${dim} mr-6`}>
+      {props.children}
     </a>
   );
 }
