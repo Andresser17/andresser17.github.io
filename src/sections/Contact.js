@@ -1,46 +1,62 @@
-// import { useState /*useEffect*/ } from "react";
+import { useState } from "react";
+import { send } from "@emailjs/browser";
 // Components
 import SectionTitle from "../components/SectionTitle";
+const EMAIL = "andresserserrano2020@gmail.com";
+const SERVICE_ID = "service_dlhbxdh";
+const TEMPLATE_ID = "template_9l4u4jj";
+const USER_ID = "user_DTWMp4cNyF93TKGmMi3vJ";
 
 function FormTextarea(props) {
-  return (
-    <textarea className={`p-2 shadow-xl h-36 text-black`}></textarea>
-  );
+  return <textarea className={`p-2 shadow-xl h-36 text-black`}></textarea>;
 }
 
 function FormInput(props) {
-  // const [color, setColor] = useState("bg-gray-500");
-
-  // if (props.color !== color && props.color) {
-  //   setColor(props.color);
-  // }
-
-  // return <input className={`p-2 mb-3 shadow-inner ${color}`} />;
-  return <input className={`p-2 shadow-xl text-black`} />;
+  return (
+    <input
+      type="text"
+      name={props.name}
+      placeholder={props.placeholder}
+      value={props.toSend[props.name]}
+      onChange={props.onChange}
+      className={`p-2 shadow-xl text-black`}
+    />
+  );
 }
 
 function FormLabel(props) {
-  return (
-    <label className="mt-4 mb-1">{props.text}</label>
-  )
+  return <label className="mt-4 mb-1">{props.text}</label>;
 }
 
 function FormButton(props) {
   return (
-    <button className="block px-6 py-4 mt-4 font-semibold text-black rounded shadow-xl bg-fourth">
+    <button
+      type="submit"
+      className="block px-6 py-4 mt-4 font-semibold text-black rounded shadow-xl bg-fourth"
+    >
       {props.text}
     </button>
   );
 }
 
-function Form() {
+function Form(props) {
   return (
-    <form className="flex flex-col w-96">
+    <form onSubmit={props.onSubmit} className="flex flex-col w-96">
       <FormLabel text="Name" />
-      <FormInput />
+      <FormInput
+        name="name"
+        placeholder="Name"
+        toSend={props.toSend}
+        onChange={props.onChange}
+      />
 
       <FormLabel text="Email" />
-      <FormInput />
+      <FormInput
+        name="email"
+        placeholder="Email"
+        toSend={props.toSend}
+        onChange={props.onChange}
+      />
 
       <FormLabel text="Message" />
       <FormTextarea />
@@ -51,18 +67,39 @@ function Form() {
 }
 
 function Contact() {
+  // Template params
+  const [toSend, setToSend] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const response = await send(SERVICE_ID, TEMPLATE_ID, toSend, USER_ID);
+
+    return console.log(`status: ${response.status}, text: ${response.text}`);
+  };
+
+  const handleChange = (e) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  };
+
   return (
-    <section id="contact" className="min-h-screen px-4 py-8 bg-first lg:flex lg:flex-wrap">
+    <section
+      id="contact"
+      className="min-h-screen px-4 py-8 bg-first lg:flex lg:flex-wrap"
+    >
+      <button onClick={onSubmit}>Submit</button>
       <SectionTitle text="Contact Me" />
       <div className="py-8 lg:w-1/2">
-        <span className="block text-xl">
-          Consectetur repellendus magnam tenetur libero ratione Voluptate unde
-          sit est
-        </span>
-        <span className="block text-lg font-bold">Example@email.com</span>
+        <span className="block text-xl">Send me an email!</span>
+        <a href="#" className="block text-lg font-bold">
+          {EMAIL}
+        </a>
       </div>
       <div className="flex justify-center py-8 lg:w-1/2">
-        <Form />
+        <Form onSubmit={onSubmit} toSend={toSend} onChange={handleChange} />
       </div>
     </section>
   );
