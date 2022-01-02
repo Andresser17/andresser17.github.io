@@ -1,19 +1,22 @@
 // Components
 import Buttons from "../components/Buttons";
 import SectionTitle from "../components/SectionTitle";
-import Icons from "../components/Icons";
-// Icons
-import githubIcon from "../icons/github-icon-1.svg";
-import codepenIcon from "../icons/codepen-icon.svg";
 // Images
 import authorPic from "../images/sample-person.jpg";
 
 function About() {
   return (
-    <section id="about" className="flex flex-wrap min-h-screen px-4 py-8 cont-blue-gradient">
+    <section
+      id="about"
+      className="flex flex-wrap min-h-screen px-4 py-8 cont-blue-gradient"
+    >
       <SectionTitle text="About Me" />
       <div className="flex justify-center w-full mt-8 lg:w-1/2">
-        <img src={authorPic} className="rounded w-60 h-60" />
+        <img
+          src={authorPic}
+          className="rounded w-60 h-60"
+          alt="Author"
+        />
       </div>
       <div className="w-full text-center lg:w-1/2">
         <div className="mb-4">

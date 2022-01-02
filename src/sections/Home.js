@@ -1,6 +1,4 @@
-import { useState } from "react";
-// Components
-import Buttons from "../components/Buttons";
+import { useState, useEffect } from "react";
 // Icons
 import { ReactComponent as MenuIcon } from "../icons/menu-icon.svg";
 
@@ -36,8 +34,26 @@ function MenuButton(props) {
 }
 
 function TopPanel(props) {
+  // Manage scroll position
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.scrollY;
+
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   // Top Panel behaviour
-  const base = "fixed top-0 w-full py-2 sm:py-4 flex justify-end transition-all duration-300 ease-out"
+  const base =
+    "fixed top-0 w-full py-2 sm:py-4 flex justify-end transition-all duration-300 ease-out";
   const home = "bg-black/50 text-white";
   const inactive = "bg-black/20 text-white/20 text-xs";
   const active =
@@ -45,7 +61,7 @@ function TopPanel(props) {
 
   let styles = "";
 
-  if (props.selected === "home") {
+  if (scrollPosition === 0) {
     styles = `${base} ${home}`;
   } else {
     styles = `${base} ${inactive} ${active}`;
@@ -63,7 +79,7 @@ function Home() {
       className="flex items-center min-h-screen cont-blue-gradient"
     >
       {/* Top panel */}
-      <TopPanel selected={selected}>
+      <TopPanel>
         <MenuButton menuId="menu" />
         <Menu
           onSelectedChange={setSelected}
