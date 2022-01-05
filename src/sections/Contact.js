@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { send } from "@emailjs/browser";
 // Components
 import SectionTitle from "../components/SectionTitle";
+const validator = require("email-validator");
 const EMAIL = "andresserserrano2020@gmail.com";
 const SERVICE_ID = "service_dlhbxdh";
 const TEMPLATE_ID = "template_9l4u4jj";
@@ -10,11 +11,12 @@ const USER_ID = "user_DTWMp4cNyF93TKGmMi3vJ";
 function FormTextarea(props) {
   return (
     <textarea
+      disabled={props.disabled}
       name={props.name}
       placeholder={props.placeholder}
       value={props.toSend[props.name]}
       onChange={props.onChange}
-      className={`p-2 shadow-xl h-36 text-black`}
+      className={`p-2 shadow-xl h-36 text-black disabled:opacity-40`}
     ></textarea>
   );
 }
@@ -23,11 +25,12 @@ function FormInput(props) {
   return (
     <input
       type="text"
+      disabled={props.disabled}
       name={props.name}
       placeholder={props.placeholder}
       value={props.toSend[props.name]}
       onChange={props.onChange}
-      className={`p-2 shadow-xl text-black`}
+      className={`p-2 shadow-xl text-black disabled:opacity-40`}
     />
   );
 }
@@ -39,8 +42,9 @@ function FormLabel(props) {
 function FormButton(props) {
   return (
     <button
+      disabled={props.disabled}
       type="submit"
-      className="block px-6 py-4 mt-4 font-semibold text-black rounded shadow-xl bg-fourth"
+      className="block px-6 py-4 mt-4 font-semibold text-black rounded shadow-xl bg-fourth disabled:opacity-40"
     >
       {props.text}
     </button>
@@ -57,8 +61,8 @@ function Notification(props) {
   // Toggle animation
   const [toggle, setToggle] = useState(`${basicStyles} opacity-0`);
   const timeout = (ms) => {
-    return new Promise(res => setTimeout(res, ms))
-  }
+    return new Promise((res) => setTimeout(res, ms));
+  };
 
   const setOpacity = async () => {
     // Show component
@@ -85,6 +89,7 @@ function Notification(props) {
 }
 
 function ContactForm(props) {
+  const [disabled, setDisabled] = useState(false);
   // Template params
   const [toSend, setToSend] = useState({
     name: "",
@@ -98,11 +103,48 @@ function ContactForm(props) {
     color: "",
   });
 
+  const checkInputs = () => {
+    const name = toSend.name;
+    const email = toSend.email;
+    const message = toSend.message;
+
+    // Check if inputs are empty
+    if (!name.length || !email.length || !message.length) {
+      setNotMessage({
+        toggle: true,
+        message: "All the inputs have to be filled",
+        color: "bg-red-600",
+      });
+
+      return true;
+    }
+    // Check if email is valid
+    if (!validator.validate(email)) {
+      setNotMessage({
+        toggle: true,
+        message: "The email provided is invalid",
+        color: "bg-red-600",
+      });
+
+      return true;
+    }
+    return false;
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
-    console.log(toSend.name, toSend.email, toSend.message);
-    // const response = await send(SERVICE_ID, TEMPLATE_ID, toSend, USER_ID);
+
+    if (checkInputs()) return;
+
+    const timeout = (ms) => {
+      return new Promise((res) => setTimeout(res, ms));
+    };
     const response = { status: 200 };
+
+    // Disable the inputs before async is start
+    // const response = await send(SERVICE_ID, TEMPLATE_ID, toSend, USER_ID);
+    setDisabled(true);
+    await timeout(5000);
 
     // Display notification
     if (response?.status === 200) {
@@ -126,11 +168,17 @@ function ContactForm(props) {
     setToSend({ ...toSend, [e.target.name]: e.target.value });
   };
 
+  useEffect(() => {
+    // Active form when notMessage is unmounted
+    if (!notMessage.toggle) setDisabled(false);
+  }, [notMessage]);
+
   return (
     <form onSubmit={onSubmit} className="flex flex-col w-96">
       <FormLabel text="Name" />
       <FormInput
         name="name"
+        disabled={disabled}
         placeholder="Name"
         toSend={toSend}
         onChange={handleChange}
@@ -139,6 +187,7 @@ function ContactForm(props) {
       <FormLabel text="Email" />
       <FormInput
         name="email"
+        disabled={disabled}
         placeholder="Email"
         toSend={toSend}
         onChange={handleChange}
@@ -147,12 +196,13 @@ function ContactForm(props) {
       <FormLabel text="Message" />
       <FormTextarea
         name="message"
+        disabled={disabled}
         placeholder="Send me a message!"
         toSend={toSend}
         onChange={handleChange}
       />
 
-      <FormButton text="Send" />
+      <FormButton disabled={disabled} text="Send" />
       {notMessage.toggle && (
         <Notification
           onToggle={setNotMessage}
