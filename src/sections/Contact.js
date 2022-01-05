@@ -139,12 +139,10 @@ function ContactForm(props) {
     const timeout = (ms) => {
       return new Promise((res) => setTimeout(res, ms));
     };
-    const response = { status: 200 };
-
-    // Disable the inputs before async is start
-    // const response = await send(SERVICE_ID, TEMPLATE_ID, toSend, USER_ID);
+    // const response = { status: 200 };
     setDisabled(true);
-    await timeout(5000);
+    const response = await send(SERVICE_ID, TEMPLATE_ID, toSend, USER_ID);
+    // await timeout(5000);
 
     // Display notification
     if (response?.status === 200) {
