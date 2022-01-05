@@ -67,7 +67,7 @@ function TopPanel(props) {
     styles = `${base} ${inactive} ${active}`;
   }
 
-  return <div class={styles}>{props.children}</div>;
+  return <div className={styles}>{props.children}</div>;
 }
 
 function Home() {

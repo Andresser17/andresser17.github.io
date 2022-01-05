@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { send } from "@emailjs/browser";
 // Components
 import SectionTitle from "../components/SectionTitle";
@@ -8,7 +8,15 @@ const TEMPLATE_ID = "template_9l4u4jj";
 const USER_ID = "user_DTWMp4cNyF93TKGmMi3vJ";
 
 function FormTextarea(props) {
-  return <textarea className={`p-2 shadow-xl h-36 text-black`}></textarea>;
+  return (
+    <textarea
+      name={props.name}
+      placeholder={props.placeholder}
+      value={props.toSend[props.name]}
+      onChange={props.onChange}
+      className={`p-2 shadow-xl h-36 text-black`}
+    ></textarea>
+  );
 }
 
 function FormInput(props) {
@@ -39,46 +47,78 @@ function FormButton(props) {
   );
 }
 
-function Form(props) {
+function Notification(props) {
+  // Basic configurations
+  const [config, setConfig] = useState({
+    duration: 1000,
+    delay: 1000,
+  });
+  const basicStyles = `fixed bottom-4 left-4 ${props.color} p-4 text-xl rounded-sm transition-opacity delay-${config.delay} duration-${config.duration}`;
+  // Toggle animation
+  const [toggle, setToggle] = useState(`${basicStyles} opacity-0`);
+
+  const setOpacity = () => {
+    // Show component
+    setToggle(`${basicStyles} opacity-1`);
+
+    // Hide component
+    setTimeout(() => {
+      setToggle(`${basicStyles} opacity-0`);
+
+      // Unmount component
+      setTimeout(() => {
+        props.onToggle(false);
+      }, config.delay + config.duration);
+    }, config.delay + config.duration);
+  };
+
+  useEffect(() => {
+    setOpacity();
+  }, []);
+
   return (
-    <form onSubmit={props.onSubmit} className="flex flex-col w-96">
-      <FormLabel text="Name" />
-      <FormInput
-        name="name"
-        placeholder="Name"
-        toSend={props.toSend}
-        onChange={props.onChange}
-      />
-
-      <FormLabel text="Email" />
-      <FormInput
-        name="email"
-        placeholder="Email"
-        toSend={props.toSend}
-        onChange={props.onChange}
-      />
-
-      <FormLabel text="Message" />
-      <FormTextarea />
-
-      <FormButton text="Send" />
-    </form>
+    <div className={toggle}>
+      <span className="">{props.message}</span>
+    </div>
   );
 }
 
-function Contact() {
+function ContactForm(props) {
   // Template params
   const [toSend, setToSend] = useState({
     name: "",
     email: "",
     message: "",
   });
+  // Hide/Unhide message
+  const [notMessage, setNotMessage] = useState({
+    toggle: false,
+    message: "",
+    color: "",
+  });
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const response = await send(SERVICE_ID, TEMPLATE_ID, toSend, USER_ID);
+    console.log(toSend.name, toSend.email, toSend.message);
+    // const response = await send(SERVICE_ID, TEMPLATE_ID, toSend, USER_ID);
+    const response = { status: 200 };
 
-    return console.log(`status: ${response.status}, text: ${response.text}`);
+    // Display notification
+    if (response?.status === 200) {
+      setNotMessage({
+        toggle: true,
+        message: "Message Sent",
+        color: "bg-green-600",
+      });
+    }
+
+    if (response?.status === 404) {
+      setNotMessage({
+        toggle: true,
+        message: "Message not sent",
+        color: "bg-red-600",
+      });
+    }
   };
 
   const handleChange = (e) => {
@@ -86,20 +126,57 @@ function Contact() {
   };
 
   return (
+    <form onSubmit={onSubmit} className="flex flex-col w-96">
+      <FormLabel text="Name" />
+      <FormInput
+        name="name"
+        placeholder="Name"
+        toSend={toSend}
+        onChange={handleChange}
+      />
+
+      <FormLabel text="Email" />
+      <FormInput
+        name="email"
+        placeholder="Email"
+        toSend={toSend}
+        onChange={handleChange}
+      />
+
+      <FormLabel text="Message" />
+      <FormTextarea
+        name="message"
+        placeholder="Send me a message!"
+        toSend={toSend}
+        onChange={handleChange}
+      />
+
+      <FormButton text="Send" />
+      {notMessage.toggle && (
+        <Notification
+          onToggle={setNotMessage}
+          message={notMessage.message}
+          color={notMessage.color}
+        />
+      )}
+    </form>
+  );
+}
+
+function Contact() {
+  return (
     <section
       id="contact"
       className="min-h-screen px-4 py-8 bg-first lg:flex lg:flex-wrap"
     >
-      <button onClick={onSubmit}>Submit</button>
       <SectionTitle text="Contact Me" />
       <div className="py-8 lg:w-1/2">
         <span className="block text-xl">Send me an email!</span>
-        <a href="#" className="block text-lg font-bold">
-          {EMAIL}
-        </a>
+        <span className="block text-lg font-bold">{EMAIL}</span>
+        {/* Put a copy button in this for the email */}
       </div>
       <div className="flex justify-center py-8 lg:w-1/2">
-        <Form onSubmit={onSubmit} toSend={toSend} onChange={handleChange} />
+        <ContactForm />
       </div>
     </section>
   );
