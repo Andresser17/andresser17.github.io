@@ -56,20 +56,21 @@ function Notification(props) {
   const basicStyles = `fixed bottom-4 left-4 ${props.color} p-4 text-xl rounded-sm transition-opacity delay-${config.delay} duration-${config.duration}`;
   // Toggle animation
   const [toggle, setToggle] = useState(`${basicStyles} opacity-0`);
+  const timeout = (ms) => {
+    return new Promise(res => setTimeout(res, ms))
+  }
 
-  const setOpacity = () => {
+  const setOpacity = async () => {
     // Show component
     setToggle(`${basicStyles} opacity-1`);
-
+    // await to finish the animation
+    await timeout(config.delay + config.duration);
     // Hide component
-    setTimeout(() => {
-      setToggle(`${basicStyles} opacity-0`);
-
-      // Unmount component
-      setTimeout(() => {
-        props.onToggle(false);
-      }, config.delay + config.duration);
-    }, config.delay + config.duration);
+    setToggle(`${basicStyles} opacity-0`);
+    // await to finish the animation
+    await timeout(config.duration);
+    // Unmount component
+    props.onToggle(false);
   };
 
   useEffect(() => {
