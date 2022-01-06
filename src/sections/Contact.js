@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { send } from "@emailjs/browser";
 // Components
 import SectionTitle from "../components/SectionTitle";
+// Icons
+import { ReactComponent as CopyIcon } from "../icons/copy-icon.svg";
 const validator = require("email-validator");
 const EMAIL = "andresserserrano2020@gmail.com";
 const SERVICE_ID = "service_dlhbxdh";
@@ -212,6 +214,23 @@ function ContactForm(props) {
   );
 }
 
+function CopyEmail(props) {
+  // Copy the text inside the text field
+  const copy = () => navigator.clipboard.writeText(props.email);
+
+  return (
+    <div className="flex items-center">
+      <span className="text-lg font-bold align-start">{props.email}</span>
+      <button
+        onClick={copy}
+        className="w-10 p-1 mx-2 text-white rounded cursor-pointer hover:bg-black/30 active:bg-black/60"
+      >
+        <CopyIcon />
+      </button>
+    </div>
+  );
+}
+
 function Contact() {
   return (
     <section
@@ -221,8 +240,7 @@ function Contact() {
       <SectionTitle text="Contact Me" />
       <div className="py-8 lg:w-1/2">
         <span className="block text-xl">Send me an email!</span>
-        <span className="block text-lg font-bold">{EMAIL}</span>
-        {/* Put a copy button in this for the email */}
+        <CopyEmail email={EMAIL} />
       </div>
       <div className="flex justify-center py-8 lg:w-1/2">
         <ContactForm />
