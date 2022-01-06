@@ -53,7 +53,7 @@ function TopPanel(props) {
 
   // Top Panel behaviour
   const base =
-    "fixed top-0 w-full py-2 sm:py-4 flex justify-end transition-all duration-300 ease-out";
+    "fixed top-0 w-full py-2 sm:py-4 flex justify-end transition-all duration-300 ease-out z-10";
   const home = "bg-black/50 text-white";
   const inactive = "bg-black/20 text-white/20 text-xs";
   const active =

@@ -114,7 +114,7 @@ function ContactForm(props) {
     if (!name.length || !email.length || !message.length) {
       setNotMessage({
         toggle: true,
-        message: "All the inputs have to be filled",
+        message: "All inputs have to be filled",
         color: "bg-red-600",
       });
 
