@@ -89,13 +89,12 @@ function Home() {
       </TopPanel>
       {/* Home */}
       <div className="flex flex-col w-full p-4 sm:w-2/4">
-        <span className="block mb-4 text-2xl font-extralight">
+        <span className="block mb-2 text-2xl font-extralight">
           Hello, I'm
           <h1 className="text-5xl font-black">Alejandro Serrano</h1>
         </span>
-        <span className="block text-xl">
-          Lorem laboriosam eligendi eos reiciendis officiis incidunt error
-          Tempora nam veniam neque voluptatibus id, atque? Exercitationem
+        <span className="inline-block text-2xl border-b border-fourth">
+          Front End Developer
         </span>
       </div>
     </header>
