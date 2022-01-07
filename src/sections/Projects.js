@@ -65,18 +65,14 @@ function Card(props) {
   );
 }
 
-function DropdownButton(props) {
-  const onDropdown = () => {
-    if (props.dropdown) {
-      props.setDropdown(false);
-    } else {
-      props.setDropdown(true);
-    }
+function OpenButton(props) {
+  const handleClick = () => {
+    props.setOpen(!props.open);
   };
 
   return (
     <button
-      onClick={onDropdown}
+      onClick={handleClick}
       className="absolute bottom-0 w-12 m-4 fill-first stroke-fourth animate-bounce left-1/2"
     >
       <ArrowIcon />
@@ -85,21 +81,24 @@ function DropdownButton(props) {
 }
 
 function Projects() {
-  const [dropdown, setDropdown] = useState(false);
-  const basicStyles = "relative w-full px-4 py-8 overflow-hidden bg-first transition-all";
+  // const [open, setOpen] = useState(false);
+  const basicStyles =
+    "relative w-full px-4 py-8 overflow-hidden bg-first transition-all";
   const [toggle, setToggle] = useState(`${basicStyles}`);
+  // const handleClick = () => {
+  //   setOpen(!open);
+  // };
 
-  const changeHeight = () => {
-    if (!dropdown) {
-      setToggle(`${basicStyles} h-32`);
-    } else {
-      setToggle(`${basicStyles} h-96`);
-    }
-  };
-
-  useEffect(() => {
-    changeHeight();
-  }, [dropdown])
+  // useEffect(() => {
+  //   const animHeight = () => {
+  //     if (!open) {
+  //       setToggle(`${basicStyles} min-h-fit`);
+  //     } else {
+  //       setToggle(`${basicStyles} max-h`);
+  //     }
+  //   };
+  //   animHeight(open);
+  // }, [open]);
 
   return (
     <section id="projects" className={toggle}>
@@ -115,7 +114,7 @@ function Projects() {
         <Card text="MODERN HTML & CSS FROM THE BEGINNING" />
         <Card text="MODERN HTML & CSS FROM THE BEGINNING" />
       </div>
-      <DropdownButton dropdown={dropdown} setDropdown={setDropdown} />
+      {/* <OpenButton open={open} setOpen={setOpen} /> */}
     </section>
   );
 }

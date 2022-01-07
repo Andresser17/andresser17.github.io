@@ -1,3 +1,4 @@
+import config from "../app.config.js";
 // Components
 import Icons from "../components/Icons";
 // Icons
@@ -12,10 +13,10 @@ function Footer() {
           <span>&copy;2022</span> Alejandro Serrano
         </p>
         <div className="flex justify-center">
-          <Icons dim="w-8 h-8">
+          <Icons href={config.LINKEDIN_URL} dim="w-8 h-8">
             <LinkedinIcon />
           </Icons>
-          <Icons dim="w-8 h-8">
+          <Icons href={config.GITHUB_URL} dim="w-8 h-8">
             <GithubIcon />
           </Icons>
         </div>
