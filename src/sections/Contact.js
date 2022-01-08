@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import { send } from "@emailjs/browser";
+import config from "../app.config";
 // Components
 import SectionTitle from "../components/SectionTitle";
 // Icons
 import { ReactComponent as CopyIcon } from "../icons/copy-icon.svg";
+
 const validator = require("email-validator");
-const EMAIL = "andresserserrano2020@gmail.com";
-const SERVICE_ID = "service_dlhbxdh";
-const TEMPLATE_ID = "template_9l4u4jj";
-const USER_ID = "user_DTWMp4cNyF93TKGmMi3vJ";
 
 function FormTextarea(props) {
   return (
@@ -85,7 +83,7 @@ function Notification(props) {
 
   return (
     <div className={toggle}>
-      <span className="">{props.message}</span>
+      <span>{props.message}</span>
     </div>
   );
 }
@@ -143,7 +141,12 @@ function ContactForm(props) {
     };
     // const response = { status: 200 };
     setDisabled(true);
-    const response = await send(SERVICE_ID, TEMPLATE_ID, toSend, USER_ID);
+    const response = await send(
+      config.SERVICE_ID,
+      config.TEMPLATE_ID,
+      toSend,
+      config.USER_ID
+    );
     // await timeout(5000);
 
     // Display notification
@@ -215,18 +218,27 @@ function ContactForm(props) {
 }
 
 function CopyEmail(props) {
+  const [buttonText, setButtonText] = useState("Copy!")
   // Copy the text inside the text field
   const copy = () => navigator.clipboard.writeText(props.email);
+  const handleClick = (e) => {
+
+    if (buttonText === "Copy!") {
+      setButtonText("Copied!")
+    }
+    copy();
+  }
 
   return (
-    <div className="flex items-center">
-      <span className="text-lg font-bold align-start">{props.email}</span>
-      <button
-        onClick={copy}
-        className="w-10 p-1 mx-2 text-white rounded cursor-pointer hover:bg-black/30 active:bg-black/60"
-      >
-        <CopyIcon />
-      </button>
+    <div className="border rounded border-slate-900 w-fit">
+      <div className="flex justify-end p-2">
+        <button onClick={handleClick} className="inline-flex items-center justify-center h-8 px-3 min-w-20 hover:bg-slate-700 active:bg-gray-800">
+          {buttonText}
+        </button>
+      </div>
+      <div className="p-4 shadow-inner bg-slate-900">
+        <span className="ml-4 text-lg font-bold">{props.email}</span>
+      </div>
     </div>
   );
 }
@@ -240,7 +252,7 @@ function Contact() {
       <SectionTitle text="Contact Me" />
       <div className="py-8 lg:w-1/2">
         <span className="block text-xl">Send me an email!</span>
-        <CopyEmail email={EMAIL} />
+        <CopyEmail email={config.EMAIL} />
       </div>
       <div className="flex justify-center py-8 lg:w-1/2">
         <ContactForm />

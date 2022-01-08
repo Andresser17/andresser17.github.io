@@ -26,7 +26,7 @@ function Card(props) {
   return (
     <article className="px-4 pb-8 mb-16 border-b border-fourth sm:border-none lg:flex lg:justify-around lg:even:flex-row-reverse">
       <div className="w-full py-10 lg:w-5/12">
-        <img src={props.image} className="w-full" />
+        <img src={props.image} className="w-full shadow-sm shadow-white/10" />
 
         {/* Source code and live code */}
         <div className="pt-8">
