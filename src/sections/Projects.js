@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Icons from "../components/Icons";
 import SectionTitle from "../components/SectionTitle"; // Icons
 import { ReactComponent as GithubIcon } from "../icons/github-icon-1.svg";
-import { ReactComponent as HerokuIcon } from "../icons/heroku-icon.svg";
+import { ReactComponent as ExternalLinkIcon } from "../icons/external-link-icon.svg";
 import { ReactComponent as ArrowIcon } from "../icons/arrow-down-icon.svg";
 // Images
 import sampleImage from "../images/sample-image.png";
@@ -35,7 +35,7 @@ function Card(props) {
           </ProjectLink>
 
           <ProjectLink href={props.liveCode} text="Live Code">
-            <HerokuIcon />
+            <ExternalLinkIcon />
           </ProjectLink>
         </div>
       </div>
