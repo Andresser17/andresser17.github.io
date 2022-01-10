@@ -8,7 +8,7 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 // Config
 import { GITHUB_PROFILE, LINKEDIN_PROFILE, ROUTES } from "app.config";
 
-const ToggleMode = () => {
+const ToggleTheme = () => {
   const [toggle, setToggle] = useState(false);
   const [selected, setSelected] = useState("");
   // Refs
@@ -131,9 +131,6 @@ const ToggleMode = () => {
 
 function Menu() {
   const [resolution, setResolution] = useState(0);
-  const linkStyles =
-    "block p-4 md:inline md:border-b-2 md:border-black/0 md:mx-4 md:px-2 md:py-0.5";
-  const activeStyle = "bg-active md:bg-black/0 md:border-text";
 
   // get document resolution
   useEffect(() => {
@@ -150,40 +147,34 @@ function Menu() {
     };
   }, [resolution]);
 
-  const options = (
-    <div className="flex items-center mt-4 md:m-0 md:border-l md:border-border">
-      <ToggleMode />
-      <a
-        className="ml-4"
-        href={LINKEDIN_PROFILE}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <AiFillLinkedin className="w-8 h-8 md:w-5 md:h-5 cursor-pointer" />
-      </a>
-      <a
-        className="ml-4"
-        href={GITHUB_PROFILE}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <AiFillGithub className="w-8 h-8 md:w-5 md:h-5 cursor-pointer" />
-      </a>
-    </div>
-  );
-
-  const menuList = (
+  const menu = (
     <div className="md:flex">
       <Nav routes={ROUTES} />
-      {options}
+      <div className="flex items-center mt-4 md:m-0 md:border-l md:border-border">
+        <ToggleTheme />
+        <a
+          className="ml-4"
+          href={LINKEDIN_PROFILE}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <AiFillLinkedin className="w-8 h-8 md:w-5 md:h-5 cursor-pointer" />
+        </a>
+        <a
+          className="ml-4"
+          href={GITHUB_PROFILE}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <AiFillGithub className="w-8 h-8 md:w-5 md:h-5 cursor-pointer" />
+        </a>
+      </div>
     </div>
   );
 
-  return resolution >= 768 ? (
-    menuList
-  ) : (
-    <SidebarContainer>{menuList}</SidebarContainer>
-  );
+  if (resolution >= 768) return menu;
+
+  return <SidebarContainer>{menu}</SidebarContainer>;
 }
 
 export default function Header() {

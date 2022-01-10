@@ -1,7 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 // Components
-import HashLink from "components/molecules/HashLink";
 import Nav from "components/molecules/Nav";
 // Config
 import { ROUTES } from "app.config";
