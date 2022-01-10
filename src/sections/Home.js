@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 // Icons
 import { ReactComponent as MenuIcon } from "../icons/menu-icon.svg";
@@ -25,13 +26,13 @@ function Menu(props) {
   return <ul className="hidden sm:flex">{items}</ul>;
 }
 
-function MenuButton(props) {
-  return (
-    <span className="flex items-center justify-center block w-12 h-12 p-2 mx-2 text-white rounded shadow-md bg-fourth sm:hidden">
-      <MenuIcon />
-    </span>
-  );
-}
+// function MenuButton(props) {
+//   return (
+//     <span className="flex items-center justify-center block w-12 h-12 p-2 mx-2 text-white rounded shadow-md bg-fourth sm:hidden">
+//       <MenuIcon />
+//     </span>
+//   );
+// }
 
 function TopPanel(props) {
   // Manage scroll position
@@ -80,7 +81,7 @@ function Home() {
     >
       {/* Top panel */}
       <TopPanel>
-        <MenuButton menuId="menu" />
+        {/* <MenuButton menuId="menu" /> */}
         <Menu
           onSelectedChange={setSelected}
           selected={selected}

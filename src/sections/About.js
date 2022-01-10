@@ -1,3 +1,4 @@
+import React from "react";
 // Components
 import Buttons from "../components/Buttons";
 import SectionTitle from "../components/SectionTitle";

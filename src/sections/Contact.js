@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { send } from "@emailjs/browser";
 import config from "../app.config";

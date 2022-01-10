@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 // Components
 import Icons from "../components/Icons";
@@ -88,31 +89,31 @@ function Projects() {
   //   animHeight(open);
   // }, [open]);
 
-  const cards = projectsArticles.map((item) => {
-    const usedStack = item.usedStack.map((Icon) => (
-      <Icons key={Icon.render.name} dim="w-8 h-8">
-        <Icon />
-      </Icons>
-    ));
+  // const cards = projectsArticles.map((item) => {
+  //   const usedStack = item.usedStack.map((Icon) => (
+  //     <Icons key={Icon.render.name} dim="w-8 h-8">
+  //       <Icon />
+  //     </Icons>
+  //   ));
 
-    return (
-      <Card
-        image={item.image}
-        key={item.title}
-        title={item.title}
-        description={item.description}
-        sourceCode={item.sourceCode}
-        liveCode={item.liveCode}
-      >
-        {usedStack}
-      </Card>
-    );
-  });
+  //   return (
+  //     <Card
+  //       image={item.image}
+  //       key={item.title}
+  //       title={item.title}
+  //       description={item.description}
+  //       sourceCode={item.sourceCode}
+  //       liveCode={item.liveCode}
+  //     >
+  //       {usedStack}
+  //     </Card>
+  //   );
+  // });
 
   return (
     <section id="projects" className={toggle}>
       <SectionTitle text="Projects" />
-      <div className="sm:grid sm:grid-cols-2 sm:gap-1 lg:block">{cards}</div>
+      {/* <div className="sm:grid sm:grid-cols-2 sm:gap-1 lg:block">{cards}</div> */}
       {/* <OpenButton open={open} setOpen={setOpen} /> */}
     </section>
   );

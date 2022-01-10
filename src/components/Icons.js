@@ -1,3 +1,5 @@
+import React from "react";
+
 function Icons(props) {
   const dim = props.dim ? props.dim : "w-12 h-12";
 
