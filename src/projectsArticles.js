@@ -1,7 +1,7 @@
 // Personal Site imports
 import personalPageImage from "./images/personal-page.png";
-import { ReactComponent as codepenIcon } from "./icons/codepen-icon.svg";
-import { ReactComponent as linkedinIcon } from "./icons/linkedin-icon-2.svg";
+import CodepenIcon from "./icons/codepen-icon.svg";
+import LinkedinIcon from "./icons/linkedin-icon-2.svg";
 
 const personalPage = {
     image: personalPageImage,
@@ -9,7 +9,7 @@ const personalPage = {
     description: "lorem ipsun dolor hello world",
     sourceCode: "https://github.com",
     liveCode: "https://heroku.com",
-    usedStack: [codepenIcon, linkedinIcon],
+    usedStack: [CodepenIcon, LinkedinIcon],
 };
 
 export default [personalPage];

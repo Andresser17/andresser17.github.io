@@ -459,7 +459,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _images_personal_page_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./images/personal-page.png */ "./src/images/personal-page.png");
 /* harmony import */ var _icons_codepen_icon_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./icons/codepen-icon.svg */ "./src/icons/codepen-icon.svg");
+/* harmony import */ var _icons_codepen_icon_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_icons_codepen_icon_svg__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _icons_linkedin_icon_2_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./icons/linkedin-icon-2.svg */ "./src/icons/linkedin-icon-2.svg");
+/* harmony import */ var _icons_linkedin_icon_2_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_icons_linkedin_icon_2_svg__WEBPACK_IMPORTED_MODULE_2__);
 // Personal Site imports
 
 
@@ -470,7 +472,7 @@ const personalPage = {
   description: "lorem ipsun dolor hello world",
   sourceCode: "https://github.com",
   liveCode: "https://heroku.com",
-  usedStack: [_icons_codepen_icon_svg__WEBPACK_IMPORTED_MODULE_1__.ReactComponent, _icons_linkedin_icon_2_svg__WEBPACK_IMPORTED_MODULE_2__.ReactComponent]
+  usedStack: [(_icons_codepen_icon_svg__WEBPACK_IMPORTED_MODULE_1___default()), (_icons_linkedin_icon_2_svg__WEBPACK_IMPORTED_MODULE_2___default())]
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ([personalPage]);
 
@@ -552,6 +554,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app.config */ "./src/app.config.js");
 /* harmony import */ var _components_SectionTitle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/SectionTitle */ "./src/components/SectionTitle.js");
 /* harmony import */ var _icons_copy_icon_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../icons/copy-icon.svg */ "./src/icons/copy-icon.svg");
+/* harmony import */ var _icons_copy_icon_svg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_icons_copy_icon_svg__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -836,7 +839,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_config_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app.config.js */ "./src/app.config.js");
 /* harmony import */ var _components_Icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Icons */ "./src/components/Icons.js");
 /* harmony import */ var _icons_linkedin_icon_2_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../icons/linkedin-icon-2.svg */ "./src/icons/linkedin-icon-2.svg");
+/* harmony import */ var _icons_linkedin_icon_2_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_icons_linkedin_icon_2_svg__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _icons_github_icon_1_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../icons/github-icon-1.svg */ "./src/icons/github-icon-1.svg");
+/* harmony import */ var _icons_github_icon_1_svg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_icons_github_icon_1_svg__WEBPACK_IMPORTED_MODULE_4__);
 
  // Components
 
@@ -886,6 +891,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _icons_menu_icon_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../icons/menu-icon.svg */ "./src/icons/menu-icon.svg");
+/* harmony import */ var _icons_menu_icon_svg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_icons_menu_icon_svg__WEBPACK_IMPORTED_MODULE_1__);
 
  // Icons
 
@@ -995,8 +1001,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Icons */ "./src/components/Icons.js");
 /* harmony import */ var _components_SectionTitle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/SectionTitle */ "./src/components/SectionTitle.js");
 /* harmony import */ var _icons_github_icon_1_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../icons/github-icon-1.svg */ "./src/icons/github-icon-1.svg");
+/* harmony import */ var _icons_github_icon_1_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_icons_github_icon_1_svg__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _icons_external_link_icon_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../icons/external-link-icon.svg */ "./src/icons/external-link-icon.svg");
+/* harmony import */ var _icons_external_link_icon_svg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_icons_external_link_icon_svg__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _icons_arrow_down_icon_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../icons/arrow-down-icon.svg */ "./src/icons/arrow-down-icon.svg");
+/* harmony import */ var _icons_arrow_down_icon_svg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_icons_arrow_down_icon_svg__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _images_sample_image_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../images/sample-image.png */ "./src/images/sample-image.png");
 /* harmony import */ var _projectsArticles__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../projectsArticles */ "./src/projectsArticles.js");
 
@@ -1022,7 +1031,34 @@ function ProjectLink(props) {
   }, props.children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "inline-block"
   }, props.text));
-}
+} // function Card(props) {
+//   return (
+//     <article className="px-4 pb-8 mb-16 border-b border-fourth sm:border-none lg:flex lg:justify-around lg:even:flex-row-reverse">
+//       <div className="w-full py-10 lg:w-5/12">
+//         <img src={props.image} className="w-full shadow-sm shadow-white/10" />
+//         {/* Source code and live code */}
+//         <div className="pt-8">
+//           <ProjectLink href={props.sourceCode} text="Source Code">
+//             <GithubIcon />
+//           </ProjectLink>
+//           <ProjectLink href={props.liveCode} text="Live Code">
+//             <ExternalLinkIcon />
+//           </ProjectLink>
+//         </div>
+//       </div>
+//       <div className="w-fit lg:w-96">
+//         <h3 className="text-xl font-semibold text-center">{props.title}</h3>
+//         <p className="mt-4 mb-8">{props.description}</p>
+//         {/* Used stack */}
+//         <div className="flex flex-wrap p-4 bg-black/40">
+//           <span className="block w-full mb-4 text-xl border-b">Used Stack</span>
+//           {props.children}
+//         </div>
+//       </div>
+//     </article>
+//   );
+// }
+
 
 function Card(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("article", {
@@ -1037,10 +1073,10 @@ function Card(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ProjectLink, {
     href: props.sourceCode,
     text: "Source Code"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_icons_github_icon_1_svg__WEBPACK_IMPORTED_MODULE_3__.ReactComponent, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ProjectLink, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((_icons_github_icon_1_svg__WEBPACK_IMPORTED_MODULE_3___default()), null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ProjectLink, {
     href: props.liveCode,
     text: "Live Code"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_icons_external_link_icon_svg__WEBPACK_IMPORTED_MODULE_4__.ReactComponent, null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((_icons_external_link_icon_svg__WEBPACK_IMPORTED_MODULE_4___default()), null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "w-fit lg:w-96"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
     className: "text-xl font-semibold text-center"
@@ -1061,7 +1097,7 @@ function OpenButton(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: handleClick,
     className: "absolute bottom-0 w-12 m-4 fill-first stroke-fourth animate-bounce left-1/2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_icons_arrow_down_icon_svg__WEBPACK_IMPORTED_MODULE_5__.ReactComponent, null));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((_icons_arrow_down_icon_svg__WEBPACK_IMPORTED_MODULE_5___default()), null));
 }
 
 function Projects() {
@@ -1083,32 +1119,31 @@ function Projects() {
   //   };
   //   animHeight(open);
   // }, [open]);
-  // const cards = projectsArticles.map((item) => {
-  //   const usedStack = item.usedStack.map((Icon) => (
-  //     <Icons key={Icon.render.name} dim="w-8 h-8">
-  //       <Icon />
-  //     </Icons>
-  //   ));
-  //   return (
-  //     <Card
-  //       image={item.image}
-  //       key={item.title}
-  //       title={item.title}
-  //       description={item.description}
-  //       sourceCode={item.sourceCode}
-  //       liveCode={item.liveCode}
-  //     >
-  //       {usedStack}
-  //     </Card>
-  //   );
-  // });
 
+  const cards = _projectsArticles__WEBPACK_IMPORTED_MODULE_7__["default"].map(item => {
+    const usedStack = item.usedStack.map((Icon, key) => {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Icons__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        key: key,
+        dim: "w-8 h-8"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Icon, null));
+    });
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Card, {
+      image: item.image,
+      key: item.title,
+      title: item.title,
+      description: item.description,
+      sourceCode: item.sourceCode,
+      liveCode: item.liveCode
+    }, usedStack);
+  });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     id: "projects",
     className: toggle
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_SectionTitle__WEBPACK_IMPORTED_MODULE_2__["default"], {
     text: "Projects"
-  }));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "sm:grid sm:grid-cols-2 sm:gap-1 lg:block"
+  }, cards));
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Projects);
@@ -1129,14 +1164,20 @@ function Projects() {
 /*!***************************************!*\
   !*** ./src/icons/arrow-down-icon.svg ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgZmlsbD0iaW5oZXJpdCIgc3Ryb2tlPSJpbmhlcml0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMSIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIi8+PHBvbHlsaW5lIHBvaW50cz0iOCAxMiAxMiAxNiAxNiAxMiIvPjxsaW5lIHgxPSIxMiIgeDI9IjEyIiB5MT0iOCIgeTI9IjE2Ii8+PC9zdmc+Cg==");
+var React = __webpack_require__(/*! react */ "react");
+
+function ArrowDownIcon (props) {
+    return React.createElement("svg",props,[React.createElement("circle",{"cx":"12","cy":"12","r":"10","key":0}),React.createElement("polyline",{"points":"8 12 12 16 16 12","key":1}),React.createElement("line",{"x1":"12","x2":"12","y1":"8","y2":"16","key":2})]);
+}
+
+ArrowDownIcon.defaultProps = {"fill":"inherit","stroke":"inherit","strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":"1","viewBox":"0 0 24 24"};
+
+module.exports = ArrowDownIcon;
+
+ArrowDownIcon.default = ArrowDownIcon;
+
 
 /***/ }),
 
@@ -1144,14 +1185,20 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************!*\
   !*** ./src/icons/codepen-icon.svg ***!
   \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWluWU1pbiBtZWV0Ij48cGF0aCBkPSJNMjU1LjgwNyA4Ny4wODdjLS4wNTktLjMxLS4xMS0uNjItLjE5My0uOTI0LS4wNTItLjE4My0uMTE0LS4zNTUtLjE3Mi0uNTM1YTExLjAwNyAxMS4wMDcgMCAwIDAtLjI4My0uOGMtLjA3Ni0uMTgyLS4xNjItLjM1OC0uMjQ1LS41MzRhOS43NCA5Ljc0IDAgMCAwLS4zNzYtLjczYy0uMDk2LS4xNzYtLjIwNy0uMzQyLS4zMTMtLjUxYTExLjAzOCAxMS4wMzggMCAwIDAtLjg0Mi0xLjE0MiAxMS4xNjYgMTEuMTY2IDAgMCAwLS41NDQtLjU5NmMtLjE0NS0uMTQ1LS4yOS0uMjktLjQ0Mi0uNDMxYTkuMDcgOS4wNyAwIDAgMC0uNjI0LS41MmMtLjE2NS0uMTI4LS4zMjctLjI2LS41LS4zNzctLjA2MS0uMDQ0LS4xMTctLjA5Ni0uMTgyLS4xMzhMMTM0LjA5OSAxLjg1YTEwLjk4OSAxMC45ODkgMCAwIDAtMTIuMjAxIDBsLTExNyA3Ny45OThjLS4wNjUuMDQxLS4xMTYuMDkzLS4xODIuMTM4LS4xNzIuMTItLjMzNC4yNDgtLjUuMzc2YTE1LjUyIDE1LjUyIDAgMCAwLS42MjQuNTE3IDguNjA0IDguNjA0IDAgMCAwLS40MzguNDNjLS4xOTMuMTk0LS4zNzIuMzktLjU0OC41OTctLjEzLjE1NS0uMjU1LjMxLS4zNzYuNDgzLS4xNjUuMjE3LS4zMTcuNDM4LS40NjUuNjY5LS4xMDcuMTY5LS4yMTQuMzM0LS4zMTQuNTFhOS41OTMgOS41OTMgMCAwIDAtLjM3Mi43MjRjLS4wODMuMTc2LS4xNzIuMzU1LS4yNDUuNTM0LS4xMDcuMjYyLS4yLjUzMS0uMjg2LjgtLjA1OC4xOC0uMTIuMzU1LS4xNjkuNTE3LS4wOC4zMDMtLjEzOC42MS0uMTkzLjkyNC0uMDMuMTU5LS4wNjkuMzE0LS4wOS40NzYtLjA2Mi40NzUtLjA5Ni45NTEtLjA5NiAxLjQzN3Y3OC4wMTZjMCAuNDgyLjAzNC45NjUuMTAzIDEuNDM3LjAyNS4xNzMuMDcuMzEuMTA0LjQ3Ni4wNTUuMzEuMTAzLjYyLjIwNy45MzEuMDQ4LjE3Mi4xMDMuMzQ1LjE3Mi41MzQuMDg2LjI3Ni4xNzIuNTUyLjI3Ni44MDQuMDcyLjE3Mi4xNzIuMzQ0LjI0MS41MTcuMTE0LjI0MS4yNDIuNDgyLjM4LjczNC4wOTYuMTcyLjIwNi4zNDUuMzEuNTAzLjE0OC4yNDIuMzEuNDQ5LjQ4Mi42NTUuMTIxLjE3My4yNDIuMzEuMzguNDc2LjE3NS4yMDcuMzQ0LjQxNC41NTEuNTk3LjE0MS4xMzcuMjc2LjMxLjQ0OC40MTMuMi4xNzMuNDE0LjM0NS42Mi41MjQuMTY2LjEzOC4zNDYuMjQyLjQ4My4zNzYuMDY2LjAzNC4xMDQuMTAzLjE3My4xMzRsMTE2Ljk2OCA3OC4wNGExMC44MTUgMTAuODE1IDAgMCAwIDYuMTAyIDEuODUxIDExLjA2IDExLjA2IDAgMCAwIDYuMTAyLTEuODVsMTE3LTc4Yy4wNjUtLjA0LjEyLS4wODkuMTgyLS4xMzQuMTcyLS4xMi4zMzQtLjI0OC41LS4zNzUuMjE0LS4xNy40MjQtLjM0NS42MjQtLjUyNC4xNTEtLjEzNS4yOTYtLjI4My40NDEtLjQyOGE5Ljg3NiA5Ljg3NiAwIDAgMCAuOTItMS4wNzJjLjE2Ni0uMjE3LjMxOC0uNDQxLjQ2Ni0uNjY5LjEwNy0uMTY1LjIxNC0uMzM0LjMxNC0uNTAzLjEzOC0uMjQyLjI1OC0uNDg2LjM3NS0uNzM0LjA4My0uMTc2LjE3LS4zNTIuMjQ1LS41MzEuMTA3LS4yNjYuMTk3LS41MzUuMjgzLS44MDQuMDU4LS4xNzkuMTItLjM1NS4xNzItLjUzNC4wOC0uMzAzLjEzNS0uNjE0LjE5My0uOTI0LjAyOC0uMTU5LjA3LS4zMTQuMDg2LS40NzYuMDYzLS40NzUuMDk3LS45NTEuMDk3LTEuNDM3Vjg5YzAtLjQ4Ni0uMDM4LS45NjItLjA5Ny0xLjQzOC0uMDI3LS4xNjktLjA3OS0uMzA2LS4xMTMtLjQ3NWguMDE3em0tMTI3LjgxIDY2LjkzNWwtMzguOTA1LTI2LjAyMSAzOC45MDUtMjYuMDI1IDM4LjkwNyAyNi4wMjUtMzguOTA3IDI2LjAyMXptLTEwLjk5OC03MS4xNTVsLTQ3LjY5MiAzMS45TDMwLjgxIDg5LjAxMyAxMTcgMzEuNTU1djUxLjMxMnptLTY3LjQ3NyA0NS4xM2wtMjcuNTE3IDE4LjQwNnYtMzYuODExbDI3LjUxNyAxOC40MDV6bTE5Ljc4NSAxMy4yNDVMMTE3IDE3My4xMzh2NTEuMzEybC04Ni4xOS01Ny40NjUgMzguNDk4LTI1Ljc1di4wMDd6bTY5LjY5IDMxLjg5bDQ3LjY5Mi0zMS44OTYgMzguNTAxIDI1Ljc0OS04Ni4xOTMgNTcuNDU4di01MS4zMTJ6bTY3LjQ3Ny00NS4xMjhsMjcuNTIxLTE4LjQwOXYzNi44MTVsLTI3LjUyLTE4LjQxM3YuMDA3em0tMTkuNzg1LTEzLjIzOEwxMzguOTk3IDgyLjg3VjMxLjU1NWw4Ni4xOTMgNTcuNDU5LTM4LjUgMjUuNzUyeiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+Cg==");
+var React = __webpack_require__(/*! react */ "react");
+
+function CodepenIcon (props) {
+    return React.createElement("svg",props,React.createElement("path",{"d":"M255.807 87.087c-.059-.31-.11-.62-.193-.924-.052-.183-.114-.355-.172-.535a11.007 11.007 0 0 0-.283-.8c-.076-.182-.162-.358-.245-.534a9.74 9.74 0 0 0-.376-.73c-.096-.176-.207-.342-.313-.51a11.038 11.038 0 0 0-.842-1.142 11.166 11.166 0 0 0-.544-.596c-.145-.145-.29-.29-.442-.431a9.07 9.07 0 0 0-.624-.52c-.165-.128-.327-.26-.5-.377-.061-.044-.117-.096-.182-.138L134.099 1.85a10.989 10.989 0 0 0-12.201 0l-117 77.998c-.065.041-.116.093-.182.138-.172.12-.334.248-.5.376a15.52 15.52 0 0 0-.624.517 8.604 8.604 0 0 0-.438.43c-.193.194-.372.39-.548.597-.13.155-.255.31-.376.483-.165.217-.317.438-.465.669-.107.169-.214.334-.314.51a9.593 9.593 0 0 0-.372.724c-.083.176-.172.355-.245.534-.107.262-.2.531-.286.8-.058.18-.12.355-.169.517-.08.303-.138.61-.193.924-.03.159-.069.314-.09.476-.062.475-.096.951-.096 1.437v78.016c0 .482.034.965.103 1.437.025.173.07.31.104.476.055.31.103.62.207.931.048.172.103.345.172.534.086.276.172.552.276.804.072.172.172.344.241.517.114.241.242.482.38.734.096.172.206.345.31.503.148.242.31.449.482.655.121.173.242.31.38.476.175.207.344.414.551.597.141.137.276.31.448.413.2.173.414.345.62.524.166.138.346.242.483.376.066.034.104.103.173.134l116.968 78.04a10.815 10.815 0 0 0 6.102 1.851 11.06 11.06 0 0 0 6.102-1.85l117-78c.065-.04.12-.089.182-.134.172-.12.334-.248.5-.375.214-.17.424-.345.624-.524.151-.135.296-.283.441-.428a9.876 9.876 0 0 0 .92-1.072c.166-.217.318-.441.466-.669.107-.165.214-.334.314-.503.138-.242.258-.486.375-.734.083-.176.17-.352.245-.531.107-.266.197-.535.283-.804.058-.179.12-.355.172-.534.08-.303.135-.614.193-.924.028-.159.07-.314.086-.476.063-.475.097-.951.097-1.437V89c0-.486-.038-.962-.097-1.438-.027-.169-.079-.306-.113-.475h.017zm-127.81 66.935l-38.905-26.021 38.905-26.025 38.907 26.025-38.907 26.021zm-10.998-71.155l-47.692 31.9L30.81 89.013 117 31.555v51.312zm-67.477 45.13l-27.517 18.406v-36.811l27.517 18.405zm19.785 13.245L117 173.138v51.312l-86.19-57.465 38.498-25.75v.007zm69.69 31.89l47.692-31.896 38.501 25.749-86.193 57.458v-51.312zm67.477-45.128l27.521-18.409v36.815l-27.52-18.413v.007zm-19.785-13.238L138.997 82.87V31.555l86.193 57.459-38.5 25.752z","fill":"currentColor"}));
+}
+
+CodepenIcon.defaultProps = {"viewBox":"0 0 256 256","preserveAspectRatio":"xMinYMin meet"};
+
+module.exports = CodepenIcon;
+
+CodepenIcon.default = CodepenIcon;
+
 
 /***/ }),
 
@@ -1159,14 +1206,20 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************!*\
   !*** ./src/icons/copy-icon.svg ***!
   \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDI0IDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik01LjUwMjggNC42MjcwNEw1LjUgNi43NVYxNy4yNTQyQzUuNSAxOS4wNDkxIDYuOTU1MDcgMjAuNTA0MiA4Ljc1IDIwLjUwNDJMMTcuMzY2MyAyMC41MDQ1QzE3LjA1NzMgMjEuMzc4MiAxNi4yMjQgMjIuMDA0MiAxNS4yNDQ0IDIyLjAwNDJIOC43NUM2LjEyNjY1IDIyLjAwNDIgNCAxOS44Nzc2IDQgMTcuMjU0MlY2Ljc1QzQgNS43NjkyOSA0LjYyNzQ1IDQuOTM1MTIgNS41MDI4IDQuNjI3MDRaTTE3Ljc1IDJDMTguOTkyNiAyIDIwIDMuMDA3MzYgMjAgNC4yNVYxNy4yNUMyMCAxOC40OTI2IDE4Ljk5MjYgMTkuNSAxNy43NSAxOS41SDguNzVDNy41MDczNiAxOS41IDYuNSAxOC40OTI2IDYuNSAxNy4yNVY0LjI1QzYuNSAzLjAwNzM2IDcuNTA3MzYgMiA4Ljc1IDJIMTcuNzVaTTE3Ljc1IDMuNUg4Ljc1QzguMzM1NzkgMy41IDggMy44MzU3OSA4IDQuMjVWMTcuMjVDOCAxNy42NjQyIDguMzM1NzkgMTggOC43NSAxOEgxNy43NUMxOC4xNjQyIDE4IDE4LjUgMTcuNjY0MiAxOC41IDE3LjI1VjQuMjVDMTguNSAzLjgzNTc5IDE4LjE2NDIgMy41IDE3Ljc1IDMuNVoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPjwvc3ZnPgo=");
+var React = __webpack_require__(/*! react */ "react");
+
+function CopyIcon (props) {
+    return React.createElement("svg",props,React.createElement("path",{"d":"M5.5028 4.62704L5.5 6.75V17.2542C5.5 19.0491 6.95507 20.5042 8.75 20.5042L17.3663 20.5045C17.0573 21.3782 16.224 22.0042 15.2444 22.0042H8.75C6.12665 22.0042 4 19.8776 4 17.2542V6.75C4 5.76929 4.62745 4.93512 5.5028 4.62704ZM17.75 2C18.9926 2 20 3.00736 20 4.25V17.25C20 18.4926 18.9926 19.5 17.75 19.5H8.75C7.50736 19.5 6.5 18.4926 6.5 17.25V4.25C6.5 3.00736 7.50736 2 8.75 2H17.75ZM17.75 3.5H8.75C8.33579 3.5 8 3.83579 8 4.25V17.25C8 17.6642 8.33579 18 8.75 18H17.75C18.1642 18 18.5 17.6642 18.5 17.25V4.25C18.5 3.83579 18.1642 3.5 17.75 3.5Z","fill":"currentColor"}));
+}
+
+CopyIcon.defaultProps = {"fill":"none","viewBox":"0 0 24 24"};
+
+module.exports = CopyIcon;
+
+CopyIcon.default = CopyIcon;
+
 
 /***/ }),
 
@@ -1174,14 +1227,20 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************!*\
   !*** ./src/icons/external-link-icon.svg ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNCIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTggMTN2NmEyIDIgMCAwIDEtMiAySDVhMiAyIDAgMCAxLTItMlY4YTIgMiAwIDAgMSAyLTJoNiIvPjxwb2x5bGluZSBwb2ludHM9IjE1IDMgMjEgMyAyMSA5Ii8+PGxpbmUgeDE9IjEwIiB4Mj0iMjEiIHkxPSIxNCIgeTI9IjMiLz48L3N2Zz4K");
+var React = __webpack_require__(/*! react */ "react");
+
+function ExternalLinkIcon (props) {
+    return React.createElement("svg",props,[React.createElement("path",{"d":"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6","key":0}),React.createElement("polyline",{"points":"15 3 21 3 21 9","key":1}),React.createElement("line",{"x1":"10","x2":"21","y1":"14","y2":"3","key":2})]);
+}
+
+ExternalLinkIcon.defaultProps = {"fill":"none","height":"24","stroke":"currentColor","strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":"2","viewBox":"0 0 24 24","width":"24"};
+
+module.exports = ExternalLinkIcon;
+
+ExternalLinkIcon.default = ExternalLinkIcon;
+
 
 /***/ }),
 
@@ -1189,14 +1248,20 @@ __webpack_require__.r(__webpack_exports__);
 /*!*************************************!*\
   !*** ./src/icons/github-icon-1.svg ***!
   \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjU2IDI0OSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWluWU1pbiBtZWV0Ij48ZyBmaWxsPSJjdXJyZW50Q29sb3IiPjxwYXRoIGQ9Ik0xMjcuNTA1IDBDNTcuMDk1IDAgMCA1Ny4wODUgMCAxMjcuNTA1YzAgNTYuMzM2IDM2LjUzNCAxMDQuMTMgODcuMTk2IDEyMC45OSA2LjM3MiAxLjE4IDguNzEyLTIuNzY2IDguNzEyLTYuMTM0IDAtMy4wNC0uMTE5LTEzLjA4NS0uMTczLTIzLjczOS0zNS40NzMgNy43MTMtNDIuOTU4LTE1LjA0NC00Mi45NTgtMTUuMDQ0LTUuOC0xNC43MzgtMTQuMTU3LTE4LjY1Ni0xNC4xNTctMTguNjU2LTExLjU2OC03LjkxNC44NzItNy43NTIuODcyLTcuNzUyIDEyLjgwNC45IDE5LjU0NiAxMy4xNCAxOS41NDYgMTMuMTQgMTEuMzcyIDE5LjQ5MyAyOS44MjggMTMuODU3IDM3LjEwNCAxMC42IDEuMTQ0LTguMjQyIDQuNDQ5LTEzLjg2NiA4LjA5NS0xNy4wNS0yOC4zMi0zLjIyNS01OC4wOTItMTQuMTU4LTU4LjA5Mi02My4wMTQgMC0xMy45MiA0Ljk4MS0yNS4yOTUgMTMuMTM4LTM0LjIyNC0xLjMyNC0zLjIxMi01LjY4OC0xNi4xOCAxLjIzNS0zMy43NDMgMCAwIDEwLjcwNy0zLjQyNyAzNS4wNzMgMTMuMDcgMTAuMTctMi44MjYgMjEuMDc4LTQuMjQyIDMxLjkxNC00LjI5IDEwLjgzNi4wNDggMjEuNzUyIDEuNDY0IDMxLjk0MiA0LjI5IDI0LjMzNy0xNi40OTcgMzUuMDI5LTEzLjA3IDM1LjAyOS0xMy4wNyA2Ljk0IDE3LjU2MyAyLjU3NCAzMC41MzEgMS4yNSAzMy43NDMgOC4xNzUgOC45MjkgMTMuMTIyIDIwLjMwMyAxMy4xMjIgMzQuMjI0IDAgNDguOTcyLTI5LjgyOCA1OS43NTYtNTguMjIgNjIuOTEyIDQuNTczIDMuOTU3IDguNjQ4IDExLjcxNyA4LjY0OCAyMy42MTIgMCAxNy4wNi0uMTQ4IDMwLjc5MS0uMTQ4IDM0Ljk5MSAwIDMuMzkzIDIuMjk1IDcuMzY5IDguNzU5IDYuMTE3IDUwLjYzNC0xNi44NzkgODcuMTIyLTY0LjY1NiA4Ny4xMjItMTIwLjk3M0MyNTUuMDA5IDU3LjA4NSAxOTcuOTIyIDAgMTI3LjUwNSAwIi8+PHBhdGggZD0iTTQ3Ljc1NSAxODEuNjM0Yy0uMjguNjMzLTEuMjc4LjgyMy0yLjE4NS4zODktLjkyNS0uNDE2LTEuNDQ1LTEuMjgtMS4xNDUtMS45MTYuMjc1LS42NTIgMS4yNzMtLjgzNCAyLjE5Ni0uMzk2LjkyNy40MTUgMS40NTUgMS4yODcgMS4xMzQgMS45MjNNNTQuMDI3IDE4Ny4yM2MtLjYwOC41NjQtMS43OTcuMzAyLTIuNjA0LS41ODktLjgzNC0uODg5LS45OS0yLjA3Ny0uMzczLTIuNjUuNjI3LS41NjMgMS43OC0uMyAyLjYxNi41OS44MzQuODk5Ljk5NiAyLjA4LjM2IDIuNjVNNTguMzMgMTk0LjM5Yy0uNzgyLjU0My0yLjA2LjAzNC0yLjg0OS0xLjEtLjc4MS0xLjEzMy0uNzgxLTIuNDkzLjAxNy0zLjAzOC43OTItLjU0NSAyLjA1LS4wNTUgMi44NSAxLjA3Ljc4IDEuMTUzLjc4IDIuNTEzLS4wMTkgMy4wNjlNNjUuNjA2IDIwMi42ODNjLS42OTkuNzctMi4xODcuNTY0LTMuMjc3LS40ODgtMS4xMTQtMS4wMjgtMS40MjUtMi40ODctLjcyNC0zLjI1OC43MDctLjc3MiAyLjIwNC0uNTU1IDMuMzAyLjQ4OCAxLjEwNyAxLjAyNiAxLjQ0NSAyLjQ5Ni43IDMuMjU4TTc1LjAxIDIwNS40ODNjLS4zMDcuOTk4LTEuNzQxIDEuNDUyLTMuMTg1IDEuMDI4LTEuNDQyLS40MzctMi4zODYtMS42MDctMi4wOTUtMi42MTYuMy0xLjAwNSAxLjc0LTEuNDc4IDMuMTk1LTEuMDI0IDEuNDQuNDM1IDIuMzg2IDEuNTk2IDIuMDg2IDIuNjEyTTg1LjcxNCAyMDYuNjdjLjAzNiAxLjA1Mi0xLjE4OSAxLjkyNC0yLjcwNSAxLjk0My0xLjUyNS4wMzMtMi43NTgtLjgxOC0yLjc3NC0xLjg1MiAwLTEuMDYyIDEuMTk3LTEuOTI2IDIuNzIxLTEuOTUxIDEuNTE2LS4wMyAyLjc1OC44MTUgMi43NTggMS44Nk05Ni4yMjggMjA2LjI2N2MuMTgyIDEuMDI2LS44NzIgMi4wOC0yLjM3NyAyLjM2LTEuNDguMjctMi44NS0uMzYzLTMuMDM5LTEuMzgtLjE4NC0xLjA1Mi44OS0yLjEwNSAyLjM2Ny0yLjM3OCAxLjUwOC0uMjYyIDIuODU3LjM1NSAzLjA0OSAxLjM5OCIvPjwvZz48L3N2Zz4K");
+var React = __webpack_require__(/*! react */ "react");
+
+function GithubIcon1 (props) {
+    return React.createElement("svg",props,React.createElement("g",{"fill":"currentColor"},[React.createElement("path",{"d":"M127.505 0C57.095 0 0 57.085 0 127.505c0 56.336 36.534 104.13 87.196 120.99 6.372 1.18 8.712-2.766 8.712-6.134 0-3.04-.119-13.085-.173-23.739-35.473 7.713-42.958-15.044-42.958-15.044-5.8-14.738-14.157-18.656-14.157-18.656-11.568-7.914.872-7.752.872-7.752 12.804.9 19.546 13.14 19.546 13.14 11.372 19.493 29.828 13.857 37.104 10.6 1.144-8.242 4.449-13.866 8.095-17.05-28.32-3.225-58.092-14.158-58.092-63.014 0-13.92 4.981-25.295 13.138-34.224-1.324-3.212-5.688-16.18 1.235-33.743 0 0 10.707-3.427 35.073 13.07 10.17-2.826 21.078-4.242 31.914-4.29 10.836.048 21.752 1.464 31.942 4.29 24.337-16.497 35.029-13.07 35.029-13.07 6.94 17.563 2.574 30.531 1.25 33.743 8.175 8.929 13.122 20.303 13.122 34.224 0 48.972-29.828 59.756-58.22 62.912 4.573 3.957 8.648 11.717 8.648 23.612 0 17.06-.148 30.791-.148 34.991 0 3.393 2.295 7.369 8.759 6.117 50.634-16.879 87.122-64.656 87.122-120.973C255.009 57.085 197.922 0 127.505 0","key":0}),React.createElement("path",{"d":"M47.755 181.634c-.28.633-1.278.823-2.185.389-.925-.416-1.445-1.28-1.145-1.916.275-.652 1.273-.834 2.196-.396.927.415 1.455 1.287 1.134 1.923M54.027 187.23c-.608.564-1.797.302-2.604-.589-.834-.889-.99-2.077-.373-2.65.627-.563 1.78-.3 2.616.59.834.899.996 2.08.36 2.65M58.33 194.39c-.782.543-2.06.034-2.849-1.1-.781-1.133-.781-2.493.017-3.038.792-.545 2.05-.055 2.85 1.07.78 1.153.78 2.513-.019 3.069M65.606 202.683c-.699.77-2.187.564-3.277-.488-1.114-1.028-1.425-2.487-.724-3.258.707-.772 2.204-.555 3.302.488 1.107 1.026 1.445 2.496.7 3.258M75.01 205.483c-.307.998-1.741 1.452-3.185 1.028-1.442-.437-2.386-1.607-2.095-2.616.3-1.005 1.74-1.478 3.195-1.024 1.44.435 2.386 1.596 2.086 2.612M85.714 206.67c.036 1.052-1.189 1.924-2.705 1.943-1.525.033-2.758-.818-2.774-1.852 0-1.062 1.197-1.926 2.721-1.951 1.516-.03 2.758.815 2.758 1.86M96.228 206.267c.182 1.026-.872 2.08-2.377 2.36-1.48.27-2.85-.363-3.039-1.38-.184-1.052.89-2.105 2.367-2.378 1.508-.262 2.857.355 3.049 1.398","key":1})]));
+}
+
+GithubIcon1.defaultProps = {"viewBox":"0 0 256 249","preserveAspectRatio":"xMinYMin meet"};
+
+module.exports = GithubIcon1;
+
+GithubIcon1.default = GithubIcon1;
+
 
 /***/ }),
 
@@ -1204,14 +1269,20 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************!*\
   !*** ./src/icons/linkedin-icon-2.svg ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij48ZyBmaWxsPSJub25lIj48cGF0aCBkPSJNMCAxOC4zMzhDMCA4LjIxNiA4LjQ3NCAwIDE4LjkyIDBoMjE4LjE2QzI0Ny41MyAwIDI1NiA4LjIxNiAyNTYgMTguMzM4djIxOS4zMjdDMjU2IDI0Ny43OSAyNDcuNTMgMjU2IDIzNy4wOCAyNTZIMTguOTJDOC40NzUgMjU2IDAgMjQ3Ljc5MSAwIDIzNy42NjhWMTguMzM1eiIgZmlsbD0iIzA2OSIvPjxwYXRoIGQ9Ik03Ny43OTYgMjE0LjIzOFY5OC45ODZIMzkuNDg4djExNS4yNTJINzcuOHpNNTguNjUgODMuMjUzYzEzLjM1NiAwIDIxLjY3MS04Ljg1IDIxLjY3MS0xOS45MS0uMjUtMTEuMzEyLTguMzE1LTE5LjkxNS0yMS40MTctMTkuOTE1LTEzLjExMSAwLTIxLjY3NCA4LjYwMy0yMS42NzQgMTkuOTE0IDAgMTEuMDYgOC4zMTIgMTkuOTEgMjEuMTY5IDE5LjkxaC4yNDh6TTk5IDIxNC4yMzhoMzguMzA1di02NC4zNTVjMC0zLjQ0LjI1LTYuODg5IDEuMjYyLTkuMzQ2IDIuNzY4LTYuODg1IDkuMDcxLTE0LjAxMiAxOS42NTYtMTQuMDEyIDEzLjg1OCAwIDE5LjQwNSAxMC41NjggMTkuNDA1IDI2LjA2M3Y2MS42NWgzOC4zMDR2LTY2LjA4MmMwLTM1LjM5OS0xOC44OTYtNTEuODcyLTQ0LjA5OS01MS44NzItMjAuNjYzIDAtMjkuNzM4IDExLjU0OS0zNC43OCAxOS40MTVoLjI1NVY5OC45OUg5OS4wMDJjLjUgMTAuODEyLS4wMDMgMTE1LjI1Mi0uMDAzIDExNS4yNTJ6IiBmaWxsPSIjZmZmIi8+PC9nPjwvc3ZnPgo=");
+var React = __webpack_require__(/*! react */ "react");
+
+function LinkedinIcon2 (props) {
+    return React.createElement("svg",props,React.createElement("g",{"fill":"none"},[React.createElement("path",{"d":"M0 18.338C0 8.216 8.474 0 18.92 0h218.16C247.53 0 256 8.216 256 18.338v219.327C256 247.79 247.53 256 237.08 256H18.92C8.475 256 0 247.791 0 237.668V18.335z","fill":"#069","key":0}),React.createElement("path",{"d":"M77.796 214.238V98.986H39.488v115.252H77.8zM58.65 83.253c13.356 0 21.671-8.85 21.671-19.91-.25-11.312-8.315-19.915-21.417-19.915-13.111 0-21.674 8.603-21.674 19.914 0 11.06 8.312 19.91 21.169 19.91h.248zM99 214.238h38.305v-64.355c0-3.44.25-6.889 1.262-9.346 2.768-6.885 9.071-14.012 19.656-14.012 13.858 0 19.405 10.568 19.405 26.063v61.65h38.304v-66.082c0-35.399-18.896-51.872-44.099-51.872-20.663 0-29.738 11.549-34.78 19.415h.255V98.99H99.002c.5 10.812-.003 115.252-.003 115.252z","fill":"#fff","key":1})]));
+}
+
+LinkedinIcon2.defaultProps = {"viewBox":"0 0 256 256"};
+
+module.exports = LinkedinIcon2;
+
+LinkedinIcon2.default = LinkedinIcon2;
+
 
 /***/ }),
 
@@ -1219,14 +1290,20 @@ __webpack_require__.r(__webpack_exports__);
 /*!*********************************!*\
   !*** ./src/icons/menu-icon.svg ***!
   \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgZmlsbD0iY3VycmVudENvbG9yIiBoZWlnaHQ9IjI0IiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjIiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxsaW5lIHgxPSIzIiB4Mj0iMjEiIHkxPSIxMiIgeTI9IjEyIi8+PGxpbmUgeDE9IjMiIHgyPSIyMSIgeTE9IjYiIHkyPSI2Ii8+PGxpbmUgeDE9IjMiIHgyPSIyMSIgeTE9IjE4IiB5Mj0iMTgiLz48L3N2Zz4K");
+var React = __webpack_require__(/*! react */ "react");
+
+function MenuIcon (props) {
+    return React.createElement("svg",props,[React.createElement("line",{"x1":"3","x2":"21","y1":"12","y2":"12","key":0}),React.createElement("line",{"x1":"3","x2":"21","y1":"6","y2":"6","key":1}),React.createElement("line",{"x1":"3","x2":"21","y1":"18","y2":"18","key":2})]);
+}
+
+MenuIcon.defaultProps = {"fill":"currentColor","height":"24","stroke":"currentColor","strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":"2","viewBox":"0 0 24 24","width":"24"};
+
+module.exports = MenuIcon;
+
+MenuIcon.default = MenuIcon;
+
 
 /***/ }),
 
