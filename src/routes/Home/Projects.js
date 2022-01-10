@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { GITHUB_PROFILE } from "app.config";
+import React, { useState } from "react";
 // Icons
 import { AiOutlineMenu } from "react-icons/ai";
 import { AiFillGithub } from "react-icons/ai";
@@ -9,6 +8,8 @@ import { BsWordpress } from "react-icons/bs";
 import deviceType from "helpers/deviceType";
 // Styles
 import styles from "./Projects.module.css";
+// Envs
+import { GITHUB_PROFILE } from "app.config";
 // Articles to iterate
 import projectsArticles from "projectsArticles";
 

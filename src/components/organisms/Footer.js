@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import HashLink from "components/HashLink";
+import React, { NavLink } from "react-router-dom";
+import HashLink from "components/molecules/HashLink";
 
 function Menu({ routes }) {
   const links = routes.map((route) => {

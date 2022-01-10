@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Sections
-import Header from "sections/Header";
-import Footer from "sections/Footer";
+import Header from "components/organisms/Header";
+import Footer from "components/organisms/Footer";
 // Routes
 import Home from "routes/Home";
 import About from "routes/About";

@@ -1,3 +1,4 @@
+import React from "react";
 // Sections
 import Projects from "./Projects";
 import Contact from "./Contact";

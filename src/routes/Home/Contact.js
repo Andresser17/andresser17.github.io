@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { send } from "@emailjs/browser";
 import QRCode from "react-qr-code";
 import { toast } from "react-toastify";
 // Components
 import { Button, Input, Textarea } from "@andresser17/aleron-ui";
-import ModalContainer from "modals/ModalContainer";
+import ModalContainer from "components/atoms/ModalContainer";
 // Icons
 import {
   AiFillGithub,

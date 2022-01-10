@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 // Components
-import SidebarContainer from "modals/SidebarContainer";
-import HashLink from "components/HashLink";
+import SidebarContainer from "components/atoms/SidebarContainer";
+import HashLink from "components/molecules/HashLink";
 // Icons
 import { FiSun, FiMoon, FiMonitor } from "react-icons/fi";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
