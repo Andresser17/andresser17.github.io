@@ -8,7 +8,7 @@ import { BsWordpress } from "react-icons/bs";
 import deviceType from "helpers/deviceType";
 // Styles
 import styles from "./Projects.module.css";
-// Envs
+// Config
 import { GITHUB_PROFILE } from "app.config";
 // Articles to iterate
 import projectsArticles from "projectsArticles";

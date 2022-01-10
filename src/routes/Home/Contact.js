@@ -16,7 +16,7 @@ import {
 import { RiSendPlaneFill } from "react-icons/ri";
 // Validations
 import validate from "helpers/validations";
-// Envs
+// Config
 import {
   GITHUB_PROFILE,
   LINKEDIN_PROFILE,

@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
 // Components
 import SidebarContainer from "components/atoms/SidebarContainer";
-import HashLink from "components/molecules/HashLink";
+import Nav from "components/molecules/Nav";
 // Icons
 import { FiSun, FiMoon, FiMonitor } from "react-icons/fi";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 // Config
-import { GITHUB_PROFILE, LINKEDIN_PROFILE } from "app.config";
+import { GITHUB_PROFILE, LINKEDIN_PROFILE, ROUTES } from "app.config";
 
 const ToggleMode = () => {
   const [toggle, setToggle] = useState(false);
@@ -130,7 +129,7 @@ const ToggleMode = () => {
   );
 };
 
-function Menu({ routes }) {
+function Menu() {
   const [resolution, setResolution] = useState(0);
   const linkStyles =
     "block p-4 md:inline md:border-b-2 md:border-black/0 md:mx-4 md:px-2 md:py-0.5";
@@ -150,32 +149,6 @@ function Menu({ routes }) {
       window.removeEventListener("resize", getResolution);
     };
   }, [resolution]);
-
-  const links = routes.map((route) => {
-    if (route.link[1] === "#")
-      return (
-        <HashLink
-          className={linkStyles}
-          activeClassName={activeStyle}
-          key={route.link}
-          to={route.link}
-        >
-          {route.label}
-        </HashLink>
-      );
-
-    return (
-      <NavLink
-        key={route.link}
-        className={({ isActive }) =>
-          `${linkStyles} ${isActive ? activeStyle : undefined}`
-        }
-        to={route.link}
-      >
-        {route.label}
-      </NavLink>
-    );
-  });
 
   const options = (
     <div className="flex items-center mt-4 md:m-0 md:border-l md:border-border">
@@ -201,11 +174,7 @@ function Menu({ routes }) {
 
   const menuList = (
     <div className="md:flex">
-      <nav
-        className={`w-60 transition-all md:w-auto md:flex md:transition-none`}
-      >
-        {links}
-      </nav>
+      <Nav routes={ROUTES} />
       {options}
     </div>
   );
@@ -220,13 +189,6 @@ function Menu({ routes }) {
 export default function Header() {
   // Manage scroll position
   const [scrollPosition, setScrollPosition] = useState(0);
-  // menu routes
-  const routes = [
-    { label: "Home", link: "/#home", selected: true },
-    { label: "Projects", link: "/#projects" },
-    { label: "Contact", link: "/#contact" },
-    { label: "About", link: "/about" },
-  ];
   // Styles
   const scrollDownStyle = "sm:bg-bg sm:shadow-lg";
   const topPanelStyles =
@@ -254,7 +216,7 @@ export default function Header() {
     >
       {/* Topbar */}
       <div className="w-full max-w-[1600px] flex items-center sm:justify-end">
-        <Menu routes={routes} />
+        <Menu />
       </div>
     </header>
   );
