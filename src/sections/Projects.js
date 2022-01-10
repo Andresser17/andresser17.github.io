@@ -24,40 +24,10 @@ function ProjectLink(props) {
   );
 }
 
-// function Card(props) {
-//   return (
-//     <article className="px-4 pb-8 mb-16 border-b border-fourth sm:border-none lg:flex lg:justify-around lg:even:flex-row-reverse">
-//       <div className="w-full py-10 lg:w-5/12">
-//         <img src={props.image} className="w-full shadow-sm shadow-white/10" />
-
-//         {/* Source code and live code */}
-//         <div className="pt-8">
-//           <ProjectLink href={props.sourceCode} text="Source Code">
-//             <GithubIcon />
-//           </ProjectLink>
-
-//           <ProjectLink href={props.liveCode} text="Live Code">
-//             <ExternalLinkIcon />
-//           </ProjectLink>
-//         </div>
-//       </div>
-
-//       <div className="w-fit lg:w-96">
-//         <h3 className="text-xl font-semibold text-center">{props.title}</h3>
-//         <p className="mt-4 mb-8">{props.description}</p>
-//         {/* Used stack */}
-//         <div className="flex flex-wrap p-4 bg-black/40">
-//           <span className="block w-full mb-4 text-xl border-b">Used Stack</span>
-//           {props.children}
-//         </div>
-//       </div>
-//     </article>
-//   );
-// }
 function Card(props) {
   return (
-    <article className="px-4 pb-8 mb-16 border-b border-fourth sm:border-none lg:flex lg:justify-around lg:even:flex-row-reverse">
-      <div className="w-full py-10 lg:w-5/12">
+    <article className="px-4 pb-8 my-16 border-b border-fourth sm:border-none lg:flex lg:justify-around lg:even:flex-row-reverse">
+      <div className="w-full lg:w-5/12">
         <img src={props.image} className="w-full shadow-sm shadow-white/10" />
         {/* Source code and live code */}
         <div className="pt-8">
@@ -75,10 +45,10 @@ function Card(props) {
         <h3 className="text-xl font-semibold text-center">{props.title}</h3>
         <p className="mt-4 mb-8">{props.description}</p>
         {/* Used stack */}
-        <div className="flex flex-wrap p-4 bg-black/40">
-          <span className="block w-full mb-4 text-xl border-b">Used Stack</span>
-          {props.children}
-        </div>
+        {/* <div className="flex flex-wrap p-4 bg-black/40"> */}
+        {/*   <span className="block w-full mb-4 text-xl border-b">Used Stack</span> */}
+        {/*   {props.children} */}
+        {/* </div> */}
       </div>
     </article>
   );
