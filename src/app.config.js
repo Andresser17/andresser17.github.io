@@ -12,5 +12,4 @@ export const ROUTES = [
   { label: "Projects", link: "/#projects" },
   { label: "Contact", link: "/#contact" },
   { label: "About", link: "/about" },
-  { label: "Blog", link: "/blog" },
 ];
