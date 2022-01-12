@@ -219,25 +219,27 @@ function ContactForm(props) {
 }
 
 function CopyEmail(props) {
-  const [buttonText, setButtonText] = useState("Copy!")
+  const [buttonText, setButtonText] = useState("Copy!");
   // Copy the text inside the text field
   const copy = () => navigator.clipboard.writeText(props.email);
   const handleClick = (e) => {
-
     if (buttonText === "Copy!") {
-      setButtonText("Copied!")
+      setButtonText("Copied!");
     }
     copy();
-  }
+  };
 
   return (
-    <div className="border rounded border-slate-900 w-fit">
+    <div className="w-full border rounded border-slate-900 md:w-fit">
       <div className="flex justify-end p-2">
-        <button onClick={handleClick} className="inline-flex items-center justify-center h-8 px-3 min-w-20 hover:bg-slate-700 active:bg-gray-800">
+        <button
+          onClick={handleClick}
+          className="inline-flex items-center justify-center h-8 px-3 min-w-20 hover:bg-slate-700 active:bg-gray-800"
+        >
           {buttonText}
         </button>
       </div>
-      <div className="p-4 shadow-inner bg-slate-900">
+      <div className="p-4 overflow-auto shadow-inner bg-slate-900">
         <span className="ml-4 text-lg font-bold">{props.email}</span>
       </div>
     </div>

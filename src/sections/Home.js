@@ -1,14 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
 // Icons
-import { ReactComponent as MenuIcon } from "../icons/menu-icon.svg";
+import MenuIcon from "../icons/menu-icon.svg";
+import CloseIcon from "../icons/close-icon.svg";
 
 function Menu(props) {
+  const [showMenu, setShowMenu] = useState("hidden");
+
   const items = props.items.map((item) => {
     const id = item.toLowerCase();
-    let styles = `mx-4 px-2 py-0.5`;
+    let styles = `block p-4 text-center sm:inline text-start sm:mx-4 sm:px-2 sm:py-0.5`;
 
-    if (props.selected === id) styles = `${styles} border-b-2`;
+    if (props.selected === id)
+      styles = `${styles} bg-fourth sm:bg-transparent sm:border-b-2`;
 
     return (
       <li key={id}>
@@ -23,16 +27,37 @@ function Menu(props) {
     );
   });
 
-  return <ul className="hidden sm:flex">{items}</ul>;
+  useEffect(() => {
+    if (props.toggle) {
+      setShowMenu("right-0");
+    } else {
+      setShowMenu("right-full");
+    }
+  }, [props]);
+
+  return (
+    <ul
+      className={`${showMenu} absolute top-16 transition-all bg-first w-full sm:w-auto sm:static sm:bg-transparent sm:flex sm:transition-none`}
+    >
+      {items}
+    </ul>
+  );
 }
 
-// function MenuButton(props) {
-//   return (
-//     <span className="flex items-center justify-center block w-12 h-12 p-2 mx-2 text-white rounded shadow-md bg-fourth sm:hidden">
-//       <MenuIcon />
-//     </span>
-//   );
-// }
+function MenuButton(props) {
+  const toggleIcon = () => {
+    props.setToggle(!props.toggle);
+  };
+
+  return (
+    <span
+      onClick={toggleIcon}
+      className="flex items-center justify-center block w-12 h-12 p-2 mx-2 text-white rounded shadow-md bg-fourth active:bg-fourth/80 sm:hidden"
+    >
+      {props.toggle ? <CloseIcon /> : <MenuIcon />}
+    </span>
+  );
+}
 
 function TopPanel(props) {
   // Manage scroll position
@@ -54,9 +79,9 @@ function TopPanel(props) {
 
   // Top Panel behaviour
   const base =
-    "fixed top-0 w-full py-2 sm:py-4 flex justify-end transition-all duration-300 ease-out z-10";
+    "fixed top-0 w-full py-2 sm:py-4 flex flex-col items-end sm:flex-row sm:justify-end transition-all duration-300 ease-out z-10";
   const home = "bg-black/50 text-white";
-  const inactive = "bg-black/20 text-white/20 text-xs";
+  const inactive = "sm:bg-black/20 sm:text-white/20 sm:text-xs";
   const active =
     "sm:hover:text-base sm:hover:py-4 sm:hover:bg-black/50 sm:hover:text-white ";
 
@@ -73,6 +98,7 @@ function TopPanel(props) {
 
 function Home() {
   const [selected, setSelected] = useState("home");
+  const [toggle, setToggle] = useState(false);
 
   return (
     <header
@@ -81,11 +107,12 @@ function Home() {
     >
       {/* Top panel */}
       <TopPanel>
-        {/* <MenuButton menuId="menu" /> */}
+        <MenuButton toggle={toggle} setToggle={setToggle} menuId="menu" />
         <Menu
           onSelectedChange={setSelected}
           selected={selected}
           items={["Home", "Projects", "About", "Contact"]}
+          toggle={toggle}
         />
       </TopPanel>
       {/* Home */}

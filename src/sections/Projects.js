@@ -26,8 +26,8 @@ function ProjectLink(props) {
 
 function Card(props) {
   return (
-    <article className="px-4 pb-8 my-16 border-b border-fourth sm:border-none lg:flex lg:justify-around lg:even:flex-row-reverse">
-      <div className="w-full lg:w-5/12">
+    <article className="px-4 pb-8 my-16 border-b border-fourth sm:border-none md:flex md:justify-around md:even:flex-row-reverse">
+      <div className="w-full md:w-5/12">
         <img src={props.image} className="w-full shadow-sm shadow-white/10" />
         {/* Source code and live code */}
         <div className="pt-8">
@@ -41,7 +41,7 @@ function Card(props) {
         </div>
       </div>
 
-      <div className="w-fit lg:w-96">
+      <div className="w-fit md:ml-8 md:w-96">
         <h3 className="text-xl font-semibold text-center">{props.title}</h3>
         <p className="mt-4 mb-8">{props.description}</p>
         {/* Used stack */}
@@ -115,7 +115,7 @@ function Projects() {
   return (
     <section id="projects" className={toggle}>
       <SectionTitle text="Projects" />
-      <div className="sm:grid sm:grid-cols-2 sm:gap-1 lg:block">{cards}</div>
+      <div>{cards}</div>
       {/* <OpenButton open={open} setOpen={setOpen} /> */}
     </section>
   );
