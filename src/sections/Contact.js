@@ -45,7 +45,7 @@ function FormButton(props) {
     <button
       disabled={props.disabled}
       type="submit"
-      className="block px-6 py-4 mt-4 font-semibold text-black rounded shadow-xl bg-fourth disabled:opacity-40"
+      className="block px-6 py-4 mt-4 font-semibold text-black rounded shadow-xl bg-fourth disabled:opacity-40 hover:bg-fourth/80 active:bg-fourth/60"
     >
       {props.text}
     </button>

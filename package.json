@@ -17,7 +17,8 @@
   },
   "scripts": {
     "dev": "gatsby develop -p 8000 -o",
-    "build": "gatsby build"
+    "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public -b deploy"
   },
   "eslintConfig": {
     "extends": [
