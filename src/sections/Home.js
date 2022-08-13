@@ -1,8 +1,7 @@
-import React from "react";
 import { useState, useEffect } from "react";
 // Icons
-import MenuIcon from "../icons/menu-icon.svg";
-import CloseIcon from "../icons/close-icon.svg";
+import { ReactComponent as MenuIcon } from "icons/menu-icon.svg";
+import { ReactComponent as CloseIcon } from "icons/close-icon.svg";
 
 function Menu(props) {
   const [showMenu, setShowMenu] = useState("hidden");

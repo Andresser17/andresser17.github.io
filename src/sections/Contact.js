@@ -1,13 +1,10 @@
-import React from "react";
+import { Tabs } from "@andresser17/aleron-ui";
 import { useState, useEffect } from "react";
 import { send } from "@emailjs/browser";
 import config from "../app.config";
 // Components
 import SectionTitle from "../components/SectionTitle";
-// Icons
-import { ReactComponent as CopyIcon } from "../icons/copy-icon.svg";
-
-const validator = require("email-validator");
+const validator = () => {}
 
 function FormTextarea(props) {
   return (
@@ -252,6 +249,7 @@ function Contact() {
       id="contact"
       className="min-h-screen px-4 py-8 bg-first lg:flex lg:flex-wrap"
     >
+      {/* <Tabs /> */}
       <SectionTitle text="Contact Me" />
       <div className="py-8 lg:w-1/2">
         <span className="block text-xl">Send me an email!</span>

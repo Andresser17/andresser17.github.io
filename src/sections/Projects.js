@@ -1,12 +1,11 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // Components
 import Icons from "../components/Icons";
 import SectionTitle from "../components/SectionTitle";
 // Icons
-import GithubIcon from "../icons/github-icon-1.svg";
-import ExternalLinkIcon from "../icons/external-link-icon.svg";
-import ArrowIcon from "../icons/arrow-down-icon.svg";
+import { ReactComponent as GithubIcon } from "../icons/github-icon-1.svg";
+import { ReactComponent as ExternalLinkIcon } from "../icons/external-link-icon.svg";
+import { ReactComponent as ArrowIcon } from "../icons/arrow-down-icon.svg";
 // Images
 import sampleImage from "../images/sample-image.png";
 // Articles to iterate
