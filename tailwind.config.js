@@ -1,40 +1,24 @@
 module.exports = {
+  jit: true,
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
-    backgroundColor: (theme) => ({
-      ...theme("colors"),
-      first: "#1B2A49",
-      second: "#298FFF",
-      third: "#F1F1E6",
-      fourth: "#FCC642",
-    }),
-    borderColor: (theme) => ({
-      ...theme("colors"),
-      first: "#1B2A49",
-      second: "#298FFF",
-      third: "#F1F1E6",
-      fourth: "#FCC642",
-    }),
-    stroke: (theme) => ({
-      ...theme("colors"),
-      first: "#1B2A49",
-      second: "#298FFF",
-      third: "#F1F1E6",
-      fourth: "#FCC642",
-    }),
-    fill: (theme) => ({
-      ...theme("colors"),
-      first: "#1B2A49",
-      second: "#298FFF",
-      third: "#F1F1E6",
-      fourth: "#FCC642",
-    }),
-  },
-  variants: {
     extend: {
-      backgroundColor: ["active"],
+      colors: {
+        bg: "var(--bg)",
+        text: "var(--text)",
+        hover: "var(--hover)",
+        active: "var(--active)",
+        focus: "var(--focus)",
+        "focus-border": "var(--focus-border)",
+        border: "var(--border)",
+        disabled: "var(--disabled)",
+        "disabled-text": "var(--disabled-text)",
+        "disabled-border": "var(--disabled-border)",
+      },
     },
   },
   plugins: [],
+  corePlugins: {
+    preflight: true,
+  }
 };

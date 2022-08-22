@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 // Icons
 import { ReactComponent as MenuIcon } from "icons/menu-icon.svg";
 import { ReactComponent as CloseIcon } from "icons/close-icon.svg";
+import { ReactComponent as PageIcon } from "icons/page-icon.svg";
 
 function Menu(props) {
   const [showMenu, setShowMenu] = useState("hidden");
@@ -59,61 +60,56 @@ function MenuButton(props) {
 }
 
 function TopPanel(props) {
+  const routes = [
+    { label: "Home", value: "#home" },
+    { label: "Projects", value: "#projects" },
+    { label: "About", value: "/about" },
+    { label: "Contact", value: "#contact" },
+  ];
   // Manage scroll position
   const [scrollPosition, setScrollPosition] = useState(0);
+  // Styles
+  const homeStyle = "bg-black/50 text-white";
+  const inactiveStyle = "sm:bg-black/20 sm:text-white/20 sm:text-xs";
+  const activeStyle =
+    "sm:hover:text-base sm:hover:py-4 sm:hover:bg-black/50 sm:hover:text-white ";
+  const topPanelStyles =
+    "fixed top-0 w-full p-2 sm:p-4 flex sm:justify-between transition-all duration-300 ease-out z-10";
 
-  const handleScroll = () => {
+  const handleScrollPosition = () => {
     const position = window.scrollY;
 
     setScrollPosition(position);
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScrollPosition);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScrollPosition);
     };
   }, []);
 
-  // Top Panel behaviour
-  const base =
-    "fixed top-0 w-full py-2 sm:py-4 flex flex-col items-end sm:flex-row sm:justify-end transition-all duration-300 ease-out z-10";
-  const home = "bg-black/50 text-white";
-  const inactive = "sm:bg-black/20 sm:text-white/20 sm:text-xs";
-  const active =
-    "sm:hover:text-base sm:hover:py-4 sm:hover:bg-black/50 sm:hover:text-white ";
-
-  let styles = "";
-
-  if (scrollPosition === 0) {
-    styles = `${base} ${home}`;
-  } else {
-    styles = `${base} ${inactive} ${active}`;
-  }
-
-  return <div className={styles}>{props.children}</div>;
+  return (
+    <div
+      className={`${topPanelStyles} ${
+        scrollPosition > 0 ? `${inactiveStyle} ${activeStyle}` : homeStyle
+      }`}
+    >
+      <PageIcon className="w-12 h-12 text-text" />
+      {/* <Menu routes={routes} /> */}
+    </div>
+  );
 }
 
 function Home() {
-  const [selected, setSelected] = useState("home");
-  const [toggle, setToggle] = useState(false);
-
   return (
     <header
       id="home"
       className="flex items-center min-h-screen cont-blue-gradient"
     >
       {/* Top panel */}
-      <TopPanel>
-        <MenuButton toggle={toggle} setToggle={setToggle} menuId="menu" />
-        <Menu
-          onSelectedChange={setSelected}
-          selected={selected}
-          items={["Home", "Projects", "About", "Contact"]}
-          toggle={toggle}
-        />
-      </TopPanel>
+      <TopPanel />
       {/* Home */}
       <div className="flex flex-col w-full p-4 sm:w-2/4">
         <span className="block mb-2 text-2xl font-extralight">
