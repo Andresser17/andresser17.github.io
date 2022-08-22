@@ -7,7 +7,7 @@ import { ReactComponent as GithubIcon } from "../icons/github-icon-1.svg";
 
 function Footer() {
   return (
-    <footer className="bg-first">
+    <footer>
       <div className="flex items-center justify-end w-full p-2 bg-black/60">
         <p className="block p-2 mr-6 text-lg">
           <span>&copy;2022</span> Alejandro Serrano

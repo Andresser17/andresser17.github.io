@@ -1,4 +1,3 @@
-import { Tabs } from "@andresser17/aleron-ui";
 import { useState, useEffect } from "react";
 import { send } from "@emailjs/browser";
 import config from "../app.config";
