@@ -1,121 +1,93 @@
 import { useState } from "react";
-// Components
-import Icons from "../components/Icons";
-import SectionTitle from "../components/SectionTitle";
+import { GITHUB_PROFILE } from "app.config";
 // Icons
-import { ReactComponent as GithubIcon } from "../icons/github-icon-1.svg";
-import { ReactComponent as ExternalLinkIcon } from "../icons/external-link-icon.svg";
-import { ReactComponent as ArrowIcon } from "../icons/arrow-down-icon.svg";
-// Images
-import sampleImage from "../images/sample-image.png";
+import { AiOutlineMenu } from "react-icons/ai";
+import { AiFillGithub } from "react-icons/ai";
+import { MdWebAsset } from "react-icons/md";
+import { BsWordpress } from "react-icons/bs";
+// Helpers
+import deviceType from "helpers/deviceType";
+// Styles
+import styles from "./Projects.module.css";
 // Articles to iterate
 import projectsArticles from "../projectsArticles";
 
-function ProjectLink(props) {
+function CardImage({ image, links }) {
+  const [showLinks, setShowLinks] = useState(false);
+
   return (
-    <a
-      href={props.href}
-      className="flex py-2 my-4 bg-black/25 hover:bg-black/40 transition duration-300"
-    >
-      <span className="inline-block w-6 mx-4 text-white">{props.children}</span>
-      <span className="inline-block">{props.text}</span>
-    </a>
+    <div className={`w-full h-80 lg:h-[32rem] xl:h-[36rem] relative ${styles["card-image"]}`}>
+      <img
+        src={image.url}
+        alt={image.src}
+        className="w-auto h-full object-cover"
+      />
+      {/* open when user hover */}
+      <div
+        className={`absolute top-0 bg-black/70 w-full h-full justify-center items-center ${
+          showLinks ? "flex" : "hidden"
+        } ${styles["links-container"]}`}
+      >
+        <a href={links.github} target="_blank" rel="noopener noreferrer">
+          <AiFillGithub className="w-8 h-8 mx-4" />
+        </a>
+        <a href={links.deploy} target="_blank" rel="noopener noreferrer">
+          <MdWebAsset className="w-8 h-8 mx-4" />
+        </a>
+        <a href={links.blogPost} target="_blank" rel="noopener noreferrer">
+          <BsWordpress className="w-8 h-8 mx-4" />
+        </a>
+      </div>
+      {/* open button */}
+      {deviceType() !== "desktop" && (
+        <AiOutlineMenu
+          onClick={() => setShowLinks((prev) => !prev)}
+          className="w-10 h-10 bg-bg p-2 rounded-sm absolute right-4 bottom-4 z-10 cursor-pointer"
+        />
+      )}
+    </div>
   );
 }
 
-function Card(props) {
+function Card({ image, links, title, description }) {
   return (
-    <article className="px-4 pb-8 my-16 border-b border-fourth sm:border-none md:flex md:justify-around md:even:flex-row-reverse">
-      <div className="w-full md:w-5/12">
-        <img src={props.image} className="w-full shadow-sm shadow-white/10" />
-        {/* Source code and live code */}
-        <div className="pt-8">
-          <ProjectLink href={props.sourceCode} text="Source Code">
-            <GithubIcon />
-          </ProjectLink>
-
-          <ProjectLink href={props.liveCode} text="Live Code">
-            <ExternalLinkIcon />
-          </ProjectLink>
-        </div>
-      </div>
-
-      <div className="w-fit md:ml-8 md:w-96">
-        <h3 className="text-xl font-semibold text-center">{props.title}</h3>
-        <p className="mt-4 mb-8">{props.description}</p>
-        {/* Used stack */}
-        {/* <div className="flex flex-wrap p-4 bg-black/40"> */}
-        {/*   <span className="block w-full mb-4 text-xl border-b">Used Stack</span> */}
-        {/*   {props.children} */}
-        {/* </div> */}
+    <article className="w-80 mb-8 lg:w-[28rem] xl:w-[32rem]">
+      <CardImage {...{ image, links }} />
+      <div className="mt-2">
+        <h3 className="text-lg font-semibold">{title}</h3>
+        <p className="font-light text-[0.85rem] text-zinc-400">{description}</p>
       </div>
     </article>
   );
 }
 
-function OpenButton(props) {
-  const handleClick = () => {
-    props.setOpen(!props.open);
-  };
-
-  return (
-    <button
-      onClick={handleClick}
-      className="absolute bottom-0 w-12 m-4 fill-first stroke-fourth animate-bounce left-1/2"
-    >
-      <ArrowIcon />
-    </button>
-  );
-}
-
 function Projects() {
-  // const [open, setOpen] = useState(false);
-  const basicStyles =
-    "relative w-full px-4 py-8 overflow-hidden bg-first transition-all";
-  const [toggle, setToggle] = useState(`${basicStyles}`);
-  // const handleClick = () => {
-  //   setOpen(!open);
-  // };
-
-  // useEffect(() => {
-  //   const animHeight = () => {
-  //     if (!open) {
-  //       setToggle(`${basicStyles} min-h-fit`);
-  //     } else {
-  //       setToggle(`${basicStyles} max-h`);
-  //     }
-  //   };
-  //   animHeight(open);
-  // }, [open]);
-
-  const cards = projectsArticles.map((item) => {
-    const usedStack = item.usedStack.map((Icon, key) => {
-      return (
-        <Icons key={key} dim="w-8 h-8">
-          <Icon />
-        </Icons>
-      );
-    });
-
+  const cards = projectsArticles.map((art) => {
     return (
       <Card
-        image={item.image}
-        key={item.title}
-        title={item.title}
-        description={item.description}
-        sourceCode={item.sourceCode}
-        liveCode={item.liveCode}
-      >
-        {usedStack}
-      </Card>
+        key={art.title}
+        image={art.image}
+        title={art.title}
+        description={art.description}
+        links={art.links}
+      />
     );
   });
 
   return (
-    <section id="projects" className={toggle}>
-      <SectionTitle text="Projects" />
-      <div>{cards}</div>
-      {/* <OpenButton open={open} setOpen={setOpen} /> */}
+    <section id="projects" className="flex justify-center">
+      <div className="flex flex-col items-center w-full max-w-[76rem]">
+        <div className="w-full text-center mb-12 sm:flex sm:justify-between sm:px-8">
+          <h2 className="text-3xl font-semibold tracking-wide">
+            Featured Projects
+          </h2>
+          <a href={GITHUB_PROFILE} className="hidden sm:flex items-center text-lg">
+            <AiFillGithub className="w-6 h-6 mr-2 cursor-pointer" />
+            GitHub
+          </a>
+        </div>
+        <div className="md:grid md:grid-cols-2 md:gap-4">{cards}</div>
+      </div>
     </section>
   );
 }

@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
+import { GITHUB_PROFILE, LINKEDIN_PROFILE } from "app.config";
 // Components
 import SidebarContainer from "modals/SidebarContainer";
 // Icons
 import { FiSun } from "react-icons/fi";
-import { AiFillGithub } from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { ReactComponent as PageIcon } from "icons/page-icon.svg";
 
 function Menu({ routes }) {
   const [selected, setSelected] = useState("");
   const [resolution, setResolution] = useState(0);
-  const linkStyles = "block p-4 sm:inline sm:mx-4 sm:px-2 sm:py-0.5";
-  const activeStyle = "bg-active sm:bg-black/0 sm:border-b-2";
+  const linkStyles = "block p-4 md:inline md:mx-4 md:px-2 md:py-0.5";
+  const activeStyle = "bg-active md:bg-black/0 md:border-b-2";
 
   // get document resolution
   useEffect(() => {
@@ -52,11 +53,20 @@ function Menu({ routes }) {
     <div className="flex items-center mt-4 md:m-0 md:border-l md:border-border">
       <FiSun className="ml-4 w-8 h-8 md:w-5 md:h-5 cursor-pointer" />
       <a
-        href="https://github.com/Andresser17"
+        className="ml-4"
+        href={LINKEDIN_PROFILE}
         target="_blank"
         rel="noopener noreferrer"
       >
-        <AiFillGithub className="ml-4 w-8 h-8 md:w-5 md:h-5 cursor-pointer" />
+        <AiFillLinkedin className="w-8 h-8 md:w-5 md:h-5 cursor-pointer" />
+      </a>
+      <a
+        className="ml-4"
+        href={GITHUB_PROFILE}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <AiFillGithub className="w-8 h-8 md:w-5 md:h-5 cursor-pointer" />
       </a>
     </div>
   );
@@ -64,7 +74,7 @@ function Menu({ routes }) {
   const menuList = (
     <div className="md:flex">
       <ul
-        className={`w-60 transition-all sm:w-auto sm:flex sm:transition-none`}
+        className={`w-60 transition-all md:w-auto md:flex md:transition-none`}
       >
         {links}
       </ul>

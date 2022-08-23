@@ -4,8 +4,8 @@ import Topbar from "components/Topbar";
 import Home from "sections/Home";
 import Projects from "sections/Projects";
 import About from "sections/About";
-import Contact from "sections/Contact";
-import Footer from "sections/Footer";
+// import Contact from "sections/Contact";
+// import Footer from "sections/Footer";
 // Routes
 
 function App() {
@@ -15,10 +15,9 @@ function App() {
       <Home />
       <main>
         <Projects />
-        <About />
-        <Contact />
+        {/* <Contact /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
