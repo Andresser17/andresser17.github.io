@@ -12,7 +12,7 @@ const personalPage = {
   },
 };
 
-const articles = [1, 2, 3, 4, 5, 6, 7].map((_, i) => ({
+const articles = [1, 2, 3, 4].map((_, i) => ({
   ...personalPage,
   title: personalPage.title + i,
 }));
