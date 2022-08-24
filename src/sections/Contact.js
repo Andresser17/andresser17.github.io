@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { send } from "@emailjs/browser";
+import QRCode from "react-qr-code";
 // Components
 import { Button, Input, Textarea } from "@andresser17/aleron-ui";
+import ModalContainer from "modals/ModalContainer";
 // Icons
 import {
   AiFillGithub,
@@ -76,6 +79,34 @@ function Form() {
   );
 }
 
+function WhatsappQR() {
+  const [show, setShow] = useState(false);
+  const modal = (
+    <ModalContainer palette="dark" show={show} onShow={setShow}>
+      <div className="flex flex-col items-center p-12">
+        <QRCode value={WHATSAPP_PROFILE} />
+        <span className="mt-4">Copy URL:</span>
+        <a
+          href={WHATSAPP_PROFILE}
+          className="block mt-1 font-semibold cursor-pointer hover:underline"
+        >
+          {WHATSAPP_PROFILE}
+        </a>
+      </div>
+    </ModalContainer>
+  );
+
+  return (
+    <>
+      <AiOutlineWhatsApp
+        onClick={() => setShow(true)}
+        className="w-8 h-8 mr-4 cursor-pointer"
+      />
+      {modal}
+    </>
+  );
+}
+
 function Contact() {
   return (
     <section
@@ -113,14 +144,7 @@ function Contact() {
           >
             <AiFillGithub className="w-8 h-8" />
           </a>
-          <a
-            className="mr-4"
-            href={WHATSAPP_PROFILE}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <AiOutlineWhatsApp className="w-8 h-8" />
-          </a>
+          <WhatsappQR />
         </div>
       </div>
       <div className="flex items-center">

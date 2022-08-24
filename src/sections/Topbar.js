@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { NavHashLink } from "react-router-hash-link";
 // Components
 import SidebarContainer from "modals/SidebarContainer";
 import HashLink from "components/HashLink";
