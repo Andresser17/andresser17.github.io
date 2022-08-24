@@ -29,7 +29,7 @@ function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="mt-8 max-w-[24rem]">
+    <form onSubmit={handleSubmit(onSubmit)} className="mt-8 max-w-[26rem]">
       <div className="flex flex-wrap justify-between mb-4">
         <span className="block w-full">Details</span>
         <div className="w-full sm:w-[48%]">
@@ -83,7 +83,7 @@ function Contact() {
       className="min-h-screen py-8 px-6 lg:flex lg:justify-between lg:px-16"
     >
       <div>
-        <h2 className="text-4xl font-semibold block w-72 sm:font-normal sm:text-6xl sm:w-[28rem]">
+        <h2 className="text-4xl font-semibold block w-72 sm:font-normal sm:text-6xl sm:w-[28rem] xl:text-7xl xl:w-[38rem]">
           Let's talk about your project
         </h2>
         <span className="block mt-4 w-72">
