@@ -78,7 +78,10 @@ function Form() {
 
 function Contact() {
   return (
-    <section id="contact" className="min-h-screen py-4 px-6 lg:flex lg:justify-between lg:py-8 lg:px-16">
+    <section
+      id="contact"
+      className="min-h-screen py-8 px-6 lg:flex lg:justify-between lg:px-16"
+    >
       <div>
         <h2 className="text-4xl font-semibold block w-72 sm:font-normal sm:text-6xl sm:w-[28rem]">
           Let's talk about your project
@@ -120,7 +123,9 @@ function Contact() {
           </a>
         </div>
       </div>
-      <Form />
+      <div className="flex items-center">
+        <Form />
+      </div>
     </section>
   );
 }

@@ -10,14 +10,16 @@ import Footer from "sections/Footer";
 
 function App() {
   return (
-    <div className="bg-bg text-text dark">
+    <div className="bg-bg text-text dark flex justify-center">
       <Topbar />
-      <Home />
-      <main>
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+      <div className="w-full max-w-[1600px]">
+        <Home />
+        <main>
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

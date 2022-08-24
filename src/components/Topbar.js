@@ -102,7 +102,7 @@ function Topbar() {
   // Styles
   const scrollDownStyle = "sm:bg-bg sm:shadow-lg";
   const topPanelStyles =
-    "absolute sm:fixed top-0 w-full px-4 py-2 flex items-center sm:justify-between transition-all duration-300 ease-out z-10";
+    "absolute flex justify-center sm:fixed top-0 w-full px-4 py-2 transition-all duration-300 ease-out z-10";
 
   useEffect(() => {
     const handleScrollPosition = () => {
@@ -124,8 +124,10 @@ function Topbar() {
         scrollPosition > 0 ? scrollDownStyle : ""
       }`}
     >
-      <PageIcon className="w-12 h-12 text-text" />
-      <Menu routes={routes} />
+      <div className="w-full max-w-[1600px] flex items-center sm:justify-between">
+        <PageIcon className="w-12 h-12 text-text" />
+        <Menu routes={routes} />
+      </div>
     </div>
   );
 }
