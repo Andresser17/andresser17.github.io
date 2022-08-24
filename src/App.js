@@ -6,7 +6,7 @@ import Projects from "sections/Projects";
 import Contact from "sections/Contact";
 import Footer from "sections/Footer";
 // Routes
-// import About from "sections/About";
+import About from "routes/About";
 
 function App() {
   return (
