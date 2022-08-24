@@ -29,27 +29,37 @@ function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="mt-8">
-      <div className="mb-4">
-        <span className="block">Details</span>
-        <Input name="name" placeholder="Name" {...{ control }} />
-        <Input name="lastName" placeholder="Last Name" {...{ control }} />
-        <Input name="email" placeholder="Email Address" {...{ control }} />
+    <form onSubmit={handleSubmit(onSubmit)} className="mt-8 max-w-[24rem]">
+      <div className="flex flex-wrap justify-between mb-4">
+        <span className="block w-full">Details</span>
+        <div className="w-full sm:w-[48%]">
+          <Input name="name" placeholder="Name" {...{ control }} />
+        </div>
+        <div className="w-full sm:w-[48%]">
+          <Input name="lastName" placeholder="Last Name" {...{ control }} />
+        </div>
+        <div className="w-full">
+          <Input name="email" placeholder="Email Address" {...{ control }} />
+        </div>
       </div>
-      <div className="mb-4">
-        <span className="block">Company Details</span>
-        <Input
-          name="companyName"
-          description="Not Required"
-          placeholder="Company Name"
-          {...{ control }}
-        />
-        <Input
-          name="companyWebsite"
-          placeholder="Company Website"
-          description="Not Required"
-          {...{ control }}
-        />
+      <div className="flex flex-wrap justify-between mb-4">
+        <span className="block w-full">Company Details</span>
+        <div className="w-full sm:w-[48%]">
+          <Input
+            name="companyName"
+            description="Not Required"
+            placeholder="Company Name"
+            {...{ control }}
+          />
+        </div>
+        <div className="w-full sm:w-[48%]">
+          <Input
+            name="companyWebsite"
+            placeholder="Company Website"
+            description="Not Required"
+            {...{ control }}
+          />
+        </div>
       </div>
       <div className="mb-4">
         <span className="block">Message</span>
@@ -68,9 +78,9 @@ function Form() {
 
 function Contact() {
   return (
-    <section id="contact" className="min-h-screen py-4 px-6">
+    <section id="contact" className="min-h-screen py-4 px-6 lg:flex lg:justify-between lg:py-8 lg:px-16">
       <div>
-        <h2 className="text-4xl font-semibold block w-72">
+        <h2 className="text-4xl font-semibold block w-72 sm:font-normal sm:text-6xl sm:w-[28rem]">
           Let's talk about your project
         </h2>
         <span className="block mt-4 w-72">
