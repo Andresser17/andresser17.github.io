@@ -4,9 +4,9 @@ import Topbar from "components/Topbar";
 import Home from "sections/Home";
 import Projects from "sections/Projects";
 import Contact from "sections/Contact";
-// import About from "sections/About";
-// import Footer from "sections/Footer";
+import Footer from "sections/Footer";
 // Routes
+// import About from "sections/About";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Projects />
         <Contact />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

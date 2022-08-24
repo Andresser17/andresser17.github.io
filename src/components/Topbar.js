@@ -35,17 +35,16 @@ function Menu({ routes }) {
     // read route, if is equal to route.link set selected
 
     return (
-      <li key={route.link}>
-        <a
-          className={`${linkStyles} ${
-            selected === route.link ? activeStyle : ""
-          }`}
-          href={route.link}
-          onClick={() => setSelected(route.link)}
-        >
-          {route.label}
-        </a>
-      </li>
+      <a
+        key={route.link}
+        className={`${linkStyles} ${
+          selected === route.link ? activeStyle : ""
+        }`}
+        href={route.link}
+        onClick={() => setSelected(route.link)}
+      >
+        {route.label}
+      </a>
     );
   });
 
@@ -73,11 +72,11 @@ function Menu({ routes }) {
 
   const menuList = (
     <div className="md:flex">
-      <ul
+      <nav
         className={`w-60 transition-all md:w-auto md:flex md:transition-none`}
       >
         {links}
-      </ul>
+      </nav>
       {options}
     </div>
   );
