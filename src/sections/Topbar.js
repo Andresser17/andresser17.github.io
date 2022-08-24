@@ -1,17 +1,21 @@
 import { useState, useEffect } from "react";
-import { GITHUB_PROFILE, LINKEDIN_PROFILE } from "app.config";
+import { NavLink } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 // Components
 import SidebarContainer from "modals/SidebarContainer";
+import HashLink from "components/HashLink";
 // Icons
 import { FiSun } from "react-icons/fi";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { ReactComponent as PageIcon } from "icons/page-icon.svg";
+// Config
+import { GITHUB_PROFILE, LINKEDIN_PROFILE } from "app.config";
 
 function Menu({ routes }) {
-  const [selected, setSelected] = useState("");
   const [resolution, setResolution] = useState(0);
-  const linkStyles = "block p-4 md:inline md:mx-4 md:px-2 md:py-0.5";
-  const activeStyle = "bg-active md:bg-black/0 md:border-b-2";
+  const linkStyles =
+    "block p-4 md:inline md:border-b-2 md:border-black/0 md:mx-4 md:px-2 md:py-0.5";
+  const activeStyle = "bg-active md:bg-black/0 md:border-text";
 
   // get document resolution
   useEffect(() => {
@@ -29,22 +33,28 @@ function Menu({ routes }) {
   }, [resolution]);
 
   const links = routes.map((route) => {
-    // if route.selected is true set selected
-    if (selected.length === 0 && route.selected) setSelected(route.link);
-
-    // read route, if is equal to route.link set selected
+    if (route.link[1] === "#")
+      return (
+        <HashLink
+          className={linkStyles}
+          activeClassName={activeStyle}
+          key={route.link}
+          to={route.link}
+        >
+          {route.label}
+        </HashLink>
+      );
 
     return (
-      <a
+      <NavLink
         key={route.link}
-        className={`${linkStyles} ${
-          selected === route.link ? activeStyle : ""
-        }`}
-        href={route.link}
-        onClick={() => setSelected(route.link)}
+        className={({ isActive }) =>
+          `${linkStyles} ${isActive ? activeStyle : undefined}`
+        }
+        to={route.link}
       >
         {route.label}
-      </a>
+      </NavLink>
     );
   });
 

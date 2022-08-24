@@ -1,9 +1,19 @@
+import { NavLink } from "react-router-dom";
+import HashLink from "components/HashLink";
+
 function Menu({ routes }) {
   const links = routes.map((route) => {
+    if (route.link[1] === "#")
+      return (
+        <HashLink className="mx-2" key={route.link} to={route.link}>
+          {route.label}
+        </HashLink>
+      );
+
     return (
-      <a key={route.link} className="mx-2" href={route.link}>
+      <NavLink key={route.link} className="mx-2" to={route.link}>
         {route.label}
-      </a>
+      </NavLink>
     );
   });
 
@@ -21,11 +31,13 @@ function Footer() {
   ];
 
   return (
-    <footer className="h-32 flex flex-col justify-between items-center border-solid border-t border-hover p-4 sm:h-24 sm:flex-row-reverse md:px-8">
-      <Menu routes={routes} />
-      <span className="block">
-        <strong>&copy; 2022</strong> Alejandro Serrano
-      </span>
+    <footer className="w-full flex justify-center border-solid border-t border-hover">
+      <div className="w-full max-w-[1600px] h-32 flex flex-col justify-between items-center p-4 sm:h-24 sm:flex-row-reverse md:px-8">
+        <Menu routes={routes} />
+        <span className="block">
+          <strong>&copy; 2022</strong> Alejandro Serrano
+        </span>
+      </div>
     </footer>
   );
 }

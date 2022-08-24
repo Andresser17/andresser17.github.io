@@ -3,7 +3,7 @@ import authorPic from "images/PersonalPhoto-02.jpg";
 
 function About() {
   return (
-    <section id="about" className="px-4 py-8 flex flex-wrap min-h-screen sm:px-8 lg:px-12">
+    <section className="px-4 pt-32 pb-8 flex flex-wrap min-h-screen sm:px-8 lg:px-12">
       <h2 className="w-full mb-10 text-5xl font-semibold sm:text-6xl">About</h2>
       <div className="w-full max-w-[50rem]">
         <div className="mb-4 min-h-[20rem]">

@@ -1,25 +1,23 @@
-// Components
-import Topbar from "components/Topbar";
+import { Routes, Route } from "react-router-dom";
 // Sections
-import Home from "sections/Home";
-import Projects from "sections/Projects";
-import Contact from "sections/Contact";
+import Topbar from "sections/Topbar";
 import Footer from "sections/Footer";
 // Routes
+import Home from "sections/Home";
 import About from "routes/About";
 
 function App() {
   return (
-    <div className="bg-bg text-text dark flex justify-center">
+    <div className="bg-bg text-text dark flex flex-col items-center">
       <Topbar />
       <div className="w-full max-w-[1600px]">
-        <Home />
-        <main>
-          <Projects />
-          <Contact />
-        </main>
-        <Footer />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Home />} />
+        </Routes>
       </div>
+      <Footer />
     </div>
   );
 }
