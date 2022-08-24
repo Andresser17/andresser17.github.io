@@ -101,6 +101,8 @@ function Projects() {
           <a
             href={GITHUB_PROFILE}
             className="hidden sm:flex items-center text-lg"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <AiFillGithub className="w-6 h-6 mr-2 cursor-pointer" />
             GitHub

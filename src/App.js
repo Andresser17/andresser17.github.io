@@ -3,8 +3,8 @@ import Topbar from "components/Topbar";
 // Sections
 import Home from "sections/Home";
 import Projects from "sections/Projects";
-import About from "sections/About";
-// import Contact from "sections/Contact";
+import Contact from "sections/Contact";
+// import About from "sections/About";
 // import Footer from "sections/Footer";
 // Routes
 
@@ -15,7 +15,7 @@ function App() {
       <Home />
       <main>
         <Projects />
-        {/* <Contact /> */}
+        <Contact />
       </main>
       {/* <Footer /> */}
     </div>
