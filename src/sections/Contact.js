@@ -12,23 +12,26 @@ import {
   AiOutlineWhatsApp,
 } from "react-icons/ai";
 import { RiSendPlaneFill } from "react-icons/ri";
+// Validations
+import validate from "helpers/validations";
 // Envs
 import {
   GITHUB_PROFILE,
   LINKEDIN_PROFILE,
   WHATSAPP_PROFILE,
   EMAIL,
-  SERVICE_ID,
-  TEMPLATE_ID,
-  USER_ID,
 } from "app.config";
+const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
+const USER_ID = process.env.REACT_APP_USER_ID;
 
 function Form() {
   const { control, handleSubmit } = useForm();
   const onSubmit = async (data) => {
-    console.log("hello world");
     // send message
-    // await send(SERVICE_ID, TEMPLATE_ID, data, USER_ID);
+    const response = await send(SERVICE_ID, TEMPLATE_ID, data, USER_ID);
+
+    console.log(response);
   };
 
   return (
@@ -36,13 +39,62 @@ function Form() {
       <div className="flex flex-wrap justify-between mb-4">
         <span className="block w-full">Details</span>
         <div className="w-full sm:w-[48%]">
-          <Input name="name" placeholder="Name" {...{ control }} />
+          <Input
+            name="name"
+            placeholder="Name"
+            {...{ control }}
+            rules={{
+              required: true,
+              pattern: {
+                value: validate.onlyLetters,
+                message: "Only letters are accepted",
+              },
+              minLength: {
+                value: 3,
+                message: "A minimum of 3 characters is required",
+              },
+              maxLength: {
+                value: 20,
+                message: "A maximum of 20 characters is permitted",
+              },
+            }}
+          />
         </div>
         <div className="w-full sm:w-[48%]">
-          <Input name="lastName" placeholder="Last Name" {...{ control }} />
+          <Input
+            name="lastName"
+            placeholder="Last Name"
+            {...{ control }}
+            rules={{
+              required: true,
+              pattern: {
+                value: validate.onlyLetters,
+                message: "Only letters are accepted",
+              },
+              minLength: {
+                value: 3,
+                message: "A minimum of 3 characters is required",
+              },
+              maxLength: {
+                value: 20,
+                message: "A maximum of 20 characters is permitted",
+              },
+            }}
+          />
         </div>
         <div className="w-full">
-          <Input name="email" placeholder="Email Address" {...{ control }} />
+          <Input
+            name="email"
+            placeholder="Email Address"
+            {...{ control }}
+            rules={{
+              required: true,
+              pattern: {
+                value: validate.email,
+                message: "A valid email is required",
+              },
+            }}
+          />
         </div>
       </div>
       <div className="flex flex-wrap justify-between mb-4">
@@ -53,6 +105,20 @@ function Form() {
             description="Not Required"
             placeholder="Company Name"
             {...{ control }}
+            rules={{
+              pattern: {
+                value: validate.onlyLetters,
+                message: "Only letters are accepted",
+              },
+              minLength: {
+                value: 3,
+                message: "A minimum of 3 characters is required",
+              },
+              maxLength: {
+                value: 20,
+                message: "A maximum of 20 characters is permitted",
+              },
+            }}
           />
         </div>
         <div className="w-full sm:w-[48%]">
@@ -61,6 +127,12 @@ function Form() {
             placeholder="Company Website"
             description="Not Required"
             {...{ control }}
+            rules={{
+              pattern: {
+                value: validate.url,
+                message: "A valid url is required",
+              },
+            }}
           />
         </div>
       </div>
@@ -70,6 +142,17 @@ function Form() {
           name="message"
           placeholder="Send me a message..."
           {...{ control }}
+          rules={{
+            required: true,
+            minLength: {
+              value: 20,
+              message: "A minimum of 20 characters is required",
+            },
+            maxLength: {
+              value: 500,
+              message: "A maximum of 500 characters is permitted",
+            },
+          }}
         />
       </div>
       <Button className="w-full" text="Submit" icon bold>
@@ -89,6 +172,8 @@ function WhatsappQR() {
         <a
           href={WHATSAPP_PROFILE}
           className="block mt-1 font-semibold cursor-pointer hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {WHATSAPP_PROFILE}
         </a>

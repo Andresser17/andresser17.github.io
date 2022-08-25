@@ -20,7 +20,7 @@ function ModalContainer({
   palette = "light",
   show,
   onShow,
-  closeWhenClickOutside = false,
+  closeWhenClickOutside = true,
   children,
 }) {
   // Hide body scrollbar
@@ -37,13 +37,19 @@ function ModalContainer({
   return (
     // Modal container
     <div
-      onClick={() => {
+      id="modal-container"
+      onClick={(e) => {
+        const target = e.target;
+        if (target.id !== "modal-container") return;
+
         if (closeWhenClickOutside) onShow(false);
       }}
-      className={`${styles["container"]} ${palette} ${!show ? "hidden" : ""}`}
+      className={`${styles["container"]} ${palette} ${
+        !show ? "hidden" : ""
+      } z-20`}
     >
       {/* Modal content */}
-      <div className={`${styles["modal-content"]} bg-bg text-text shadow-md`}>
+      <div className={`bg-bg text-text shadow-md ${styles["modal-content"]}`}>
         <CloseButton onShow={onShow} />
         {children}
       </div>
