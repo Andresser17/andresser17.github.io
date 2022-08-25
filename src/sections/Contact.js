@@ -11,6 +11,7 @@ import {
   AiFillGithub,
   AiFillLinkedin,
   AiOutlineWhatsApp,
+  AiOutlineMail,
 } from "react-icons/ai";
 import { RiSendPlaneFill } from "react-icons/ri";
 // Validations
@@ -21,6 +22,7 @@ import {
   LINKEDIN_PROFILE,
   WHATSAPP_PROFILE,
   EMAIL,
+  RESUME,
 } from "app.config";
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
@@ -214,16 +216,19 @@ function Contact() {
       className="min-h-screen py-8 px-6 lg:flex lg:justify-between lg:px-16"
     >
       <div>
-        <h2 className="text-4xl font-semibold block w-72 sm:font-normal sm:text-6xl sm:w-[28rem] xl:text-7xl xl:w-[38rem]">
-          Let's talk about your project
+        <h2 className="text-4xl font-semibold block w-72 sm:font-normal sm:text-5xl sm:w-[28rem] xl:text-6xl xl:w-[38rem]">
+          Let's work together, send me a message.
         </h2>
-        <span className="block mt-4 w-72">
-          Reach out filling the form bellow or send me an{" "}
+        <span className="block text-xl leading-2 mt-4 w-72">
+          Download my{" "}
+          {/* Reach out filling the form bellow or send me an{" "} */}
           <a
             className="underline underline-offset-2 font-semibold text-bg primary"
-            href={`mailto:${EMAIL}`}
+            href={RESUME}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            EMAIL!
+            RESUME!
           </a>
         </span>
         {/* social media */}
@@ -245,6 +250,14 @@ function Contact() {
             <AiFillGithub className="w-8 h-8" />
           </a>
           <WhatsappQR />
+          <a
+            className="mr-4"
+            href={`mailto:${EMAIL}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiOutlineMail className="w-8 h-8" />
+          </a>
         </div>
       </div>
       <div className="flex items-center">
