@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { send } from "@emailjs/browser";
 import QRCode from "react-qr-code";
@@ -27,7 +27,12 @@ const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
 const USER_ID = process.env.REACT_APP_USER_ID;
 
 function Form() {
-  const { control, handleSubmit } = useForm();
+  const {
+    control,
+    reset,
+    handleSubmit,
+    formState: { isSubmitSuccessful },
+  } = useForm();
   const onSubmit = async (data) => {
     // send message
     const response = await send(SERVICE_ID, TEMPLATE_ID, data, USER_ID);
@@ -39,6 +44,10 @@ function Form() {
 
     toast.error("Error");
   };
+
+  useEffect(() => {
+    if (isSubmitSuccessful) reset();
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mt-8 max-w-[26rem]">
