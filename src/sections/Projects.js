@@ -17,7 +17,7 @@ function CardImage({ image, links }) {
 
   return (
     <div
-      className={`w-full h-80 lg:h-[32rem] xl:h-[36rem] relative ${styles["card-image"]}`}
+      className={`w-full flex justify-center h-80 lg:h-[32rem] xl:h-[36rem] relative ${styles["card-image"]}`}
     >
       <img
         src={image.url}
