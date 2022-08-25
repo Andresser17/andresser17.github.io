@@ -1,5 +1,6 @@
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Sections
 import Topbar from "sections/Topbar";
@@ -7,16 +8,47 @@ import Footer from "sections/Footer";
 // Routes
 import Home from "sections/Home";
 import About from "routes/About";
+// Envs
+import { RESUME } from "app.config";
 
 function App() {
   const contextClass = {
-    success: "bg-bg/30 primary",
-    error: "bg-bg/30 primary",
-    info: "bg-gray-600",
+    success: "bg-bg primary",
+    error: "bg-bg primary",
+    info: "bg-bg primary",
     warning: "bg-orange-400",
     default: "bg-bg",
     dark: "bg-white-600 font-gray-300",
   };
+
+  // display a welcome message when page is ready
+  useEffect(() => {
+    const welcomeMessage = () =>
+      toast.info(
+        <p>
+          Welcome visitor, You can download my resume{" "}
+          <a
+            className="underline underline-offset-2 font-semibold text-bg info"
+            href={RESUME}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            HERE!
+          </a>
+        </p>,
+        {
+          autoClose: false,
+          hideProgressBar: true,
+          closeOnClick: false,
+        }
+      );
+
+    window.addEventListener("load", welcomeMessage);
+
+    return () => {
+      window.removeEventListener("load", welcomeMessage);
+    };
+  }, []);
 
   return (
     <div className="bg-bg text-text dark flex flex-col items-center">
