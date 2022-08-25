@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { send } from "@emailjs/browser";
 import QRCode from "react-qr-code";
+import { toast } from "react-toastify";
 // Components
 import { Button, Input, Textarea } from "@andresser17/aleron-ui";
 import ModalContainer from "modals/ModalContainer";
@@ -31,7 +32,12 @@ function Form() {
     // send message
     const response = await send(SERVICE_ID, TEMPLATE_ID, data, USER_ID);
 
-    console.log(response);
+    if (response.status === 200) {
+      toast.success("Email sent successfully");
+      return;
+    }
+
+    toast.error("Error");
   };
 
   return (
