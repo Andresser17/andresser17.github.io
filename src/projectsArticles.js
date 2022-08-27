@@ -1,15 +1,14 @@
-// Personal Site imports
-import henryDogsImage from "./images/henry-dogs.png";
-import vlixesImage from "./images/vlixes-ecommerce.png";
-import aleronLibraryImage from "./images/henry-dogs.png";
+import henryDogsImage from "images/henry-dogs.png";
+import vlixesImage from "images/vlixes-ecommerce.png";
+import aleronLibraryImage from "images/aleron-ui.png";
 
 const henryDogs = {
   image: { url: henryDogsImage, alt: "Henry personal project" },
   title: "Henry Dogs",
   description: "Find your favorites dog breeds",
   links: {
-    github: "https://github.com/Andresser17/henry-pi-dogs",
-    deploy: "",
+    github: "https://github.com/Andresser17/dogs",
+    deploy: "https://andresser17.github.io/dogs/",
     blogPost: "",
   },
 };
@@ -19,8 +18,8 @@ const vlixes = {
   title: "Vlixes E-commerce",
   description: "Buy sport clothes at the best price on the market",
   links: {
-    github: "",
-    deploy: "",
+    github: "https://github.com/Andresser17/vlixes",
+    deploy: "https://andresser17.github.io/vlixes/",
     blogPost: "",
   },
 };

@@ -216,7 +216,7 @@ function Contact() {
       className="min-h-screen py-8 px-6 lg:flex lg:justify-between lg:px-16"
     >
       <div>
-        <h2 className="text-4xl font-semibold block w-72 sm:font-normal sm:text-5xl sm:w-[28rem] xl:text-6xl xl:w-[38rem]">
+        <h2 className="text-4xl font-semibold block w-72 sm:text-5xl sm:w-[28rem] xl:text-6xl xl:w-[38rem]">
           Let's work together, send me a message.
         </h2>
         <span className="block text-xl leading-2 mt-4 w-72">

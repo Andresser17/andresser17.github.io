@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import "fonts/IBM_Plex_Sans/stylesheet.css";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
