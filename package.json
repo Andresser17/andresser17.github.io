@@ -2,7 +2,7 @@
   "name": "andresser17-portfolio",
   "version": "1.0.0",
   "private": true,
-  "homepage": "andresser17.github.io",
+  "homepage": "/",
   "dependencies": {
     "@emailjs/browser": "^3.2.0",
     "@testing-library/jest-dom": "^5.16.1",
