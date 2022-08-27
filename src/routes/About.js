@@ -1,5 +1,5 @@
 // Images
-import authorPic from "images/PersonalPhoto-02.jpg";
+import authorPic from "images/personal-photo.webp";
 
 function About() {
   return (

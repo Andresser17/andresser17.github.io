@@ -1,5 +1,5 @@
-import henryDogsImage from "images/henry-dogs.png";
-import vlixesImage from "images/vlixes-ecommerce.png";
+import henryDogsImage from "images/henry-dogs.webp";
+import vlixesImage from "images/vlixes-ecommerce.webp";
 import aleronLibraryImage from "images/aleron-ui.png";
 
 const henryDogs = {
