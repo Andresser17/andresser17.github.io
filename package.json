@@ -1,7 +1,8 @@
 {
-  "name": "react-portfolio",
-  "version": "0.1.0",
+  "name": "andresser17-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "homepage": "andresser17.github.io",
   "dependencies": {
     "@emailjs/browser": "^3.2.0",
     "@testing-library/jest-dom": "^5.16.1",
@@ -19,22 +20,17 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gatsby build && gh-pages -d public -b deploy"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": ["react-app", "react-app/jest"]
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -43,6 +39,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8"
   }
