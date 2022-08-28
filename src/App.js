@@ -12,6 +12,7 @@ import About from "routes/About";
 import { RESUME } from "app.config";
 
 function App() {
+  // React toastify themes
   const contextClass = {
     success: "bg-bg primary",
     error: "bg-bg primary",
@@ -51,7 +52,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-bg text-text dark flex flex-col items-center">
+    <div className="bg-bg text-text flex flex-col items-center">
       <Topbar />
       <div className="w-full max-w-[1600px]">
         <Routes>

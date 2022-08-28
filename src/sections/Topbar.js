@@ -4,11 +4,81 @@ import { NavLink } from "react-router-dom";
 import SidebarContainer from "modals/SidebarContainer";
 import HashLink from "components/HashLink";
 // Icons
-import { FiSun } from "react-icons/fi";
+import { FiSun, FiMoon, FiMonitor } from "react-icons/fi";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { ReactComponent as PageIcon } from "icons/page-icon.svg";
 // Config
 import { GITHUB_PROFILE, LINKEDIN_PROFILE } from "app.config";
+
+const ToggleMode = () => {
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle((prev) => !prev);
+  };
+
+  const handleSelect = (mode) => {
+    if (mode === "system") {
+      localStorage.removeItem("theme");
+
+      // Change color theme to system preference
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? (document.documentElement.classList = "dark")
+        : (document.documentElement.classList = "light");
+    } else {
+      document.documentElement.classList = mode;
+      // save in localStorage
+      localStorage.theme = mode;
+    }
+
+    setToggle(false);
+  };
+
+  return (
+    <>
+      <div className="relative z-10">
+        <FiSun
+          onClick={handleToggle}
+          className="ml-4 w-8 h-8 md:w-5 md:h-5 cursor-pointer"
+        />
+        <div
+          className={`w-28 absolute text-text top-8 right-0 secondary ${
+            toggle ? "block" : "hidden"
+          }`}
+        >
+          <span
+            onClick={() => handleSelect("light")}
+            className="flex items-center p-2 cursor-pointer bg-bg rounded-t hover:bg-hover"
+          >
+            <FiSun className="w-5 h-5 mr-2" />
+            Light
+          </span>
+          <span
+            onClick={() => handleSelect("dark")}
+            className="flex items-center p-2 cursor-pointer bg-bg hover:bg-hover"
+          >
+            <FiMoon className="w-5 h-5 mr-2" />
+            Dark
+          </span>
+          <span
+            onClick={() => handleSelect("system")}
+            className="flex items-center p-2 cursor-pointer bg-bg rounded-b hover:bg-hover"
+          >
+            <FiMonitor className="w-5 h-5 mr-2" />
+            System
+          </span>
+        </div>
+      </div>
+      {/* capture outside click */}
+      <div
+        onClick={handleToggle}
+        className={`absolute top-0 left-0 w-full h-screen ${
+          toggle ? "block" : "hidden"
+        }`}
+      ></div>
+    </>
+  );
+};
 
 function Menu({ routes }) {
   const [resolution, setResolution] = useState(0);
@@ -59,7 +129,7 @@ function Menu({ routes }) {
 
   const options = (
     <div className="flex items-center mt-4 md:m-0 md:border-l md:border-border">
-      <FiSun className="ml-4 w-8 h-8 md:w-5 md:h-5 cursor-pointer" />
+      <ToggleMode />
       <a
         className="ml-4"
         href={LINKEDIN_PROFILE}
