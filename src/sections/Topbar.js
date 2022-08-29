@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 // Components
 import SidebarContainer from "modals/SidebarContainer";
@@ -12,12 +12,19 @@ import { GITHUB_PROFILE, LINKEDIN_PROFILE } from "app.config";
 
 const ToggleMode = () => {
   const [toggle, setToggle] = useState(false);
+  const [selected, setSelected] = useState("");
+  // Refs
+  const iconRef = useRef(null);
+  // Icons
+  const lightIcon = <FiSun />;
+  const darkIcon = <FiMoon />;
+  const systemIcon = <FiMonitor />;
 
   const handleToggle = () => {
     setToggle((prev) => !prev);
   };
 
-  const handleSelect = (mode) => {
+  const handleSelect = (e, mode) => {
     if (mode === "system") {
       localStorage.removeItem("theme");
 
@@ -34,37 +41,81 @@ const ToggleMode = () => {
     setToggle(false);
   };
 
+  // check what mode is selected
+  useEffect(() => {
+    // check targetNode class after component is mounted;
+    const targetNode = document.documentElement;
+    if (selected.length === 0) {
+      // if localStorage.theme is undefined, select system;
+      if (!localStorage.theme) {
+        setSelected("system");
+      } else setSelected(targetNode.classList[0]);
+    }
+
+    const config = { attributes: true };
+    const observer = new MutationObserver((mutationList, observer) => {
+      for (let mutation of mutationList) {
+        if (
+          mutation.type === "attributes" &&
+          mutation.attributeName === "class"
+        ) {
+          // if localStorage.theme is undefined, select system;
+          if (!localStorage.theme) {
+            setSelected("system");
+            return;
+          }
+
+          setSelected(targetNode.classList[0]);
+        }
+      }
+    });
+
+    observer.observe(targetNode, config);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [selected]);
+
   return (
     <>
       <div className="relative z-10">
-        <FiSun
+        <span
           onClick={handleToggle}
-          className="ml-4 w-8 h-8 md:w-5 md:h-5 cursor-pointer"
-        />
+          className="ml-4 block w-8 h-8 md:w-5 md:h-5 cursor-pointer [&>svg]:w-full [&>svg]:h-full"
+          ref={iconRef}
+        >
+          {selected === "light" && lightIcon}
+          {selected === "dark" && darkIcon}
+          {selected === "system" && systemIcon}
+        </span>
         <div
-          className={`w-28 absolute text-text top-8 right-0 secondary ${
+          className={`w-28 absolute text-text top-10 left-4 md:top-8 md:left-auto md:right-0 secondary ${
             toggle ? "block" : "hidden"
           }`}
         >
           <span
-            onClick={() => handleSelect("light")}
-            className="flex items-center p-2 cursor-pointer bg-bg rounded-t hover:bg-hover"
+            onClick={(e) => handleSelect(e, "light")}
+            className={`flex items-center p-2 cursor-pointer rounded-t hover:bg-hover [&>svg]:w-5 [&>svg]:h-5 [&>svg]:mr-2
+            ${selected === "light" ? "bg-hover" : "bg-bg"}`}
           >
-            <FiSun className="w-5 h-5 mr-2" />
+            {lightIcon}
             Light
           </span>
           <span
-            onClick={() => handleSelect("dark")}
-            className="flex items-center p-2 cursor-pointer bg-bg hover:bg-hover"
+            onClick={(e) => handleSelect(e, "dark")}
+            className={`flex items-center p-2 cursor-pointer hover:bg-hover [&>svg]:w-5 [&>svg]:h-5 [&>svg]:mr-2
+ ${selected === "dark" ? "bg-hover" : "bg-bg"}`}
           >
-            <FiMoon className="w-5 h-5 mr-2" />
+            {darkIcon}
             Dark
           </span>
           <span
-            onClick={() => handleSelect("system")}
-            className="flex items-center p-2 cursor-pointer bg-bg rounded-b hover:bg-hover"
+            onClick={(e) => handleSelect(e, "system")}
+            className={`flex items-center p-2 cursor-pointer rounded-b hover:bg-hover [&>svg]:w-5 [&>svg]:h-5 [&>svg]:mr-2
+ ${selected === "system" ? "bg-hover" : "bg-bg"}`}
           >
-            <FiMonitor className="w-5 h-5 mr-2" />
+            {systemIcon}
             System
           </span>
         </div>
