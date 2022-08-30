@@ -1,25 +1,42 @@
-import config from "../app.config.js";
-// Components
-import Icons from "../components/Icons";
-// Icons
-import { ReactComponent as LinkedinIcon } from "../icons/linkedin-icon-2.svg";
-import { ReactComponent as GithubIcon } from "../icons/github-icon-1.svg";
+import { NavLink } from "react-router-dom";
+import HashLink from "components/HashLink";
+
+function Menu({ routes }) {
+  const links = routes.map((route) => {
+    if (route.link[1] === "#")
+      return (
+        <HashLink className="mx-2" key={route.link} to={route.link}>
+          {route.label}
+        </HashLink>
+      );
+
+    return (
+      <NavLink key={route.link} className="mx-2" to={route.link}>
+        {route.label}
+      </NavLink>
+    );
+  });
+
+  return <nav>{links}</nav>;
+}
 
 function Footer() {
+  // menu routes
+  const routes = [
+    { label: "Home", link: "/#home" },
+    { label: "Projects", link: "/#projects" },
+    { label: "Contact", link: "/#contact" },
+    { label: "About", link: "/about" },
+    { label: "Blog", link: "/blog" },
+  ];
+
   return (
-    <footer className="bg-first">
-      <div className="flex items-center justify-end w-full p-2 bg-black/60">
-        <p className="block p-2 mr-6 text-lg">
-          <span>&copy;2022</span> Alejandro Serrano
-        </p>
-        <div className="flex justify-center">
-          <Icons href={config.LINKEDIN_URL} dim="w-8 h-8">
-            <LinkedinIcon />
-          </Icons>
-          <Icons href={config.GITHUB_URL} dim="w-8 h-8">
-            <GithubIcon />
-          </Icons>
-        </div>
+    <footer className="w-full flex justify-center border-solid border-t border-hover">
+      <div className="w-full max-w-[1600px] h-32 flex flex-col justify-between items-center p-4 sm:h-24 sm:flex-row-reverse md:px-8">
+        <Menu routes={routes} />
+        <span className="block">
+          <strong>&copy; 2022</strong> Alejandro Serrano
+        </span>
       </div>
     </footer>
   );
