@@ -249,7 +249,7 @@ function Topbar() {
   }, []);
 
   return (
-    <div
+    <header
       className={`${topPanelStyles} ${
         scrollPosition > 0 ? scrollDownStyle : ""
       }`}
@@ -258,7 +258,7 @@ function Topbar() {
         <PageIcon className="w-12 h-12 text-text" />
         <Menu routes={routes} />
       </div>
-    </div>
+    </header>
   );
 }
 

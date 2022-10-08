@@ -8,6 +8,7 @@ import Footer from "sections/Footer";
 // Routes
 import Home from "sections/Home";
 import About from "routes/About";
+import Blog from "routes/Blog";
 // Envs
 import { RESUME } from "app.config";
 
@@ -58,7 +59,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </div>
       <Footer />

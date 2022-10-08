@@ -5,10 +5,7 @@ import Contact from "sections/Contact";
 function Home() {
   return (
     <>
-      <header
-        id="home"
-        className="flex items-center min-h-screen"
-      >
+      <div id="home" className="flex items-center min-h-screen">
         <div className="flex flex-col w-full p-4 sm:w-2/4">
           <span className="block mb-2 text-2xl font-extralight">
             Hello, I'm
@@ -18,7 +15,7 @@ function Home() {
             Full Stack Developer
           </span>
         </div>
-      </header>
+      </div>
       <main>
         <Projects />
         <Contact />
