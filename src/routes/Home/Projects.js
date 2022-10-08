@@ -10,7 +10,7 @@ import deviceType from "helpers/deviceType";
 // Styles
 import styles from "./Projects.module.css";
 // Articles to iterate
-import projectsArticles from "../projectsArticles";
+import projectsArticles from "projectsArticles";
 
 function CardImage({ image, links }) {
   const [showLinks, setShowLinks] = useState(false);

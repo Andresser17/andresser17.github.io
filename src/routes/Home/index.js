@@ -1,6 +1,6 @@
 // Sections
-import Projects from "sections/Projects";
-import Contact from "sections/Contact";
+import Projects from "./Projects";
+import Contact from "./Contact";
 
 function Home() {
   return (

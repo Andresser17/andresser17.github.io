@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Topbar from "sections/Topbar";
 import Footer from "sections/Footer";
 // Routes
-import Home from "sections/Home";
+import Home from "routes/Home";
 import About from "routes/About";
 import Blog from "routes/Blog";
 // Envs
