@@ -6,7 +6,6 @@ import HashLink from "components/HashLink";
 // Icons
 import { FiSun, FiMoon, FiMonitor } from "react-icons/fi";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { ReactComponent as PageIcon } from "icons/page-icon.svg";
 // Config
 import { GITHUB_PROFILE, LINKEDIN_PROFILE } from "app.config";
 
@@ -232,7 +231,7 @@ function Topbar() {
   // Styles
   const scrollDownStyle = "sm:bg-bg sm:shadow-lg";
   const topPanelStyles =
-    "absolute flex justify-center sm:fixed top-0 w-full px-4 py-2 transition-all duration-300 ease-out z-10";
+    "absolute flex justify-center sm:fixed top-0 w-full p-4 transition-all duration-300 ease-out z-10";
 
   useEffect(() => {
     const handleScrollPosition = () => {
@@ -254,8 +253,7 @@ function Topbar() {
         scrollPosition > 0 ? scrollDownStyle : ""
       }`}
     >
-      <div className="w-full max-w-[1600px] flex items-center sm:justify-between">
-        <PageIcon className="w-12 h-12 text-text" />
+      <div className="w-full max-w-[1600px] flex items-center sm:justify-end">
         <Menu routes={routes} />
       </div>
     </header>

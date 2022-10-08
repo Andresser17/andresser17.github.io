@@ -35,7 +35,7 @@ function Post() {
 
 function Blog() {
   return (
-    <div className="min-h-screen mt-24 px-6 lg:flex lg:justify-between lg:px-16">
+    <div className="min-h-screen mt-12 px-6 lg:mt-24 lg:flex lg:justify-between lg:px-16">
       <div>
         <h2 className="font-bold mb-16 text-2xl">Blog Posts</h2>
         <Post />
