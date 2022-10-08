@@ -9,6 +9,7 @@ import Footer from "sections/Footer";
 import Home from "routes/Home";
 import About from "routes/About";
 import Blog from "routes/Blog";
+import Post from "routes/Post";
 // Envs
 import { RESUME } from "app.config";
 
@@ -60,6 +61,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/post" element={<Post />} />
         </Routes>
       </div>
       <Footer />
