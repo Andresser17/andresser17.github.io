@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // Sections
 import Comments from "./Comments";
 // Icons
@@ -8,6 +8,8 @@ import {
   IoIosArrowForward as ArrowRight,
   IoIosArrowBack as ArrowLeft,
 } from "react-icons/io";
+// Services
+import postService from "services/post.service";
 
 function Contents() {
   const [show, setShow] = useState(false);
@@ -59,19 +61,28 @@ function Author() {
 }
 
 function Post() {
+  const [post, setPost] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await postService.getPostById(1);
+      console.log(response);
+      setPost(response);
+    };
+    if (post !== null && Object.keys(post).length === 0) fetchData();
+  }, [post]);
+
   return (
     <div className="w-full min-h-screen p-6 mt-16 flex justify-between flex-wrap lg:max-w-[72rem]">
       <div className="max-w-[48rem]">
         <div className="max-w-[32rem]">
-          <h1 className="text-3xl font-bold">
-            How to create a list of users in React
-          </h1>
+          <h1 className="text-3xl font-bold">{post.title?.rendered}</h1>
           <div className="flex justify-between mt-2">
             <span className="text-sm text-text/70 max-w-[10rem]">
               Alejandro Serrano
             </span>
             <span className="text-sm text-text/70 max-w-[10rem] sm:max-w-full">
-              Published on Aug 2, 2022
+              {post.date}
             </span>
           </div>
           <div className="flex flex-wrap my-8">
@@ -80,19 +91,21 @@ function Post() {
             <FaLinkedin className="text-4xl cursor-pointer" />
           </div>
         </div>
-        {/* Description */}
-        <p className="mb-8">
-          This is my one hundred percent original description, here I will make
-          a little resume about how to program a simple list of users in React.
-        </p>
-        <h2 className="text-2xl font-bold mb-4">Installation</h2>
-        <p className="mb-8">
-          To get started we need to install the expo package Contacts
-        </p>
+        {/* Content */}
+        <div
+          className="my-8"
+          dangerouslySetInnerHTML={{ __html: post.content?.rendered }}
+        ></div>
+        {/* <p className="mb-8"> */}
+        {/* </p> */}
+        {/* <h2 className="text-2xl font-bold mb-4">Installation</h2> */}
+        {/* <p className="mb-8"> */}
+        {/*   To get started we need to install the expo package Contacts */}
+        {/* </p> */}
         <Author />
       </div>
       {/* <Contents /> */}
-      <Comments />
+      {/* <Comments /> */}
     </div>
   );
 }
