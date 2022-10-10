@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 // Sections
 import Comments from "./Comments";
 // Icons
 import { FaTwitterSquare, FaLinkedin } from "react-icons/fa";
-import { FaUserCircle } from "react-icons/fa";
 import {
   IoIosArrowForward as ArrowRight,
   IoIosArrowBack as ArrowLeft,
 } from "react-icons/io";
 // Services
 import postService from "services/post.service";
+import userService from "services/user.service";
 
 function Contents() {
   const [show, setShow] = useState(false);
@@ -45,32 +46,45 @@ function Contents() {
   );
 }
 
-function Author() {
+function Author({ data }) {
   return (
     <div className="flex items-center">
-      <FaUserCircle className="w-20 h-20" />
+      {/* <FaUserCircle className="w-20 h-20" /> */}
+      <img src={data.avatar_urls ? data.avatar_urls["96"] : ""} alt="Author" />
       <div className="ml-4">
-        <span className="block font-bold mb-2">Alejandro Serrano</span>
-        <p className="text-sm">
-          Self-taught Web Developer racing games entusiast, and future
-          professional web developer
-        </p>
+        <span className="block font-bold mb-2">{data.name}</span>
+        <p className="text-sm">{data.description}</p>
       </div>
     </div>
   );
 }
 
 function Post() {
+  const { id } = useParams();
   const [post, setPost] = useState({});
+  const [user, setUser] = useState({});
+  const date = new Date(post.date).toLocaleDateString("en-us", {
+    weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await postService.getPostById(1);
-      console.log(response);
+      const response = await postService.getPostById(id);
       setPost(response);
     };
     if (post !== null && Object.keys(post).length === 0) fetchData();
-  }, [post]);
+  }, [post, id]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await userService.getUserById(1);
+      setUser(response);
+    };
+    if (user !== null && Object.keys(user).length === 0) fetchData();
+  }, [user]);
 
   return (
     <div className="w-full min-h-screen p-6 mt-16 flex justify-between flex-wrap lg:max-w-[72rem]">
@@ -79,10 +93,10 @@ function Post() {
           <h1 className="text-3xl font-bold">{post.title?.rendered}</h1>
           <div className="flex justify-between mt-2">
             <span className="text-sm text-text/70 max-w-[10rem]">
-              Alejandro Serrano
+              {user.name}
             </span>
             <span className="text-sm text-text/70 max-w-[10rem] sm:max-w-full">
-              {post.date}
+              {date}
             </span>
           </div>
           <div className="flex flex-wrap my-8">
@@ -93,16 +107,10 @@ function Post() {
         </div>
         {/* Content */}
         <div
-          className="my-8"
+          className="my-8 [&_p]:mb-4"
           dangerouslySetInnerHTML={{ __html: post.content?.rendered }}
         ></div>
-        {/* <p className="mb-8"> */}
-        {/* </p> */}
-        {/* <h2 className="text-2xl font-bold mb-4">Installation</h2> */}
-        {/* <p className="mb-8"> */}
-        {/*   To get started we need to install the expo package Contacts */}
-        {/* </p> */}
-        <Author />
+        <Author data={user} />
       </div>
       {/* <Contents /> */}
       {/* <Comments /> */}
