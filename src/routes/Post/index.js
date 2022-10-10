@@ -1,4 +1,6 @@
 import { useState } from "react";
+// Sections
+import Comments from "./Comments";
 // Icons
 import { FaTwitterSquare, FaLinkedin } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
@@ -58,7 +60,7 @@ function Author() {
 
 function Post() {
   return (
-    <div className="w-full min-h-screen p-6 mt-16 flex justify-between lg:max-w-[72rem]">
+    <div className="w-full min-h-screen p-6 mt-16 flex justify-between flex-wrap lg:max-w-[72rem]">
       <div className="max-w-[28rem] lg:max-w-[36rem]">
         <h1 className="text-3xl font-bold">
           How to create a list of users in React
@@ -88,6 +90,7 @@ function Post() {
         <Author />
       </div>
       <Contents />
+      <Comments />
     </div>
   );
 }
