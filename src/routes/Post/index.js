@@ -61,22 +61,24 @@ function Author() {
 function Post() {
   return (
     <div className="w-full min-h-screen p-6 mt-16 flex justify-between flex-wrap lg:max-w-[72rem]">
-      <div className="max-w-[28rem] lg:max-w-[36rem]">
-        <h1 className="text-3xl font-bold">
-          How to create a list of users in React
-        </h1>
-        <div className="flex justify-between mt-2">
-          <span className="text-sm text-text/70 max-w-[10rem]">
-            Alejandro Serrano
-          </span>
-          <span className="text-sm text-text/70 max-w-[10rem] sm:max-w-full">
-            Published on Aug 2, 2022
-          </span>
-        </div>
-        <div className="flex flex-wrap my-8">
-          <span className="block w-full">Share on:</span>
-          <FaTwitterSquare className="text-4xl mr-2 cursor-pointer" />
-          <FaLinkedin className="text-4xl cursor-pointer" />
+      <div className="max-w-[48rem]">
+        <div className="max-w-[32rem]">
+          <h1 className="text-3xl font-bold">
+            How to create a list of users in React
+          </h1>
+          <div className="flex justify-between mt-2">
+            <span className="text-sm text-text/70 max-w-[10rem]">
+              Alejandro Serrano
+            </span>
+            <span className="text-sm text-text/70 max-w-[10rem] sm:max-w-full">
+              Published on Aug 2, 2022
+            </span>
+          </div>
+          <div className="flex flex-wrap my-8">
+            <span className="block w-full">Share on:</span>
+            <FaTwitterSquare className="text-4xl mr-2 cursor-pointer" />
+            <FaLinkedin className="text-4xl cursor-pointer" />
+          </div>
         </div>
         {/* Description */}
         <p className="mb-8">
@@ -89,7 +91,7 @@ function Post() {
         </p>
         <Author />
       </div>
-      <Contents />
+      {/* <Contents /> */}
       <Comments />
     </div>
   );
