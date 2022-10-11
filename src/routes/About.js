@@ -16,7 +16,7 @@ function About() {
             Hello, my name is Alejandro Serrano.
           </span>
           <p className="leading-8 text-xl">
-            Young Software engineer with more than Three years of experience
+            Young Software Developer with more than Three years of experience
             learning programming as a hobby, with experience working with a team
             in academic projects applying SCRUM methodologies and Gitflow. With
             passion for clean code practices, and collaborate to Open Source.
