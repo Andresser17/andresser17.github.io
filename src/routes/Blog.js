@@ -79,16 +79,16 @@ function Blog() {
           <span className="text-xl">No post available</span>
         )}
       </div>
-      <div className="mb-12 lg:m-0 lg:mt-24">
-        <h3 className="font-bold mb-12 text-xl lg:text-2xl">
-          Featured Projects
-        </h3>
-        <div className="flex overflow-auto lg:flex-col">
-          <Featured />
-          <Featured />
-          <Featured />
-        </div>
-      </div>
+      {/* <div className="mb-12 lg:m-0 lg:mt-24"> */}
+      {/*   <h3 className="font-bold mb-12 text-xl lg:text-2xl"> */}
+      {/*     Featured Projects */}
+      {/*   </h3> */}
+      {/*   <div className="flex overflow-auto lg:flex-col"> */}
+      {/*     <Featured /> */}
+      {/*     <Featured /> */}
+      {/*     <Featured /> */}
+      {/*   </div> */}
+      {/* </div> */}
       <div className="w-full mb-12">
         <Pagination
           selected={page}
