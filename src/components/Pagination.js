@@ -11,7 +11,7 @@ function Pagination({
   selected = 1,
 }) {
   const handlePageClick = (e) => {
-    setSelected(e.selected);
+    setSelected(e.selected + 1);
   };
 
   return (
@@ -27,7 +27,7 @@ function Pagination({
       nextClassName={styles["arrow-button-li"]}
       nextLinkClassName={styles["arrow-button"]}
       onPageChange={handlePageClick}
-      pageCount={Math.ceil(pageCount / limit)}
+      pageCount={Number(pageCount)}
     />
   );
 }

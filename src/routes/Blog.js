@@ -1,5 +1,9 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // Components
 import Pagination from "components/Pagination";
+// Services
+import postService from "services/post.service";
 // Images
 import featuredImage from "images/aleron-ui.png";
 
@@ -16,34 +20,64 @@ function Featured() {
   );
 }
 
-function Post() {
+function Post({ data }) {
+  const link = `/post/${data.id}`;
+
   return (
     <div className="w-full max-w-[28rem] mb-12">
-      <h3 className="font-bold text-2xl cursor-pointer">
-        How to create a list of users in React
+      <h3 className="font-bold text-2xl mb-4 cursor-pointer">
+        <Link to={link} className="font-bold mt-4 cursor-pointer">
+          {data.title?.rendered}
+        </Link>
       </h3>
-      <span className="block text-sm mb-6 mt-2">This is my subtitle</span>
-      <p>
-        This is my one hundred percent original descriptions, here I will make a
-        little resume about how to program a simple list of users in React.
-      </p>
-
+      <div dangerouslySetInnerHTML={{ __html: data.excerpt?.rendered }}></div>
       <div className="mt-4">
-        <span className="font-bold mt-4 cursor-pointer">Read more</span>
+        <Link to={link} className="font-bold mt-4 cursor-pointer">
+          Read more
+        </Link>
       </div>
     </div>
   );
 }
 
 function Blog() {
+  const [posts, setPosts] = useState({});
+  const [refresh, setRefresh] = useState(false);
+  const [page, setPage] = useState(1);
+  const [pageCount, setPageCount] = useState(0);
+  const limit = 5;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await postService.getPosts({ page, limit });
+      if (response.status === 200) {
+        setPosts(response.data);
+        setPageCount(response.headers["x-wp-totalpages"]);
+      }
+      setRefresh(false);
+    };
+    if (refresh) {
+      fetchData();
+      return;
+    }
+    if (posts !== null && Object.keys(posts).length === 0) fetchData();
+  }, [posts, page, refresh]);
+
+  // manage pagination buttons
+  const handlePage = (selected) => {
+    setPage(selected);
+    setRefresh(true);
+  };
+
   return (
     <div className="min-h-screen mt-12 px-6 lg:mt-24 lg:flex lg:flex-wrap lg:justify-between lg:px-16">
-      <div>
+      <div className="mb-12 lg:m-0">
         <h2 className="font-bold mb-16 text-2xl">Blog Posts</h2>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        {Object.keys(posts).length > 0 ? (
+          posts.map((post) => <Post data={post} key={post.id} />)
+        ) : (
+          <span className="text-xl">No post available</span>
+        )}
       </div>
       <div className="mb-12 lg:m-0 lg:mt-24">
         <h3 className="font-bold mb-12 text-xl lg:text-2xl">
@@ -56,7 +90,12 @@ function Blog() {
         </div>
       </div>
       <div className="w-full mb-12">
-        <Pagination />
+        <Pagination
+          selected={page}
+          setSelected={handlePage}
+          pageCount={pageCount}
+          limit={limit}
+        />
       </div>
     </div>
   );
