@@ -10,7 +10,7 @@ import deviceType from "helpers/deviceType";
 // Styles
 import styles from "./Projects.module.css";
 // Articles to iterate
-import projectsArticles from "../projectsArticles";
+import projectsArticles from "projectsArticles";
 
 function CardImage({ image, links }) {
   const [showLinks, setShowLinks] = useState(false);
@@ -68,7 +68,7 @@ function CardImage({ image, links }) {
 
 function Card({ image, links, title, description }) {
   return (
-    <article className="w-80 mb-8 md:even:ml-4 md:odd:mr-4 md:[&:nth-child(4n+1)]:mt-4 md:[&:nth-child(4n)]:mt-4 lg:w-[28rem] xl:w-[32rem]">
+    <article className="w-80 mb-8 lg:w-[28rem] xl:w-[32rem]">
       <CardImage {...{ image, links }} />
       <div className="mt-2">
         <h3 className="text-lg font-semibold">{title}</h3>
@@ -108,7 +108,7 @@ function Projects() {
             GitHub
           </a>
         </div>
-        <div className="max-w-[66rem] md:flex md:flex-wrap md:justify-center">
+        <div className="max-w-[66rem] md:flex md:flex-wrap md:justify-between">
           {cards}
         </div>
       </div>

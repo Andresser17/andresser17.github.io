@@ -6,8 +6,10 @@ import "react-toastify/dist/ReactToastify.css";
 import Topbar from "sections/Topbar";
 import Footer from "sections/Footer";
 // Routes
-import Home from "sections/Home";
+import Home from "routes/Home";
 import About from "routes/About";
+import Blog from "routes/Blog";
+import Post from "routes/Post";
 // Envs
 import { RESUME } from "app.config";
 
@@ -58,7 +60,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/post/:id" element={<Post />} />
         </Routes>
       </div>
       <Footer />

@@ -57,6 +57,7 @@ function Form() {
         <span className="block w-full">Details</span>
         <div className="w-full sm:w-[48%]">
           <Input
+            palette="white"
             name="name"
             placeholder="Name"
             {...{ control }}
@@ -79,6 +80,7 @@ function Form() {
         </div>
         <div className="w-full sm:w-[48%]">
           <Input
+            palette="white"
             name="lastName"
             placeholder="Last Name"
             {...{ control }}
@@ -101,6 +103,7 @@ function Form() {
         </div>
         <div className="w-full">
           <Input
+            palette="white"
             name="email"
             placeholder="Email Address"
             {...{ control }}
@@ -118,6 +121,7 @@ function Form() {
         <span className="block w-full">Company Details</span>
         <div className="w-full sm:w-[48%]">
           <Input
+            palette="white"
             name="companyName"
             description="Not Required"
             placeholder="Company Name"
@@ -140,6 +144,7 @@ function Form() {
         </div>
         <div className="w-full sm:w-[48%]">
           <Input
+            palette="white"
             name="companyWebsite"
             placeholder="Company Website"
             description="Not Required"
@@ -156,6 +161,7 @@ function Form() {
       <div className="mb-4">
         <span className="block">Message</span>
         <Textarea
+          palette="white"
           name="message"
           placeholder="Send me a message..."
           {...{ control }}
