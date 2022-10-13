@@ -1,32 +1,31 @@
-import axios from "axios";
+import Butter from "buttercms";
 // Envs
-const { REACT_APP_WP_API: WP_API } = process.env;
+const { REACT_APP_BUTTER_TOKEN: BUTTER_TOKEN } = process.env;
+const butter = Butter(BUTTER_TOKEN);
 
 async function getPosts({ page = 1, limit = 10 }) {
   try {
-    return await axios.get(
-      `${WP_API}/wp/v2/posts?page=${page}&per_page=${limit}`
-    );
+    return await butter.post.list({ page, page_size: limit });
   } catch (err) {
     console.log(err);
     return err;
   }
 }
 
-async function getPostById(id) {
+async function getPostBySlug(slug) {
   try {
-    const response = await axios.get(`${WP_API}/wp/v2/posts/${id}`);
+    const response = await butter.post.retrieve(slug);
 
     return response.data;
   } catch (err) {
     console.log(err);
-    return null;
+    return err;
   }
 }
 
 const post = {
   getPosts,
-  getPostById,
+  getPostBySlug,
 };
 
 export default post;
