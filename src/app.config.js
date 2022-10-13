@@ -4,4 +4,4 @@ export const LINKEDIN_PROFILE =
 export const WHATSAPP_PROFILE = "https://wa.me/qr/CLOWWPNMNJ4OM1";
 export const EMAIL = "andresserserrano2020@gmail.com";
 export const RESUME =
-  "https://drive.google.com/file/d/1x2F4dqcj41iDXoWYlV4dZdXwDVYl0wps/view?usp=sharing";
+  "https://drive.google.com/file/d/1l2TPf8bMqk-7BCY2I9veiZwd7dma-5Vx/view";

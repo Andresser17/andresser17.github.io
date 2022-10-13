@@ -10,7 +10,6 @@ import {
 } from "react-icons/io";
 // Services
 import postService from "services/post.service";
-import userService from "services/user.service";
 
 function Contents() {
   const [show, setShow] = useState(false);
@@ -46,24 +45,26 @@ function Contents() {
   );
 }
 
-function Author({ data }) {
+function Author({ data = {} }) {
   return (
-    <div className="flex items-center">
-      {/* <FaUserCircle className="w-20 h-20" /> */}
-      <img src={data.avatar_urls ? data.avatar_urls["96"] : ""} alt="Author" />
+    <div className="flex flex-wrap items-start w-full max-w-[32rem]">
+      <img src={data.profile_image} alt="Author" />
       <div className="ml-4">
-        <span className="block font-bold mb-2">{data.name}</span>
-        <p className="text-sm">{data.description}</p>
+        <span className="block font-bold mb-2">
+          {data.first_name} {data.last_name}
+        </span>
+        <p className="text-sm max-w-[24rem]">{data.bio}</p>
+      </div>
+      <div className="w-full">
       </div>
     </div>
   );
 }
 
 function Post() {
-  const { id } = useParams();
+  const { slug } = useParams();
   const [post, setPost] = useState({});
-  const [user, setUser] = useState({});
-  const date = new Date(post.date).toLocaleDateString("en-us", {
+  const date = new Date(post.published).toLocaleDateString("en-us", {
     weekday: "long",
     year: "numeric",
     month: "short",
@@ -72,28 +73,20 @@ function Post() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await postService.getPostById(id);
-      setPost(response);
+      const response = await postService.getPostBySlug(slug);
+      setPost(response.data);
     };
     if (post !== null && Object.keys(post).length === 0) fetchData();
-  }, [post, id]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await userService.getUserById(1);
-      setUser(response);
-    };
-    if (user !== null && Object.keys(user).length === 0) fetchData();
-  }, [user]);
+  }, [post, slug]);
 
   return (
     <div className="w-full min-h-screen p-6 mt-16 flex justify-between flex-wrap lg:max-w-[72rem]">
-      <div className="max-w-[48rem]">
-        <div className="max-w-[32rem]">
-          <h1 className="text-3xl font-bold">{post.title?.rendered}</h1>
+      <div className="w-full max-w-[48rem]">
+        <div className="w-full max-w-[32rem]">
+          <h1 className="text-3xl font-bold">{post.title}</h1>
           <div className="flex justify-between mt-2">
             <span className="text-sm text-text/70 max-w-[10rem]">
-              {user.name}
+              {post.author?.first_name} {post.author?.last_name}
             </span>
             <span className="text-sm text-text/70 max-w-[10rem] sm:max-w-full">
               {date}
@@ -107,10 +100,10 @@ function Post() {
         </div>
         {/* Content */}
         <div
-          className="my-8 [&_p]:mb-4"
-          dangerouslySetInnerHTML={{ __html: post.content?.rendered }}
+          className="my-8 [&_p]:mb-4 [&_h1]:text-3xl [&_h2]:text-2xl [&_h3]:text-xl [&>*]:mb-4"
+          dangerouslySetInnerHTML={{ __html: post.body }}
         ></div>
-        <Author data={user} />
+        <Author data={post.author} />
       </div>
       {/* <Contents /> */}
       {/* <Comments /> */}

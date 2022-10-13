@@ -12,7 +12,7 @@ function Home() {
             <h1 className="text-5xl font-bold">Alejandro Serrano</h1>
           </span>
           <span className="inline-block text-2xl border-b border-border">
-            Full Stack Developer
+            Web Developer
           </span>
         </div>
       </div>

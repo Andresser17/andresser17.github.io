@@ -1,6 +1,5 @@
-import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Sections
 import Topbar from "sections/Topbar";
@@ -10,8 +9,6 @@ import Home from "routes/Home";
 import About from "routes/About";
 import Blog from "routes/Blog";
 import Post from "routes/Post";
-// Envs
-import { RESUME } from "app.config";
 
 function App() {
   // React toastify themes
@@ -24,35 +21,6 @@ function App() {
     dark: "bg-white-600 font-gray-300",
   };
 
-  // display a welcome message when page is ready
-  useEffect(() => {
-    const welcomeMessage = () =>
-      toast.info(
-        <p>
-          Welcome visitor, You can download my resume{" "}
-          <a
-            className="underline underline-offset-2 font-semibold text-bg info"
-            href={RESUME}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            HERE!
-          </a>
-        </p>,
-        {
-          autoClose: false,
-          hideProgressBar: true,
-          closeOnClick: false,
-        }
-      );
-
-    window.addEventListener("load", welcomeMessage);
-
-    return () => {
-      window.removeEventListener("load", welcomeMessage);
-    };
-  }, []);
-
   return (
     <div className="bg-bg text-text flex flex-col items-center">
       <Topbar />
@@ -61,7 +29,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/post/:id" element={<Post />} />
+          <Route path="/post/:slug" element={<Post />} />
         </Routes>
       </div>
       <Footer />

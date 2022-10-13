@@ -227,7 +227,6 @@ function Contact() {
         </h2>
         <span className="block text-xl leading-2 mt-4 w-72">
           Download my{" "}
-          {/* Reach out filling the form bellow or send me an{" "} */}
           <a
             className="underline underline-offset-2 font-semibold text-bg primary"
             href={RESUME}
