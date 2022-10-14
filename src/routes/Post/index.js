@@ -55,8 +55,7 @@ function Author({ data = {} }) {
         </span>
         <p className="text-sm max-w-[24rem]">{data.bio}</p>
       </div>
-      <div className="w-full">
-      </div>
+      <div className="w-full"></div>
     </div>
   );
 }
@@ -78,6 +77,9 @@ function Post() {
     };
     if (post !== null && Object.keys(post).length === 0) fetchData();
   }, [post, slug]);
+
+  if (Object.keys(post).length === 0)
+    return <div className="absolute top-0 left-0 w-full h-full bg-bg"></div>;
 
   return (
     <div className="w-full min-h-screen p-6 mt-16 flex justify-between flex-wrap lg:max-w-[72rem]">

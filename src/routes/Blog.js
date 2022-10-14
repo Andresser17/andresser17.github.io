@@ -69,9 +69,12 @@ function Blog() {
     setRefresh(true);
   };
 
+  if (Object.keys(posts).length === 0)
+    return <div className="absolute top-0 left-0 w-full h-full bg-bg"></div>;
+
   return (
     <div className="min-h-screen mt-12 px-6 lg:mt-24 lg:flex lg:flex-wrap lg:justify-between lg:px-16">
-      <div className="mb-12 lg:m-0">
+      <div className="mb-12 min-h-[48rem] lg:m-0">
         <h2 className="font-bold mb-16 text-2xl">Blog Posts</h2>
         {Object.keys(posts).length > 0 ? (
           posts.map((post) => <Post data={post} key={post.slug} />)
