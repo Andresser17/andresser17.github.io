@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "/",
   "dependencies": {
+    "@andresser17/aleron-ui": "^1.0.8",
     "@emailjs/browser": "^3.2.0",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^13.3.0",
@@ -30,10 +31,17 @@
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
-    "extends": ["react-app", "react-app/jest"]
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

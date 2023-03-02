@@ -3,15 +3,13 @@ import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // Sections
-import Topbar from "sections/Topbar";
+import Header from "sections/Header";
 import Footer from "sections/Footer";
 // Routes
 import Home from "routes/Home";
 import About from "routes/About";
-import Blog from "routes/Blog";
-import Post from "routes/Post";
 
-function App() {
+export default function App() {
   // React toastify themes
   const contextClass = {
     success: "bg-bg primary",
@@ -24,13 +22,11 @@ function App() {
 
   return (
     <div className="bg-bg text-text flex flex-col items-center">
-      <Topbar />
+      <Header />
       <div className="w-full max-w-[1600px]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/post/:slug" element={<Post />} />
         </Routes>
       </div>
       <Footer />
@@ -45,5 +41,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

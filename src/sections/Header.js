@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 // Components
 import SidebarContainer from "modals/SidebarContainer";
@@ -217,7 +217,7 @@ function Menu({ routes }) {
   );
 }
 
-function Topbar() {
+export default function Header() {
   // Manage scroll position
   const [scrollPosition, setScrollPosition] = useState(0);
   // menu routes
@@ -226,7 +226,6 @@ function Topbar() {
     { label: "Projects", link: "/#projects" },
     { label: "Contact", link: "/#contact" },
     { label: "About", link: "/about" },
-    { label: "Blog", link: "/blog" },
   ];
   // Styles
   const scrollDownStyle = "sm:bg-bg sm:shadow-lg";
@@ -253,11 +252,10 @@ function Topbar() {
         scrollPosition > 0 ? scrollDownStyle : ""
       }`}
     >
+      {/* Topbar */}
       <div className="w-full max-w-[1600px] flex items-center sm:justify-end">
         <Menu routes={routes} />
       </div>
     </header>
   );
 }
-
-export default Topbar;
