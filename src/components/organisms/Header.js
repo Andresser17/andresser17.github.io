@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 // Components
 import SidebarContainer from "components/atoms/SidebarContainer";
 import Nav from "components/molecules/Nav";
+// Hooks
+import useResolution from "hooks/useResolution";
+import useScrollPosition from "hooks/useScrollPosition";
 // Icons
 import { FiSun, FiMoon, FiMonitor } from "react-icons/fi";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
@@ -130,22 +133,7 @@ const ToggleTheme = () => {
 };
 
 function Menu() {
-  const [resolution, setResolution] = useState(0);
-
-  // get document resolution
-  useEffect(() => {
-    // get current resolution when component is mounted
-    if (resolution === 0) setResolution(document.body.clientWidth);
-
-    const getResolution = () => {
-      setResolution(document.body.clientWidth);
-    };
-    window.addEventListener("resize", getResolution);
-
-    return () => {
-      window.removeEventListener("resize", getResolution);
-    };
-  }, [resolution]);
+  const resolution = useResolution();
 
   const menu = (
     <div className="md:flex">
@@ -178,26 +166,11 @@ function Menu() {
 }
 
 export default function Header() {
-  // Manage scroll position
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const scrollPosition = useScrollPosition();
   // Styles
   const scrollDownStyle = "sm:bg-bg sm:shadow-lg";
   const topPanelStyles =
     "absolute flex justify-center sm:fixed top-0 w-full p-4 transition-all duration-300 ease-out z-10";
-
-  useEffect(() => {
-    const handleScrollPosition = () => {
-      const position = window.scrollY;
-
-      setScrollPosition(position);
-    };
-
-    window.addEventListener("scroll", handleScrollPosition);
-
-    return () => {
-      window.removeEventListener("scroll", handleScrollPosition);
-    };
-  }, []);
 
   return (
     <header
